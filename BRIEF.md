@@ -13,7 +13,7 @@ Indult: 2026. november 25.
 - Hotel: Aurora Hacienda Zanzibar, 4 szoba, zanzibári stílus (az épület is). Most nyílt, nincs még anyag.
 - Nincs Booking.com és Instagram (nem is lesz, ha nem muszáj) → csak közvetlen foglalás, saját PMS.
 - Fizetés: első körben foglalási kérés, fizetés a szálláson; előleg később, ha kell.
-- Infra: Cloudflare (Pages/Workers, DNS) + Supabase + .com domain.
+- Infra: hosting Netlify (netlify.toml kész, repó: TheCinemaker/hasienda); Cloudflare a .com domainhez + DNS-hez; Supabase a foglalási backendhez (később). Statikus oldal, a hosting bármikor cserélhető.
 
 ## Amit tudni kell az induláshoz (töltsd ki, vagy mondd el Claude-nak)
 
