@@ -3,6 +3,18 @@
 Megrendelő: egy zanzibári hotel (név: ____). Kivitelező: SA Software & Network Solutions.
 Indult: 2026. november 25.
 
+## Rögzített döntések (2026-11-25, tulaj elképzelése alapján)
+- Hely: Nungwi (Zanzibár északi csúcsa). GPS: -5.736968776973334, 39.296170872725 (src/i18n/site.ts).
+- Stílus: luxury, referencia: https://www.aryaboutiqueresort.com/?lang=en – **ne legyen "AI-érzés"** (nincs sablonos gradiens/kártyarács, valódi fotók, visszafogott tipó).
+- Nyelvek: EN, DE, RU, FR, ES, IT, AR (az arab RTL!).
+- Nulla emoji, csak SVG ikonok.
+- Online foglalás + Apple Wallet / Google Wallet jegy (QR) – lásd TODO.md.
+- Recepció: QR-beolvasás → vendég/foglalás azonnal a recepciós felületen → saját PMS kell.
+- Hotel: Aurora Hacienda Zanzibar, 4 szoba, zanzibári stílus (az épület is). Most nyílt, nincs még anyag.
+- Nincs Booking.com és Instagram (nem is lesz, ha nem muszáj) → csak közvetlen foglalás, saját PMS.
+- Fizetés: első körben foglalási kérés, fizetés a szálláson; előleg később, ha kell.
+- Infra: Cloudflare (Pages/Workers, DNS) + Supabase + .com domain.
+
 ## Amit tudni kell az induláshoz (töltsd ki, vagy mondd el Claude-nak)
 
 1. **A hotel**
