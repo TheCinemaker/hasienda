@@ -26,9 +26,10 @@
 - [ ] Cloudflare, Supabase fiók (ügyfél tulajdonában)
 
 ## Ideiglenes képek (cserélendő, azonos fájlnévvel)
-- DEMO fotók (Wikimedia Commons, scripts/fetch-demo-photos.mjs): hero, welcome, nungwi (Paul W, CC0), house (Eric Kilby, CC BY-SA 2.0 – a láblécben jelölve). Valódi fotóknál a lábléc photoCredit sor törlendő
-- public/images/ szobák: room-1..4.jpg (még placeholder, valódi szobafotó nincs); eredeti lista: hero.jpg, welcome.jpg, room-1..4.jpg, house.jpg, nungwi.jpg (barna/zöld átmenetek "PLACEHOLDER" felirattal; újragenerálás: node scripts/gen-placeholders.mjs)
-- A szövegekben "To be confirmed" jelölésű részek (szobaleírás, ár, épület, távolságok, fizetés) valós adatra cserélendők, a jelölő (.tbc) ezután törölhető
+- MI-generált ideiglenes luxury fotók (`public/images/`): `hero.jpg`, `welcome.jpg`, `room-1.jpg`, `room-2.jpg`, `room-3.jpg`, `room-4.jpg`, `house.jpg`, `nungwi.jpg`, `transfer.jpg`, `excursions.jpg`, `book.jpg`. Mind a 11 fájl 2400×1350 (16:9) JPEG, ugyanazzal a fájlnévvel cserélhető valódi fotóra (a korábbi Wikimedia Commons demo fotók és a lábléc `photoCredit` sor eltávolítva).
+- Ideiglenes CC0 stock fotó: `dining.jpg` (Rawpixel / Openverse CC0, 2400×1350 – valódi étteremfotóra cserélendő).
+- Hivatalos logó: `logo-seal.png` (tulaj FB-on is használt kör alakú pecsétje átlátszó háttérrel feldolgozva).
+- A szövegekben "To be confirmed" jelölésű részek (egyedi szobaleírások, pontos szobaárak/kirándulás-árak, pontos távolságok, fizetés) valós adatra cserélendők, a jelölő (.tbc) ezután törölhető
 - Jogi cégnév a lábléc copyright sorába (most: Aurora Hacienda Zanzibar)
-- Űrlap nincs bekötve (Supabase / e-mail a 2. fázisban)
+- Foglalási űrlap: előtöltött WhatsApp (`+36303852459`) és e-mail (`aurorahaciendazanzibar@gmail.com`) küldés aktív; Supabase / saját PMS a 2. fázisban
 - Fordítások (DE, RU, FR, ES, IT, AR): az EN szöveg véglegesítése után; addig az oldal csak EN, a nyelvválasztó rejtve

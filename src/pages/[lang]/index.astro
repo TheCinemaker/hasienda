@@ -1,20 +1,33 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { available, t, isTbc, type Locale } from '../../i18n';
-import { mapUrl } from '../../i18n/site';
+import { contact, coordsDisplay, mapUrl } from '../../i18n/site';
 
 export function getStaticPaths() {
   return available.map((lang) => ({ params: { lang } }));
 }
 const lang = Astro.params.lang as Locale;
 const d = t(lang);
+
+const amenityIcons = [
+  'M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3zM6 12V6a2 2 0 0 1 4 0v1',
+  'M3 7h18v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zM7 18c0-1.5 1-2 1-2M12 18c0-1.5 1-2 1-2M17 18c0-1.5 1-2 1-2',
+  'M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 10V4a3 3 0 0 1 5 2M14 12h6a3 3 0 0 1-2 5M10 12H4a3 3 0 0 1 2-5M12 14v6a3 3 0 0 1-5-2',
+  'M3 6h18v11H3zM8 20h8M12 17v3',
+  'M6 3h12v18H6zM6 10h12M9 6.5v1.5M9 13v3',
+  'M5 9h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9zM16 10h2a2 2 0 0 1 0 4h-2M8 5c0-1 .8-1.5.8-2.5M12 5c0-1 .8-1.5.8-2.5',
+  'M4 5h16v14H4zM12 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0M8 19v2M16 19v2',
+];
 ---
 <Base lang={lang}>
   <main>
-    <section class="panel hero" id="top-panel" data-dot={d.nav.home}>
-      <img src="/images/hero.jpg" alt="" class="panel-img zoom" fetchpriority="high" />
+    <section class="panel hero" id="top-panel" data-dot={d.nav.start}>
+      <div class="panel-media">
+        <img src="/images/hero.jpg" alt="" class="panel-img zoom" fetchpriority="high" />
+      </div>
       <div class="shade"></div>
       <div class="panel-text reveal">
+        <span class="hero-hairline" aria-hidden="true"></span>
         <p class="eyebrow">{d.hero.eyebrow}</p>
         <h1>{d.hero.title}</h1>
         <p class="lead">{d.hero.text}</p>
@@ -22,79 +35,240 @@ const d = t(lang);
       <div class="dock">
         <nav class="quick" aria-label={d.nav.quick}>
           <a href="#rooms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V7M3 14h18v4M21 14v-2.5A2.5 2.5 0 0 0 18.5 9H11v5M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg>{d.nav.stay}</a>
+          <a href="#dining"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5v-5zM16 11h2.5a2 2 0 0 1 0 4H16M8 6c0-1 .8-1.5.8-2.5M12 6c0-1 .8-1.5.8-2.5"/></svg>{d.nav.dining}</a>
           <a href="#house"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10.5L12 4l8 6.5V21M4 21h16M9.5 21v-5.5a2.5 2.5 0 0 1 5 0V21"/></svg>{d.nav.house}</a>
           <a href="#nungwi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>{d.nav.place}</a>
+          <a href="#experiences"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polygon points="15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5 15.5 8.5"/></svg>{d.nav.experiences}</a>
           <a href="#book"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>{d.nav.book}</a>
         </nav>
         <form class="bar" id="bar" novalidate>
           <label>{d.book.arrival}<input type="date" name="arrival" /></label>
           <label>{d.book.departure}<input type="date" name="departure" /></label>
           <label>{d.book.guests}<input type="number" name="guests" min="1" max="12" value="2" /></label>
-          <button type="submit">{d.hero.check}</button>
+          <button type="submit"><span>{d.hero.check}</span></button>
         </form>
-        <p class="clock"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{d.hero.time} <time id="clock"></time></p>
+        <div class="hero-meta">
+          <p class="clock"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{d.hero.time} <time id="clock"></time></p>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <p class="hero-coords">{coordsDisplay}</p>
+        </div>
+        <a href="#welcome" class="scroll-cue" aria-label={d.nav.scroll}><span></span></a>
       </div>
     </section>
 
-    <section class="panel" id="welcome" data-dot={d.welcome.eyebrow}>
-      <img src="/images/welcome.jpg" alt="" class="panel-img" loading="lazy" />
+    <section class="panel panel-editorial" id="welcome" data-dot={d.welcome.eyebrow}>
+      <div class="panel-media">
+        <img src="/images/welcome.jpg" alt="" class="panel-img" loading="lazy" />
+      </div>
       <div class="shade"></div>
       <div class="panel-text reveal">
+        <span class="chapter-num" aria-hidden="true">01</span>
         <p class="eyebrow">{d.welcome.eyebrow}</p>
         <h2>{d.welcome.title}</h2>
         <p>{d.welcome.p1}</p>
         <p>{d.welcome.p2}</p>
+        <ul class="facts-strip">
+          {d.welcome.facts.map((fact) => <li>{fact}</li>)}
+        </ul>
       </div>
     </section>
 
     <div id="rooms" data-dot={d.rooms.eyebrow}>
       {d.rooms.items.map((r, i) => (
-        <section class="panel" id={`room-${i + 1}`}>
-          <img src={`/images/room-${i + 1}.jpg`} alt="" class="panel-img" loading="lazy" />
+        <section class="panel panel-suite" id={`room-${i + 1}`}>
+          <div class="panel-media">
+            <img src={`/images/room-${i + 1}.jpg`} alt="" class="panel-img" loading="lazy" />
+          </div>
           <div class="shade"></div>
-          <div class="panel-text reveal">
-            <p class="eyebrow">{d.rooms.eyebrow} · {i + 1} / {d.rooms.items.length}</p>
-            <h2>{r.name}</h2>
-            <p>{isTbc(r.text) ? r.text.tbc : r.text}{isTbc(r.text) && <span class="tbc">{d.tbcLabel}</span>}</p>
-            <p class="price"><span>{d.rooms.price}</span> {d.rooms.priceTbc.tbc}<span class="tbc">{d.tbcLabel}</span></p>
-            <a class="btn" href="#book">{d.nav.book}</a>
+          <div class="panel-text panel-text--suite reveal">
+            <div class="suite-main">
+              <div class="suite-meta">
+                <span class="chapter-num">02 · 0{i + 1} / 0{d.rooms.items.length}</span>
+                <p class="eyebrow">{d.rooms.eyebrow}</p>
+              </div>
+              <h2>{r.name}</h2>
+              <p class="suite-desc">
+                {isTbc(r.text) ? r.text.tbc : r.text}
+                {isTbc(r.text) && <span class="tbc">{d.tbcLabel}</span>}
+              </p>
+              <ul class="amenity-strip" aria-label="Room amenities">
+                {d.rooms.amenities.map((item, idx) => (
+                  <li>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d={amenityIcons[idx] || amenityIcons[0]} />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="suite-foot">
+                <p class="price">
+                  <span>{d.rooms.rateLabel}</span>
+                  <strong>{d.rooms.rateBasis}</strong>
+                  <small>{d.rooms.rateInquiry}</small>
+                </p>
+                <a class="btn" href="#book"><span>{d.rooms.request}</span></a>
+              </div>
+            </div>
+            <nav class="suite-nav" aria-label={d.rooms.title}>
+              {d.rooms.items.map((item, j) => (
+                <a href={`#room-${j + 1}`} aria-current={i === j ? 'true' : undefined} title={item.name}>
+                  0{j + 1}
+                </a>
+              ))}
+            </nav>
           </div>
         </section>
       ))}
     </div>
 
-    <section class="panel" id="house" data-dot={d.house.eyebrow}>
-      <img src="/images/house.jpg" alt="" class="panel-img" loading="lazy" />
+    <section class="panel panel-suite panel-dining" id="dining" data-dot={d.dining.eyebrow}>
+      <div class="panel-media">
+        <img src="/images/dining.jpg" alt="" class="panel-img" loading="lazy" />
+      </div>
+      <div class="shade"></div>
+      <div class="panel-text panel-text--suite reveal">
+        <div class="suite-main">
+          <div class="suite-meta">
+            <span class="chapter-num">03</span>
+            <p class="eyebrow">{d.dining.eyebrow}</p>
+          </div>
+          <h2>{d.dining.title}</h2>
+          <p class="suite-desc">{d.dining.text}</p>
+          <div class="exp-pillars exp-pillars--3">
+            {d.dining.pillars.map((pillar) => (
+              <div class="exp-pillar">
+                <h3>{pillar.title}</h3>
+                <p>{pillar.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-editorial" id="house" data-dot={d.house.eyebrow}>
+      <div class="panel-media">
+        <img src="/images/house.jpg" alt="" class="panel-img" loading="lazy" />
+      </div>
       <div class="shade"></div>
       <div class="panel-text reveal">
+        <span class="chapter-num" aria-hidden="true">04</span>
         <p class="eyebrow">{d.house.eyebrow}</p>
         <h2>{d.house.title}</h2>
         <p>{d.house.text}</p>
         <p class="note">{d.house.more.tbc}<span class="tbc">{d.tbcLabel}</span></p>
+        <div class="security-strip">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3l7 3v5c0 4.8-3 8.8-7 10-4-1.2-7-5.2-7-10V6l7-3z"/>
+            <path d="M9.5 12.2l1.8 1.8 3.5-3.6"/>
+          </svg>
+          <div>
+            <span>{d.house.securityLabel}</span>
+            <p>{d.house.securityText}</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="panel" id="nungwi" data-dot={d.place.eyebrow}>
-      <img src="/images/nungwi.jpg" alt="" class="panel-img" loading="lazy" />
+    <section class="panel panel-editorial" id="nungwi" data-dot={d.place.eyebrow}>
+      <div class="panel-media">
+        <img src="/images/nungwi.jpg" alt="" class="panel-img" loading="lazy" />
+      </div>
       <div class="shade"></div>
       <div class="panel-text reveal">
+        <span class="chapter-num" aria-hidden="true">05</span>
         <p class="eyebrow">{d.place.eyebrow}</p>
         <h2>{d.place.title}</h2>
         <p>{d.place.text}</p>
+        <p class="coords-line">{coordsDisplay}</p>
         <p class="note">{d.place.more.tbc}<span class="tbc">{d.tbcLabel}</span></p>
         <a class="btn" href={mapUrl} target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          {d.place.map}
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span>{d.place.map}</span>
         </a>
       </div>
     </section>
 
-    <section class="book" id="book" data-dot={d.book.eyebrow}>
-      <div class="book-inner reveal">
+    <div id="experiences" data-dot={d.experiences.eyebrow}>
+      <section class="panel panel-suite panel-experience" id="transfer">
+        <div class="panel-media">
+          <img src="/images/transfer.jpg" alt="" class="panel-img" loading="lazy" />
+        </div>
+        <div class="shade"></div>
+        <div class="panel-text panel-text--suite reveal">
+          <div class="suite-main">
+            <div class="suite-meta">
+              <span class="chapter-num">06 · 01 / 02</span>
+              <p class="eyebrow">{d.experiences.eyebrow} · {d.experiences.transfer.label}</p>
+            </div>
+            <h2>{d.experiences.transfer.title}</h2>
+            <p class="suite-desc">{d.experiences.transfer.text}</p>
+            <p class="note">{d.experiences.transfer.note.tbc}<span class="tbc">{d.tbcLabel}</span></p>
+            <a class="btn" href="#book" data-request-transfer><span>{d.experiences.transfer.cta}</span></a>
+          </div>
+          <nav class="suite-nav" aria-label={d.experiences.eyebrow}>
+            <a href="#transfer" aria-current="true" title={d.experiences.transfer.title}>01</a>
+            <a href="#excursions" title={d.experiences.excursions.title}>02</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="panel panel-suite panel-experience" id="excursions">
+        <div class="panel-media">
+          <img src="/images/excursions.jpg" alt="" class="panel-img" loading="lazy" />
+        </div>
+        <div class="shade"></div>
+        <div class="panel-text panel-text--suite reveal">
+          <div class="suite-main">
+            <div class="suite-meta">
+              <span class="chapter-num">06 · 02 / 02</span>
+              <p class="eyebrow">{d.experiences.eyebrow} · {d.experiences.excursions.label}</p>
+            </div>
+            <h2>{d.experiences.excursions.title}</h2>
+            <p class="suite-desc">{d.experiences.excursions.text}</p>
+            <div class="exp-pillars exp-pillars--3">
+              {d.experiences.excursions.pillars.map((pillar) => (
+                <div class="exp-pillar">
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.text}</p>
+                </div>
+              ))}
+            </div>
+            <p class="note">{d.experiences.excursions.note.tbc}<span class="tbc">{d.tbcLabel}</span></p>
+            <a class="btn" href="#book"><span>{d.experiences.excursions.cta}</span></a>
+          </div>
+          <nav class="suite-nav" aria-label={d.experiences.eyebrow}>
+            <a href="#transfer" title={d.experiences.transfer.title}>01</a>
+            <a href="#excursions" aria-current="true" title={d.experiences.excursions.title}>02</a>
+          </nav>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel book" id="book" data-dot={d.book.eyebrow}>
+      <div class="panel-media">
+        <img src="/images/book.jpg" alt="" class="panel-img" loading="lazy" />
+      </div>
+      <div class="shade"></div>
+      <div class="book-card reveal">
+        <span class="chapter-num" aria-hidden="true">07</span>
         <p class="eyebrow">{d.book.eyebrow}</p>
         <h2>{d.book.title}</h2>
         <p class="lead">{d.book.text}</p>
-        <form id="book-form" novalidate>
+
+        <div class="direct-contact">
+          <a href={contact.whatsappUrl} target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5a7.2 7.2 0 0 0 2.5 2.5c.2.1.4.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.5v.5c0 .3-.2.7-.6.9-.6.3-1.4.4-2.5 0a9.5 9.5 0 0 1-5-5c-.4-1.1-.3-1.9 0-2.5z"/></svg>
+            <span><strong>{d.book.whatsapp}</strong> {contact.phoneDisplay}</span>
+          </a>
+          <a href={contact.emailHref}>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><strong>{d.book.emailLabel}</strong> {contact.email}</span>
+          </a>
+        </div>
+
+        <form id="book-form" data-whatsapp={contact.whatsappUrl} data-email={contact.emailHref} novalidate>
           <label>{d.book.name}<input name="name" autocomplete="name" required /></label>
           <label>{d.book.email}<input name="email" type="email" autocomplete="email" required /></label>
           <div class="row">
@@ -102,10 +276,17 @@ const d = t(lang);
             <label>{d.book.departure}<input name="departure" type="date" required /></label>
           </div>
           <label>{d.book.guests}<input name="guests" type="number" min="1" max="12" value="2" required /></label>
+          <label class="check-row">
+            <input type="checkbox" name="transfer" />
+            <span>{d.book.transfer}</span>
+          </label>
           <label>{d.book.message}<textarea name="message" rows="3"></textarea></label>
-          <button class="btn" type="submit">{d.book.send}</button>
-          <p class="note">{d.book.note.tbc}<span class="tbc">{d.tbcLabel}</span></p>
-          <p class="form-msg" id="form-msg" role="status" hidden>{d.book.unavailable}</p>
+          <div class="form-actions">
+            <button class="btn btn--gold" type="submit" data-channel="whatsapp"><span>{d.book.sendWhatsapp}</span></button>
+            <button class="btn" type="button" data-channel="email"><span>{d.book.sendEmail}</span></button>
+          </div>
+          <p class="note">{d.book.rateNote}</p>
+          <p class="form-msg" id="form-msg" role="status" hidden>{d.book.validationMsg}</p>
         </form>
       </div>
     </section>
@@ -113,17 +294,85 @@ const d = t(lang);
 
   <script is:inline>
     const bar = document.getElementById('bar'), bf = document.getElementById('book-form');
+    const msgEl = document.getElementById('form-msg');
     bar.addEventListener('submit', (e) => {
       e.preventDefault();
-      for (const n of ['arrival', 'departure', 'guests']) bf.elements[n].value = bar.elements[n].value;
-      window.__lenis ? window.__lenis.scrollTo('#book', { duration: 1.6 }) : document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+      for (const n of ['arrival', 'departure', 'guests']) {
+        const target = bf.elements[n];
+        target.value = bar.elements[n].value;
+        target.classList.add('prefilled');
+        setTimeout(() => target.classList.remove('prefilled'), 1800);
+      }
+      window.__goTo ? window.__goTo('#book') : document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
     });
     const clock = document.getElementById('clock');
-    const tick = () => { clock.textContent = new Intl.DateTimeFormat(document.documentElement.lang, { timeZone: 'Africa/Dar_es_Salaam', hour: '2-digit', minute: '2-digit' }).format(new Date()); };
-    tick(); setInterval(tick, 20000);
-    document.getElementById('book-form').addEventListener('submit', (e) => {
+    const tick = () => {
+      clock.textContent = new Intl.DateTimeFormat(document.documentElement.lang, {
+        timeZone: 'Africa/Dar_es_Salaam',
+        hour: '2-digit',
+        minute: '2-digit',
+      }).format(new Date());
+    };
+    tick();
+    setInterval(tick, 20000);
+
+    const buildInquiry = () => {
+      const name = bf.elements.name.value.trim();
+      const email = bf.elements.email.value.trim();
+      const arrival = bf.elements.arrival.value || 'To be confirmed';
+      const departure = bf.elements.departure.value || 'To be confirmed';
+      const guests = bf.elements.guests.value || '2';
+      const transfer = bf.elements.transfer.checked ? 'Yes (owner airport pickup)' : 'No';
+      const message = bf.elements.message.value.trim();
+      const lines = [
+        'Aurora Hacienda Zanzibar — Booking & Rate Inquiry',
+        'Name: ' + name,
+        email ? 'Email: ' + email : null,
+        'Arrival: ' + arrival,
+        'Departure: ' + departure,
+        'Guests: ' + guests,
+        'Personal airport transfer: ' + transfer,
+        message ? 'Notes: ' + message : null,
+      ].filter(Boolean);
+      return lines.join('\n');
+    };
+
+    const dispatchInquiry = (channel) => {
+      const nameEl = bf.elements.name;
+      if (!nameEl.value.trim()) {
+        msgEl.hidden = false;
+        nameEl.focus();
+        return;
+      }
+      msgEl.hidden = true;
+      const body = buildInquiry();
+      if (channel === 'email') {
+        const subject = encodeURIComponent('Booking Inquiry — Aurora Hacienda Zanzibar');
+        window.location.href = bf.dataset.email + '?subject=' + subject + '&body=' + encodeURIComponent(body);
+      } else {
+        window.open(bf.dataset.whatsapp + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
+      }
+    };
+
+    bf.addEventListener('submit', (e) => {
       e.preventDefault();
-      document.getElementById('form-msg').hidden = false;
+      dispatchInquiry('whatsapp');
+    });
+    bf.querySelector('button[data-channel="email"]')?.addEventListener('click', () => {
+      dispatchInquiry('email');
+    });
+
+    document.querySelectorAll('a[data-request-transfer]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const cb = bf.elements.transfer;
+        if (!cb) return;
+        cb.checked = true;
+        const row = cb.closest('.check-row');
+        if (row) {
+          row.classList.add('prefilled');
+          setTimeout(() => row.classList.remove('prefilled'), 1800);
+        }
+      });
     });
   </script>
 </Base>
