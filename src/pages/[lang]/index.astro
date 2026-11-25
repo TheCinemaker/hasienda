@@ -116,7 +116,7 @@ const d = t(lang);
     bar.addEventListener('submit', (e) => {
       e.preventDefault();
       for (const n of ['arrival', 'departure', 'guests']) bf.elements[n].value = bar.elements[n].value;
-      document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+      window.__lenis ? window.__lenis.scrollTo('#book', { duration: 1.6 }) : document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
     });
     const clock = document.getElementById('clock');
     const tick = () => { clock.textContent = new Intl.DateTimeFormat(document.documentElement.lang, { timeZone: 'Africa/Dar_es_Salaam', hour: '2-digit', minute: '2-digit' }).format(new Date()); };
