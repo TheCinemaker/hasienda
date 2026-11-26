@@ -2,9 +2,9 @@
 // Only confirmed facts go in here; anything unknown is simply left out (see TODO.md).
 export const en = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – a small hotel in Nungwi',
+    title: 'Aurora Hacienda Zanzibar – four-room hotel in Nungwi',
     description:
-      'Aurora Hacienda is a small hotel with four rooms in Nungwi, at the northern tip of Zanzibar, Tanzania. Built in the traditional Zanzibari style.',
+      'A small four-room hotel in Nungwi, Zanzibar, built in traditional style, with pool, restaurant, cocktail bar and breakfast included.',
   },
   nav: { start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
   hero: {
@@ -12,7 +12,7 @@ export const en = {
     title: 'A small hotel at the northern tip of Zanzibar',
     text: 'Four rooms, built in the traditional Zanzibari style.',
     cta: 'Send a booking request',
-    check: 'Check availability',
+    check: 'Request your dates',
     time: 'Local time in Zanzibar',
   },
   welcome: {
@@ -26,7 +26,7 @@ export const en = {
   rooms: {
     eyebrow: 'Rooms',
     title: 'Four rooms',
-    intro: 'Each room has an en-suite bathroom and full modern comfort in traditional Zanzibari style.',
+    intro: 'Each room has an en-suite bathroom and modern comforts, in traditional Zanzibari style.',
     amenitiesLabel: "Room amenities",
     amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe'],
     items: [
@@ -42,7 +42,7 @@ export const en = {
   },
   dining: {
     eyebrow: 'Dining & Bar',
-    title: 'Own kitchen, island flavours & cocktails',
+    title: 'Our kitchen, island flavours & cocktails',
     text: 'Wake up to breakfast included with every stay, and enjoy our own restaurant and bar from midday into the evening.',
     breakfastBtn: 'Breakfast menu',
     drinkBtn: 'Drink menu',
@@ -165,7 +165,7 @@ export const en = {
   house: {
     eyebrow: 'The house',
     title: 'Zanzibari style',
-    text: 'The building is made in the traditional Zanzibari style.',
+    text: 'The house is built in the traditional Zanzibari style.',
     securityLabel: 'Peace of mind',
     securityText: 'Nighttime security by Imara Security (Tanzania) and CCTV in common areas.',
   },

@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const it: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – un piccolo hotel a Nungwi',
+    title: 'Aurora Hacienda Zanzibar – hotel di quattro camere a Nungwi',
     description:
-      'Aurora Hacienda è un piccolo hotel con quattro camere a Nungwi, sulla punta nord di Zanzibar, in Tanzania. Costruito nel tradizionale stile zanzibarino.',
+      'Piccolo hotel di quattro camere a Nungwi, Zanzibar, in stile tradizionale: piscina, ristorante, cocktail bar e colazione inclusa.',
   },
   nav: { start: 'Panoramica', home: 'Benvenuti', stay: 'Camere', dining: 'Ristorante', house: 'La casa', place: 'Nungwi', experiences: 'Esperienze', book: 'Prenota', menu: 'Menu', close: 'Chiudi', language: 'Lingua', scroll: 'Scorri in basso', top: 'Torna su', quick: 'Collegamenti rapidi' },
   hero: {
@@ -12,7 +12,7 @@ export const it: Dict = {
     title: 'Un piccolo hotel sulla punta nord di Zanzibar',
     text: 'Quattro camere nel tradizionale stile zanzibarino.',
     cta: 'Invia una richiesta',
-    check: 'Verifica disponibilità',
+    check: 'Richiedi disponibilità',
     time: 'Ora locale a Zanzibar',
   },
   welcome: {
@@ -20,7 +20,7 @@ export const it: Dict = {
     title: "Un luogo tra il verde e il cielo",
     p1: "Il sogno di un architetto ungherese, diventato realtà a poche centinaia di metri dall’Oceano Indiano.",
     subtitle: "Un sogno tropicale diventato realtà",
-    p2: "Un piccolo paradiso verde dove la fantasia dell’architetto incontra le autentiche tradizioni di Zanzibar. Circondato da oltre 50 specie di piante, con una splendida piscina al centro, un bungalow di quattro camere e il nostro ristorante con cucina rendono la vostra vacanza un sogno.",
+    p2: "Un piccolo paradiso verde dove la fantasia dell’architetto incontra le autentiche tradizioni di Zanzibar. Circondato da oltre 50 specie di piante, con una splendida piscina al centro, un bungalow di quattro camere e il nostro ristorante con cucina rendono la tua vacanza un sogno.",
     facts: ['Quattro camere · colazione inclusa', 'Ristorante e cocktail bar', 'Transfer aeroportuale personale', 'Guardiania notturna e telecamere'],
   },
   rooms: {
@@ -32,13 +32,13 @@ export const it: Dict = {
     items: [{ name: 'Camera 1' }, { name: 'Camera 2' }, { name: 'Camera 3' }, { name: 'Camera 4' }],
     rateLabel: 'Tariffe',
     rateBasis: 'Per camera · 2 ospiti · a notte · colazione inclusa',
-    rateInquiry: 'Per le tariffe aggiornate contattateci via WhatsApp, telefono, Messenger o e-mail.',
+    rateInquiry: 'Per le tariffe aggiornate contattaci via WhatsApp, telefono, Messenger o e-mail.',
     request: 'Richiedi',
   },
   dining: {
     eyebrow: 'Ristorante e bar',
     title: 'La nostra cucina, i sapori dell’isola e i cocktail',
-    text: 'La colazione è inclusa in ogni soggiorno. Il nostro ristorante e il bar vi aspettano da mezzogiorno fino a sera.',
+    text: 'La colazione è inclusa in ogni soggiorno. Il nostro ristorante e il bar ti aspettano da mezzogiorno fino a sera.',
     breakfastBtn: 'Menu colazione',
     drinkBtn: 'Carta delle bevande',
     back: 'Indietro',
@@ -140,7 +140,7 @@ export const it: Dict = {
   place: {
     eyebrow: 'Dove siamo',
     title: "Il villaggio di Nungwi",
-    text: "L’Oceano Indiano vi chiama con le sue mille sfumature di blu. Spiagge di sabbia bianchissima, lunghe passeggiate, ombrelloni colorati, il viavai dei mercati locali, ristoranti, caffè e pub, escursioni per tutti i gusti e i tesori naturali dell’isola rendono unico il vostro soggiorno a Zanzibar.",
+    text: "L’Oceano Indiano ti chiama con le sue mille sfumature di blu. Spiagge di sabbia bianchissima, lunghe passeggiate, ombrelloni colorati, il viavai dei mercati locali, ristoranti, caffè e pub, escursioni per tutti i gusti e i tesori naturali dell’isola rendono unico il tuo soggiorno a Zanzibar.",
     map: 'Apri in Google Maps',
   },
   experiences: {
@@ -148,17 +148,17 @@ export const it: Dict = {
     transfer: {
       label: 'Arrivo',
       title: 'Transfer aeroportuale personale',
-      text: 'Il vostro soggiorno inizia appena atterrate. Il proprietario accoglie di persona ogni ospite in aeroporto e lo accompagna direttamente ad Aurora Hacienda, a Nungwi.',
+      text: 'Il tuo soggiorno inizia appena atterri. Il proprietario accoglie di persona ogni ospite in aeroporto e lo accompagna direttamente ad Aurora Hacienda, a Nungwi.',
       cta: 'Richiedi il transfer',
     },
     excursions: {
       label: 'Vita sull’isola',
       title: 'Escursioni a Zanzibar e safari sulla terraferma',
-      text: 'Scoprite la ricchezza di Zanzibar con escursioni sull’isola, oppure proseguite per un safari sulla terraferma tanzaniana. Prenotate sul posto o chiedete al proprietario dove andare e quando.',
+      text: 'Scopri la ricchezza di Zanzibar con escursioni sull’isola, oppure prosegui per un safari sulla terraferma tanzaniana. Prenota sul posto o chiedi al proprietario dove andare e quando.',
       pillars: [
         { title: 'Escursioni a Zanzibar', text: 'Tour dell’isola di vario tipo, da organizzare direttamente con noi durante il soggiorno.' },
         { title: 'Safari sulla terraferma', text: 'Indimenticabili safari nella natura della Tanzania continentale.' },
-        { title: 'I consigli di chi vi ospita', text: 'Il proprietario vi suggerisce di persona dove andare e il momento migliore per partire.' },
+        { title: 'I consigli di chi ti ospita', text: 'Il proprietario ti suggerisce di persona dove andare e il momento migliore per partire.' },
       ],
       cta: 'Pianifica il soggiorno',
     },
@@ -166,8 +166,8 @@ export const it: Dict = {
   book: {
     eyebrow: 'Prenota',
     title: 'Invia una richiesta di prenotazione',
-    text: 'Le tariffe sono per camera, per 2 ospiti a notte, colazione inclusa. Inviate le date via WhatsApp o e-mail, oppure contattateci direttamente per telefono o Messenger.',
-    name: 'Il vostro nome',
+    text: 'Le tariffe sono per camera, per 2 ospiti a notte, colazione inclusa. Invia le date via WhatsApp o e-mail, oppure contattaci direttamente per telefono o Messenger.',
+    name: 'Il tuo nome',
     email: 'E-mail',
     arrival: 'Arrivo',
     datePlaceholder: "Scegli la data",
@@ -180,7 +180,7 @@ export const it: Dict = {
     whatsapp: 'WhatsApp',
     emailLabel: 'E-mail',
     rateNote: 'Tariffe: per camera / 2 ospiti / a notte, colazione inclusa.',
-    validationMsg: 'Inserite il vostro nome, oppure contattateci direttamente via WhatsApp o e-mail qui sopra.',
+    validationMsg: 'Inserisci il tuo nome, oppure contattaci direttamente via WhatsApp o e-mail qui sopra.',
   },
   footer: {
     address: 'Nungwi, Zanzibar, Tanzania',

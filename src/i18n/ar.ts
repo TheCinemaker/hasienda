@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const ar: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – فندق صغير في نونغوي',
+    title: 'Aurora Hacienda Zanzibar – فندق من أربع غرف في نونغوي',
     description:
-      'أورورا هاسيندا فندق صغير من أربع غرف في نونغوي، في الطرف الشمالي من زنجبار بتنزانيا، مبني على الطراز الزنجباري التقليدي.',
+      'فندق صغير من أربع غرف في نونغوي بزنجبار على الطراز التقليدي: مسبح ومطعم وركن كوكتيلات، والفطور مشمول.',
   },
   nav: { start: 'نظرة عامة', home: 'أهلاً بكم', stay: 'الغرف', dining: 'المطعم', house: 'الدار', place: 'نونغوي', experiences: 'تجارب', book: 'احجز', menu: 'القائمة', close: 'إغلاق', language: 'اللغة', scroll: 'مرّر للأسفل', top: 'العودة إلى الأعلى', quick: 'روابط سريعة' },
   hero: {

@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const de: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – ein kleines Hotel in Nungwi',
+    title: 'Aurora Hacienda Zanzibar – Hotel mit vier Zimmern in Nungwi',
     description:
-      'Aurora Hacienda ist ein kleines Hotel mit vier Zimmern in Nungwi, an der Nordspitze von Sansibar, Tansania. Erbaut im traditionellen sansibarischen Stil.',
+      'Kleines Hotel mit vier Zimmern in Nungwi, Sansibar, im traditionellen Stil: Pool, Restaurant, Cocktailbar und Frühstück inklusive.',
   },
   nav: { start: 'Übersicht', home: 'Willkommen', stay: 'Zimmer', dining: 'Restaurant', house: 'Das Haus', place: 'Nungwi', experiences: 'Erlebnisse', book: 'Buchen', menu: 'Menü', close: 'Schließen', language: 'Sprache', scroll: 'Nach unten scrollen', top: 'Nach oben', quick: 'Schnellzugriff' },
   hero: {
@@ -20,7 +20,7 @@ export const de: Dict = {
     title: "Ein Ort zwischen üppigem Grün und Himmel",
     p1: "Der Traum eines ungarischen Architekten, verwirklicht nur wenige hundert Meter vom Indischen Ozean entfernt.",
     subtitle: "Ein wahr gewordener Tropentraum",
-    p2: "Ein kleines grünes Paradies, in dem die Fantasie des Architekten auf authentische sansibarische Traditionen trifft. Umgeben von mehr als 50 Pflanzenarten, mit einem herrlichen Pool in der Mitte, machen ein Bungalow mit vier Zimmern und unser eigenes Restaurant mit Küche Ihren Urlaub traumhaft.",
+    p2: "Ein kleines grünes Paradies, in dem die Fantasie des Architekten auf authentische sansibarische Traditionen trifft. Umgeben von mehr als 50 Pflanzenarten, mit einem herrlichen Pool in der Mitte, machen ein Bungalow mit vier Zimmern und unser eigenes Restaurant mit Küche deinen Urlaub traumhaft.",
     facts: ['Vier Zimmer · mit Frühstück', 'Eigenes Restaurant und Cocktailbar', 'Persönlicher Flughafentransfer', 'Nachtwache und Videoüberwachung'],
   },
   rooms: {
@@ -32,13 +32,13 @@ export const de: Dict = {
     items: [{ name: 'Zimmer 1' }, { name: 'Zimmer 2' }, { name: 'Zimmer 3' }, { name: 'Zimmer 4' }],
     rateLabel: 'Preise',
     rateBasis: 'Pro Zimmer · 2 Personen · pro Nacht · mit Frühstück',
-    rateInquiry: 'Aktuelle Preise erfragen Sie per WhatsApp, Telefon, Messenger oder E-Mail.',
+    rateInquiry: 'Aktuelle Preise erfragst du per WhatsApp, Telefon, Messenger oder E-Mail.',
     request: 'Anfragen',
   },
   dining: {
     eyebrow: 'Restaurant und Bar',
     title: 'Eigene Küche, Inselaromen und Cocktails',
-    text: 'Jeder Aufenthalt beginnt mit dem inklusiven Frühstück. Unser Restaurant und unsere Bar sind von mittags bis in den Abend für Sie da.',
+    text: 'Jeder Aufenthalt beginnt mit dem inklusiven Frühstück. Unser Restaurant und unsere Bar sind von mittags bis in den Abend für dich da.',
     breakfastBtn: 'Frühstückskarte',
     drinkBtn: 'Getränkekarte',
     back: 'Zurück',
@@ -140,7 +140,7 @@ export const de: Dict = {
   place: {
     eyebrow: 'Lage',
     title: "Das Dorf Nungwi",
-    text: "Der Indische Ozean lockt mit seinen tausend Blautönen. Strahlend weiße Sandstrände, lange Spaziergänge, bunte Sonnenschirme, das Treiben der lokalen Märkte, Restaurants, Cafés und Pubs, vielfältige Ausflüge und die Naturschätze der Insel machen Ihren Aufenthalt auf Sansibar einzigartig.",
+    text: "Der Indische Ozean lockt mit seinen tausend Blautönen. Strahlend weiße Sandstrände, lange Spaziergänge, bunte Sonnenschirme, das Treiben der lokalen Märkte, Restaurants, Cafés und Pubs, vielfältige Ausflüge und die Naturschätze der Insel machen deinen Aufenthalt auf Sansibar einzigartig.",
     map: 'In Google Maps öffnen',
   },
   experiences: {
@@ -148,17 +148,17 @@ export const de: Dict = {
     transfer: {
       label: 'Anreise',
       title: 'Persönlicher Flughafentransfer',
-      text: 'Ihr Urlaub beginnt mit der Landung. Der Inhaber holt jeden Gast persönlich am Flughafen ab und bringt ihn direkt zur Aurora Hacienda in Nungwi.',
+      text: 'Dein Urlaub beginnt mit der Landung. Der Inhaber holt jeden Gast persönlich am Flughafen ab und bringt ihn direkt zur Aurora Hacienda in Nungwi.',
       cta: 'Abholung anfragen',
     },
     excursions: {
       label: 'Inselleben',
       title: 'Ausflüge auf Sansibar und Safaris auf dem Festland',
-      text: 'Entdecken Sie die Vielfalt Sansibars auf Inselausflügen oder reisen Sie weiter zu einer Safari auf dem tansanischen Festland. Buchen Sie vor Ort oder fragen Sie den Inhaber, wohin und wann es sich lohnt.',
+      text: 'Entdecke die Vielfalt Sansibars auf Inselausflügen oder reise weiter zu einer Safari auf dem tansanischen Festland. Buche vor Ort oder frag den Inhaber, wohin und wann es sich lohnt.',
       pillars: [
-        { title: 'Ausflüge auf Sansibar', text: 'Abwechslungsreiche Inseltouren, die Sie während Ihres Aufenthalts direkt bei uns organisieren.' },
+        { title: 'Ausflüge auf Sansibar', text: 'Abwechslungsreiche Inseltouren, die du während deines Aufenthalts direkt bei uns organisierst.' },
         { title: 'Safari auf dem Festland', text: 'Unvergessliche Tiersafaris auf dem tansanischen Festland.' },
-        { title: 'Persönliche Tipps', text: 'Der Inhaber verrät Ihnen persönlich, wohin und wann Sie am besten aufbrechen.' },
+        { title: 'Persönliche Tipps', text: 'Der Inhaber verrät dir persönlich, wohin und wann du am besten aufbrichst.' },
       ],
       cta: 'Aufenthalt planen',
     },
@@ -166,8 +166,8 @@ export const de: Dict = {
   book: {
     eyebrow: 'Buchen',
     title: 'Buchungsanfrage senden',
-    text: 'Die Preise gelten pro Zimmer für 2 Personen und Nacht inklusive Frühstück. Senden Sie Ihre Reisedaten per WhatsApp oder E-Mail, oder erreichen Sie uns direkt per Telefon oder Messenger.',
-    name: 'Ihr Name',
+    text: 'Die Preise gelten pro Zimmer für 2 Personen und Nacht inklusive Frühstück. Sende deine Reisedaten per WhatsApp oder E-Mail, oder erreiche uns direkt per Telefon oder Messenger.',
+    name: 'Dein Name',
     email: 'E-Mail',
     arrival: 'Anreise',
     datePlaceholder: "Datum wählen",
@@ -180,7 +180,7 @@ export const de: Dict = {
     whatsapp: 'WhatsApp',
     emailLabel: 'E-Mail',
     rateNote: 'Preise: pro Zimmer / 2 Personen / pro Nacht, inklusive Frühstück.',
-    validationMsg: 'Bitte geben Sie Ihren Namen ein oder kontaktieren Sie uns direkt per WhatsApp oder E-Mail.',
+    validationMsg: 'Bitte gib deinen Namen ein oder kontaktiere uns direkt per WhatsApp oder E-Mail.',
   },
   footer: {
     address: 'Nungwi, Sansibar, Tansania',

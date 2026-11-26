@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const es: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – un pequeño hotel en Nungwi',
+    title: 'Aurora Hacienda Zanzibar – hotel de 4 habitaciones en Nungwi',
     description:
-      'Aurora Hacienda es un pequeño hotel de cuatro habitaciones en Nungwi, en el extremo norte de Zanzíbar, Tanzania. Construido en el estilo tradicional zanzibarí.',
+      'Pequeño hotel de cuatro habitaciones en Nungwi, Zanzíbar, de estilo tradicional: piscina, restaurante, coctelería y desayuno incluido.',
   },
   nav: { start: 'Inicio', home: 'Bienvenida', stay: 'Habitaciones', dining: 'Restaurante', house: 'La casa', place: 'Nungwi', experiences: 'Experiencias', book: 'Reservar', menu: 'Menú', close: 'Cerrar', language: 'Idioma', scroll: 'Desplazarse hacia abajo', top: 'Volver arriba', quick: 'Enlaces rápidos' },
   hero: {
@@ -20,7 +20,7 @@ export const es: Dict = {
     title: "Un lugar entre la vegetación y el cielo",
     p1: "El sueño de un arquitecto húngaro, hecho realidad a pocos cientos de metros del océano Índico.",
     subtitle: "Un sueño tropical hecho realidad",
-    p2: "Un pequeño paraíso verde donde la imaginación del arquitecto se une a las auténticas tradiciones de Zanzíbar. Rodeado de más de 50 especies de plantas, con una magnífica piscina en el centro, un bungaló de cuatro habitaciones y nuestro propio restaurante con cocina hacen de sus vacaciones un sueño.",
+    p2: "Un pequeño paraíso verde donde la imaginación del arquitecto se une a las auténticas tradiciones de Zanzíbar. Rodeado de más de 50 especies de plantas, con una magnífica piscina en el centro, un bungaló de cuatro habitaciones y nuestro propio restaurante con cocina hacen de tus vacaciones un sueño.",
     facts: ['Cuatro habitaciones · desayuno incluido', 'Restaurante y coctelería propios', 'Traslado personal desde el aeropuerto', 'Vigilancia nocturna y cámaras'],
   },
   rooms: {
@@ -32,13 +32,13 @@ export const es: Dict = {
     items: [{ name: 'Habitación 1' }, { name: 'Habitación 2' }, { name: 'Habitación 3' }, { name: 'Habitación 4' }],
     rateLabel: 'Tarifas',
     rateBasis: 'Por habitación · 2 huéspedes · por noche · desayuno incluido',
-    rateInquiry: 'Para conocer las tarifas actuales, contáctenos por WhatsApp, teléfono, Messenger o correo.',
+    rateInquiry: 'Para conocer las tarifas actuales, contáctanos por WhatsApp, teléfono, Messenger o correo.',
     request: 'Solicitar',
   },
   dining: {
     eyebrow: 'Restaurante y bar',
     title: 'Cocina propia, sabores de la isla y cócteles',
-    text: 'El desayuno está incluido en cada estancia. Nuestro restaurante y bar le esperan desde el mediodía hasta la noche.',
+    text: 'El desayuno está incluido en cada estancia. Nuestro restaurante y bar te esperan desde el mediodía hasta la noche.',
     breakfastBtn: 'Carta de desayuno',
     drinkBtn: 'Carta de bebidas',
     back: 'Volver',
@@ -51,7 +51,7 @@ export const es: Dict = {
     menus: {
       breakfast: {
         title: 'Desayuno',
-        subtitle: 'Incluido cada mañana en su estancia',
+        subtitle: 'Incluido cada mañana en tu estancia',
         fixedTitle: 'Cada mañana',
         fixed: [
           { name: 'Frescura del trópico', desc: 'Zumo de naranja, agua con menta y limón' },
@@ -140,7 +140,7 @@ export const es: Dict = {
   place: {
     eyebrow: 'Ubicación',
     title: "El pueblo de Nungwi",
-    text: "El océano Índico le llama con sus mil tonos de azul. Playas de arena de un blanco deslumbrante, largos paseos, sombrillas de colores, el bullicio de los mercados locales, restaurantes, cafés y pubs, excursiones variadas y los tesoros naturales de la isla hacen única su estancia en Zanzíbar.",
+    text: "El océano Índico te llama con sus mil tonos de azul. Playas de arena de un blanco deslumbrante, largos paseos, sombrillas de colores, el bullicio de los mercados locales, restaurantes, cafés y pubs, excursiones variadas y los tesoros naturales de la isla hacen única tu estancia en Zanzíbar.",
     map: 'Abrir en Google Maps',
   },
   experiences: {
@@ -148,26 +148,26 @@ export const es: Dict = {
     transfer: {
       label: 'Llegada',
       title: 'Traslado personal desde el aeropuerto',
-      text: 'Su estancia comienza en cuanto aterriza. El propietario recibe personalmente a cada huésped en el aeropuerto y lo lleva directamente a Aurora Hacienda, en Nungwi.',
+      text: 'Tu estancia comienza en cuanto aterrizas. El propietario recibe personalmente a cada huésped en el aeropuerto y lo lleva directamente a Aurora Hacienda, en Nungwi.',
       cta: 'Solicitar traslado',
     },
     excursions: {
       label: 'Vida en la isla',
       title: 'Excursiones en Zanzíbar y safaris en el continente',
-      text: 'Descubra la riqueza de Zanzíbar con excursiones por la isla o continúe hacia un safari en la Tanzania continental. Reserve aquí mismo o pregunte al propietario adónde ir y cuándo.',
+      text: 'Descubre la riqueza de Zanzíbar con excursiones por la isla o continúa hacia un safari en la Tanzania continental. Reserva aquí mismo o pregunta al propietario adónde ir y cuándo.',
       pillars: [
-        { title: 'Excursiones en Zanzíbar', text: 'Variadas rutas por la isla que puede organizar directamente con nosotros durante su estancia.' },
+        { title: 'Excursiones en Zanzíbar', text: 'Variadas rutas por la isla que puedes organizar directamente con nosotros durante tu estancia.' },
         { title: 'Safari en el continente', text: 'Safaris inolvidables en la Tanzania continental.' },
-        { title: 'Consejos del anfitrión', text: 'El propietario le cuenta personalmente adónde ir y cuál es el mejor momento.' },
+        { title: 'Consejos del anfitrión', text: 'El propietario te cuenta personalmente adónde ir y cuál es el mejor momento.' },
       ],
       cta: 'Planificar la estancia',
     },
   },
   book: {
     eyebrow: 'Reservar',
-    title: 'Envíe una solicitud de reserva',
-    text: 'Las tarifas son por habitación, para 2 huéspedes por noche, con desayuno incluido. Envíe sus fechas por WhatsApp o correo, o contáctenos directamente por teléfono o Messenger.',
-    name: 'Su nombre',
+    title: 'Envía una solicitud de reserva',
+    text: 'Las tarifas son por habitación, para 2 huéspedes por noche, con desayuno incluido. Envía tus fechas por WhatsApp o correo, o contáctanos directamente por teléfono o Messenger.',
+    name: 'Tu nombre',
     email: 'Correo electrónico',
     arrival: 'Llegada',
     datePlaceholder: "Elegir fecha",
@@ -180,7 +180,7 @@ export const es: Dict = {
     whatsapp: 'WhatsApp',
     emailLabel: 'Correo',
     rateNote: 'Tarifas: por habitación / 2 huéspedes / por noche, desayuno incluido.',
-    validationMsg: 'Escriba su nombre o contáctenos directamente por WhatsApp o por el correo indicado arriba.',
+    validationMsg: 'Escribe tu nombre o contáctanos directamente por WhatsApp o por el correo indicado arriba.',
   },
   footer: {
     address: 'Nungwi, Zanzíbar, Tanzania',

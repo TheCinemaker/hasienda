@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const fr: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – un petit hôtel à Nungwi',
+    title: 'Aurora Hacienda Zanzibar – hôtel de 4 chambres à Nungwi',
     description:
-      'Aurora Hacienda est un petit hôtel de quatre chambres à Nungwi, à la pointe nord de Zanzibar, en Tanzanie. Construit dans le style traditionnel zanzibarite.',
+      'Petit hôtel de quatre chambres à Nungwi, Zanzibar, de style traditionnel : piscine, restaurant, bar à cocktails et petit-déjeuner inclus.',
   },
   nav: { start: 'Aperçu', home: 'Bienvenue', stay: 'Chambres', dining: 'Table', house: 'La maison', place: 'Nungwi', experiences: 'Expériences', book: 'Réserver', menu: 'Menu', close: 'Fermer', language: 'Langue', scroll: 'Faire défiler', top: 'Retour en haut', quick: 'Accès rapide' },
   hero: {
@@ -12,7 +12,7 @@ export const fr: Dict = {
     title: 'Un petit hôtel à la pointe nord de Zanzibar',
     text: 'Quatre chambres dans le style traditionnel zanzibarite.',
     cta: 'Envoyer une demande',
-    check: 'Voir les disponibilités',
+    check: 'Demander les disponibilités',
     time: 'Heure locale à Zanzibar',
   },
   welcome: {

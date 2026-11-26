@@ -2,9 +2,9 @@ import type { Dict } from './en';
 
 export const hu: Dict = {
   meta: {
-    title: 'Aurora Hacienda Zanzibar – kis szálloda Nungwiban',
+    title: 'Aurora Hacienda Zanzibar – négyszobás hotel Nungwiban',
     description:
-      'Az Aurora Hacienda négyszobás kis szálloda Nungwiban, Zanzibár északi csücskében, Tanzániában. Hagyományos zanzibári stílusban épült.',
+      'Négyszobás kis szálloda Nungwiban, hagyományos zanzibári stílusban: úszómedence, étterem, koktélbár és reggeli az árban.',
   },
   nav: { start: 'Kezdőlap', home: 'Üdvözlünk', stay: 'Szobák', dining: 'Étterem', house: 'A ház', place: 'Nungwi', experiences: 'Élmények', book: 'Foglalás', menu: 'Menü', close: 'Bezárás', language: 'Nyelv', scroll: 'Görgess lejjebb', top: 'Vissza a tetejére', quick: 'Gyorslinkek' },
   hero: {
@@ -12,7 +12,7 @@ export const hu: Dict = {
     title: 'Kis szálloda Zanzibár északi csücskében',
     text: 'Négy szoba, hagyományos zanzibári stílusban.',
     cta: 'Foglalási kérés küldése',
-    check: 'Szabad szoba kérése',
+    check: 'Foglalási kérés',
     time: 'Helyi idő Zanzibáron',
   },
   welcome: {
