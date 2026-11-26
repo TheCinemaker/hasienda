@@ -2449,3 +2449,89 @@ html[dir='rtl'] .sheet-back { letter-spacing: 0; }
 /* reset instantly while off screen, so the entrance can replay cleanly */
 .js .reveal:not(.in) .w > span,
 .js .reveal:not(.in) > * { transition: none !important; }
+
+/* ---------- welcome sub-heading ---------- */
+.welcome-sub { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(1.35rem, 2.4vw, 1.8rem); line-height: 1.3; color: var(--gold-bright); margin: .9em 0 .5em; }
+
+/* ---------- header language switcher ---------- */
+.lang-switch { position: relative; }
+.lang-switch summary { display: flex; align-items: center; gap: 7px; cursor: pointer; list-style: none; padding: 8px 4px; font-size: .74rem; letter-spacing: .18em; }
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary:hover { color: var(--gold-bright); }
+.lang-switch ul { position: absolute; inset-inline-end: 0; top: calc(100% + 10px); z-index: 60; margin: 0; padding: 8px 0; list-style: none; min-width: 170px; background: rgba(14, 11, 9, .97); border: 1px solid var(--gold-line); box-shadow: 0 18px 44px rgba(0, 0, 0, .5); }
+.lang-switch li a { display: block; padding: 9px 20px; text-decoration: none; font-size: .9rem; color: var(--ivory); text-align: start; text-transform: none; letter-spacing: .02em; }
+.lang-switch li a:hover, .lang-switch li a[aria-current] { color: var(--gold-bright); background: rgba(212, 176, 117, .1); }
+@media (max-width: 860px) {
+  .lang-switch summary { padding: 8px 0; gap: 4px; }
+  .lang-switch summary span { display: none; }
+  .header-right { gap: 10px; }
+}
+
+/* ---------- Arabic ---------- */
+html[lang='ar'] { --serif: 'Amiri', 'Times New Roman', serif; --sans: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif; }
+html[lang='ar'] body { font-family: var(--sans); }
+/* letter spacing and fake italics break Arabic script */
+html[lang='ar'] *:not(.brand-main, .brand-sub, .footer-brand) { letter-spacing: 0 !important; font-style: normal !important; }
+html[lang='ar'] h1, html[lang='ar'] h2, html[lang='ar'] h3 { line-height: 1.45; }
+html[lang='ar'] .eyebrow, html[lang='ar'] .bar label, html[lang='ar'] .exp-pillar h3, html[lang='ar'] .amenity-strip, html[lang='ar'] .facts-strip { font-size: .86rem; }
+html[lang='ar'].js .reveal .w { padding-block: .22em; margin-block: -.22em; }
+html[dir='rtl'] .progress { transform-origin: right; }
+html[dir='rtl'] :is(.chapter-num, .menu-price, .coords-line) { direction: ltr; unicode-bidi: isolate; }
+html[dir='rtl'] .brand, html[dir='rtl'] .footer-brand { direction: ltr; }
+
+/* narrow phones: keep air between the logo and the language icon */
+@media (max-width: 440px) {
+  .site-header { padding-inline: 14px; }
+  .brand { gap: 7px; }
+  .brand-seal { width: 28px; height: 28px; }
+  .brand-main { font-size: 1.18rem; letter-spacing: .16em; }
+  .brand-sub { font-size: .5rem; letter-spacing: .2em; }
+  .head-book { padding-inline: 12px; letter-spacing: .12em; }
+  .header-right { gap: 8px; }
+}
+html[lang='ar'] :is(.head-nav a, .menu-label, .head-book, .quick a, .btn, .bar button, .sheet-back, .footer-links a) { font-size: .9rem; }
+
+/* phones: the language icon sits next to the menu button, where there is room even with long "Book" labels */
+@media (max-width: 860px) {
+  .lang-switch { position: absolute; inset-inline-start: calc(var(--lang-x, 50px)); top: 50%; transform: translateY(-50%); }
+  .lang-switch ul { inset-inline-start: -36px; inset-inline-end: auto; }
+}
+@media (max-width: 860px) { .lang-switch { --lang-x: calc(var(--gutter) + 52px); } }
+@media (max-width: 440px) { .lang-switch { --lang-x: 66px; } }
+
+/* ---------- calendar (flatpickr) in the site colours ---------- */
+input.date-field { cursor: pointer; width: 100%; text-overflow: ellipsis; }
+input.date-field::placeholder { color: rgba(250, 246, 239, .55); opacity: 1; }
+.flatpickr-calendar { background: #14100d; border: 1px solid rgba(212, 176, 117, .45); border-radius: 2px; box-shadow: 0 24px 60px rgba(0, 0, 0, .6); font-family: var(--sans); }
+.flatpickr-calendar::before, .flatpickr-calendar::after { display: none; }
+.flatpickr-months .flatpickr-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, span.flatpickr-weekday, .flatpickr-weekdays { background: transparent; color: var(--ivory); fill: var(--ivory); }
+.flatpickr-current-month input.cur-year { border: 0; padding: 0; font-size: inherit; }
+.flatpickr-current-month .flatpickr-monthDropdown-months option { background: #14100d; }
+span.flatpickr-weekday { color: var(--gold); font-weight: 400; }
+.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month { color: var(--gold-bright); fill: var(--gold-bright); }
+.flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg { fill: #fff; }
+.flatpickr-day { color: var(--ivory); border-radius: 2px; }
+.flatpickr-day:hover, .flatpickr-day:focus { background: rgba(212, 176, 117, .2); border-color: rgba(212, 176, 117, .4); }
+.flatpickr-day.today { border-color: var(--gold); }
+.flatpickr-day.today:hover { background: rgba(212, 176, 117, .2); color: var(--ivory); }
+.flatpickr-day.selected, .flatpickr-day.selected:hover { background: var(--gold-bright); border-color: var(--gold-bright); color: var(--obsidian); }
+.flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay { color: rgba(250, 246, 239, .35); }
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover { color: rgba(250, 246, 239, .18); background: transparent; border-color: transparent; }
+html[dir='rtl'] .flatpickr-calendar { direction: rtl; }
+
+/* ---------- booking sheet ---------- */
+.book-modal .sheet-card { max-width: 660px; max-height: min(92svh, 900px); }
+.book-modal .sheet-body .lead { font-size: 1rem; margin: 0 0 1.4em; color: rgba(250, 246, 239, .84); }
+.book-modal form { margin-top: 1.6em; }
+.book-modal .sheet-head h2 { line-height: 1.15; }
+
+/* ---------- cross-fade for long jumps ---------- */
+.curtain { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; background: var(--obsidian); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .5s var(--ease), visibility .5s; }
+.curtain.on { opacity: 1; visibility: visible; transition-duration: .36s; }
+.curtain img { opacity: .9; }
+.panel-cta { min-height: 78svh; }
+
+.flatpickr-current-month .flatpickr-monthDropdown-months { -webkit-appearance: none; appearance: none; height: 32px; line-height: 1.3; padding: 0 6px; font-family: var(--sans); font-size: 1rem; font-weight: 400; color: var(--ivory); cursor: pointer; }
+.flatpickr-current-month { display: flex; justify-content: center; align-items: center; gap: 6px; height: 34px; padding-top: 4px; }
+
+.flatpickr-day.prevMonthDay:hover, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.nextMonthDay:focus { background: rgba(212, 176, 117, .2); border-color: rgba(212, 176, 117, .4); color: var(--ivory); }

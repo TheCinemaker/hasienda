@@ -27,7 +27,7 @@
 
 ## Képek állapota (cserélendő ideiglenesek azonos fájlnévvel)
 - **VALÓDI hotel fotók (színkorrigálva az oldal arany-obszidián-türkiz palettájához, `inbox/`-ból):** `hero.jpg`, `welcome.jpg`, `dining.jpg`, `house.jpg` (2400×1350 JPEG).
-- **Még ideiglenes MI-generált fotók (`public/images/`, azonos fájlnévvel cserélhetők):** `room-1.jpg`, `room-2.jpg`, `room-3.jpg`, `room-4.jpg`, `nungwi.jpg`, `transfer.jpg`, `excursions.jpg`, `book.jpg` (2400×1350 JPEG).
+- **Még ideiglenes MI-generált fotók (`public/images/`, azonos fájlnévvel cserélhetők):** `nungwi.jpg`, `transfer.jpg`, `excursions.jpg`, `book.jpg` (2400×1350 JPEG). A hotel saját fotói: `hero`, `welcome`, `house`, `dining`, `room-1..4` (a szobáknál bejárat/terasz – belső fotók még kellenek).
 - **Hivatalos logó:** `logo-seal.png` (arany-obszidián hivatalos pecsét, 512×512 PNG).
 - A szövegekben "To be confirmed" jelölésű részek (egyedi szobaleírások, pontos szobaárak/kirándulás-árak, pontos távolságok, fizetés) valós adatra cserélendők, a jelölő (.tbc) ezután törölhető
 - Jogi cégnév a lábléc copyright sorába (most: Aurora Hacienda Zanzibar)
@@ -40,3 +40,10 @@
 - Távolság: tengerpart, reptér, Stone Town
 - Reptéri transzfer részletei és díja
 - Kirándulások listája és ára
+
+## Nyelvek és foglalás (2026-11-26)
+- [x] 8 nyelv, nyelvválasztó, böngésző szerinti átirányítás, saját naptár az oldal nyelvén
+- [x] Foglalás modalban; hosszú ugrásoknál átúsztatás
+- [ ] Anyanyelvi átolvasás, elsősorban arab és orosz; a magyart a tulaj nézze át
+- [ ] A tulaj hagyja jóvá a Welcome / Nungwi szöveg fordításait (az eredetit ő küldte HU + EN nyelven)
+- [ ] Élesítéskor a noindex mindhárom helyről törlendő (meta, netlify.toml header, public/robots.txt)

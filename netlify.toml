@@ -5,11 +5,6 @@
 [build.environment]
   NODE_VERSION = "22"
 
-[[redirects]]
-  from = "/"
-  to = "/en/"
-  status = 302
-
 # DRAFT PHASE: keep search engines out. Remove this block (and the robots meta tag) at launch.
 [[headers]]
   for = "/*"

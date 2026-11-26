@@ -16,16 +16,18 @@ export const en = {
     time: 'Local time in Zanzibar',
   },
   welcome: {
-    eyebrow: 'Welcome',
-    title: 'Aurora Hacienda',
-    p1: 'Aurora Hacienda is a small hotel in Nungwi, on the northern tip of Zanzibar island in Tanzania.',
-    p2: 'We have four rooms. The house and the rooms follow the traditional Zanzibari style.',
+    eyebrow: "Aurora Hacienda · Zanzibar",
+    title: "A place between the lush greenery and the sky",
+    p1: "The dream of a Hungarian architect, brought to life just a few hundred metres from the Indian Ocean.",
+    subtitle: "A tropical dream realised",
+    p2: "This is a small, verdant paradise where an architect’s imagination meets authentic Zanzibari traditions. Surrounded by more than 50 plant species, with a stunning swimming pool at its heart, a four-room bungalow and our own restaurant and kitchen all come together to make your holiday truly dreamlike.",
     facts: ['Four rooms · Breakfast included', 'Own restaurant & cocktail bar', 'Personal airport transfer', 'Night security & CCTV'],
   },
   rooms: {
     eyebrow: 'Rooms',
     title: 'Four rooms',
     intro: 'Each room has an en-suite bathroom and full modern comfort in traditional Zanzibari style.',
+    amenitiesLabel: "Room amenities",
     amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe'],
     items: [
       { name: 'Room 1' },
@@ -169,8 +171,8 @@ export const en = {
   },
   place: {
     eyebrow: 'Location',
-    title: 'Nungwi',
-    text: 'Nungwi is a village at the very north of Zanzibar island.',
+    title: "The village of Nungwi",
+    text: "The Indian Ocean beckons with its thousand shades of blue. Dazzling white sandy beaches, long leisurely walks, colourful parasols, bustling local markets, restaurants, cafés and pubs, diverse excursions and the island’s natural treasures make your stay in Zanzibar unique.",
     map: 'Open in Google Maps',
   },
   experiences: {
@@ -200,6 +202,7 @@ export const en = {
     name: 'Your name',
     email: 'Email',
     arrival: 'Arrival',
+    datePlaceholder: "Select date",
     departure: 'Departure',
     guests: 'Number of guests',
     transfer: 'Request personal airport transfer (owner pickup)',

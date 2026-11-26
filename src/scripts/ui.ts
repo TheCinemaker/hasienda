@@ -1,4 +1,5 @@
 import Lenis from 'lenis';
+import { initDatePickers } from './dates';
 
 const $ = (id: string) => document.getElementById(id) as HTMLElement;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -21,27 +22,33 @@ const goTo = (target: string | number) => {
   clearTimeout(programTimer);
   setHeaderHidden(false);
 
-  if (lenis) {
-    lenis.scrollTo(target as any, {
-      duration: 1.5,
-      easing: (t: number) => 1 - Math.pow(1 - t, 4),
-      onComplete: () => {
-        programmaticScroll = false;
-      },
-    });
-    programTimer = window.setTimeout(() => {
-      programmaticScroll = false;
-    }, 1700);
-  } else {
-    if (typeof target === 'string') {
-      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      scrollTo({ top: target, behavior: 'smooth' });
-    }
-    programTimer = window.setTimeout(() => {
-      programmaticScroll = false;
-    }, 900);
+  const el = typeof target === 'string' ? document.querySelector<HTMLElement>(target) : null;
+  const destination = el ? el.getBoundingClientRect().top + scrollY : Number(target);
+  const done = () => {
+    programmaticScroll = false;
+  };
+  const jump = () => {
+    if (lenis) lenis.scrollTo(destination, { immediate: true, force: true });
+    else scrollTo({ top: destination, behavior: 'auto' });
+  };
+
+  if (!reduce && Math.abs(destination - scrollY) > innerHeight * 1.25) {
+    const curtain = $('curtain');
+    curtain.classList.add('on');
+    window.setTimeout(() => {
+      jump();
+      setHeaderHidden(false);
+      window.setTimeout(() => {
+        curtain.classList.remove('on');
+        done();
+      }, 160);
+    }, 380);
+    return;
   }
+
+  if (lenis) lenis.scrollTo(destination, { duration: 1.2, easing: (t: number) => 1 - Math.pow(1 - t, 4), onComplete: done });
+  else scrollTo({ top: destination, behavior: reduce ? 'auto' : 'smooth' });
+  programTimer = window.setTimeout(done, 1400);
 };
 (window as any).__goTo = goTo;
 
@@ -49,6 +56,12 @@ document.addEventListener('click', (e) => {
   const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
   if (!a || a.getAttribute('href') === '#') return;
   const id = a.getAttribute('href')!;
+  if (id === '#book') {
+    // booking opens on top of the page, wherever the visitor is
+    e.preventDefault();
+    openSheet(bookModal, a);
+    return;
+  }
   if (document.querySelector(id)) {
     e.preventDefault();
     goTo(id);
@@ -109,16 +122,61 @@ menu.querySelectorAll<HTMLAnchorElement>('.menu-links a[data-preview]').forEach(
 addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (menu.classList.contains('open')) setMenu(false);
-    if (diningModal?.classList.contains('open')) closeDiningModal();
+    closeSheet();
   }
 });
 
-/* ---------- interactive breakfast & drink menu modal ---------- */
-const diningModal = document.getElementById('dining-modal') as (HTMLElement & { inert: boolean }) | null;
-const diningClose = document.getElementById('dining-modal-close') as HTMLButtonElement | null;
-const diningBody = document.getElementById('dining-modal-body') as HTMLElement | null;
-let diningTrigger: HTMLElement | null = null;
+/* ---------- sheets (modals): menus and booking ---------- */
+type Sheet = HTMLElement & { inert: boolean };
+const diningModal = document.getElementById('dining-modal') as Sheet | null;
+const bookModal = document.getElementById('book-modal') as Sheet | null;
+let sheetTrigger: HTMLElement | null = null;
 
+const openedSheet = () => document.querySelector<Sheet>('.sheet-modal.open');
+
+const hideSheet = (sheet: Sheet) => {
+  if (sheet.contains(document.activeElement)) sheetTrigger?.focus({ preventScroll: true });
+  sheet.querySelectorAll<any>('input').forEach((i) => i._flatpickr?.close());
+  sheet.classList.remove('open');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.inert = true;
+};
+
+function openSheet(sheet: Sheet | null, trigger?: HTMLElement | null) {
+  if (!sheet || sheet.classList.contains('open')) return;
+  const other = openedSheet();
+  if (other) hideSheet(other);
+  sheetTrigger = trigger || null;
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden', 'false');
+  sheet.inert = false;
+  document.body.classList.add('lock');
+  setHeaderHidden(true);
+  lenis?.stop();
+  sheet.querySelector<HTMLElement>('.sheet-close')?.focus({ preventScroll: true });
+  // the phone's own back button should close the sheet, not leave the page
+  if (!history.state?.sheet) history.pushState({ sheet: true }, '');
+}
+
+function closeSheet() {
+  const sheet = openedSheet();
+  if (!sheet) return;
+  hideSheet(sheet);
+  if (!menu.classList.contains('open')) {
+    document.body.classList.remove('lock');
+    lenis?.start();
+  }
+  setHeaderHidden(false);
+  if (history.state?.sheet) history.back();
+}
+
+addEventListener('popstate', closeSheet);
+document.querySelectorAll<HTMLElement>('.sheet-modal [data-close-modal], #dining-modal-close, #dining-modal-back').forEach((el) => el.addEventListener('click', closeSheet));
+// the calendar floats above the sheet, so close it when the sheet content scrolls
+bookModal?.querySelector('.sheet-body')?.addEventListener('scroll', () => bookModal.querySelectorAll<any>('input').forEach((i) => i._flatpickr?.close()), { passive: true });
+(window as any).__openBooking = () => openSheet(bookModal);
+
+const diningBody = document.getElementById('dining-modal-body') as HTMLElement | null;
 const setDiningTab = (tab: string) => {
   if (!diningModal) return;
   diningModal.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((btn) => {
@@ -129,46 +187,12 @@ const setDiningTab = (tab: string) => {
   });
   if (diningBody) diningBody.scrollTop = 0;
 };
-
-const openDiningModal = (tab: string, trigger?: HTMLElement | null) => {
-  if (!diningModal) return;
-  diningTrigger = trigger || null;
-  setDiningTab(tab);
-  diningModal.classList.add('open');
-  diningModal.setAttribute('aria-hidden', 'false');
-  diningModal.inert = false;
-  document.body.classList.add('lock');
-  setHeaderHidden(true);
-  lenis?.stop();
-  diningClose?.focus({ preventScroll: true });
-  // the phone's own back button should close the menu, not leave the page
-  if (!history.state?.diningModal) history.pushState({ diningModal: true }, '');
-};
-
-const closeDiningModal = () => {
-  if (!diningModal || !diningModal.classList.contains('open')) return;
-  if (diningModal.contains(document.activeElement)) {
-    diningTrigger?.focus({ preventScroll: true });
-  }
-  diningModal.classList.remove('open');
-  diningModal.setAttribute('aria-hidden', 'true');
-  diningModal.inert = true;
-  if (!menu.classList.contains('open')) {
-    document.body.classList.remove('lock');
-    lenis?.start();
-  }
-  setHeaderHidden(false);
-  if (history.state?.diningModal) history.back();
-};
-
-addEventListener('popstate', () => closeDiningModal());
-document.getElementById('dining-modal-back')?.addEventListener('click', closeDiningModal);
-
 document.querySelectorAll<HTMLElement>('[data-open-menu]').forEach((btn) => {
-  btn.addEventListener('click', () => openDiningModal(btn.dataset.openMenu || 'breakfast', btn));
+  btn.addEventListener('click', () => {
+    setDiningTab(btn.dataset.openMenu || 'breakfast');
+    openSheet(diningModal, btn);
+  });
 });
-diningClose?.addEventListener('click', closeDiningModal);
-diningModal?.querySelector('[data-close-modal]')?.addEventListener('click', closeDiningModal);
 diningModal?.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((btn) => {
   btn.addEventListener('click', () => setDiningTab(btn.dataset.tab || 'breakfast'));
 });
@@ -339,3 +363,21 @@ const updateToTop = () => {
 };
 addEventListener('scroll', updateToTop, { passive: true });
 toTop.addEventListener('click', () => goTo(0));
+
+/* ---------- language switcher ---------- */
+const langSwitch = document.getElementById('lang-switch') as HTMLDetailsElement | null;
+document.addEventListener('click', (e) => {
+  const link = (e.target as HTMLElement).closest('a[data-lang]') as HTMLAnchorElement | null;
+  if (link) {
+    // remember the visitor's choice for the next visit to the start page
+    try { localStorage.setItem('lang', link.dataset.lang!); } catch { /* private mode */ }
+  }
+  if (langSwitch?.open && !langSwitch.contains(e.target as Node)) langSwitch.open = false;
+});
+addEventListener('keydown', (e) => { if (e.key === 'Escape' && langSwitch) langSwitch.open = false; });
+
+/* ---------- date pickers in the page language ---------- */
+initDatePickers();
+
+// a shared link ending in #book opens the booking sheet straight away
+if (location.hash === '#book') openSheet(bookModal);

@@ -42,15 +42,15 @@ const amenityIcons = [
           <a href="#book"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>{d.nav.book}</a>
         </nav>
         <form class="bar" id="bar" novalidate>
-          <label>{d.book.arrival}<input type="date" name="arrival" /></label>
-          <label>{d.book.departure}<input type="date" name="departure" /></label>
+          <label>{d.book.arrival}<input type="date" name="arrival" placeholder={d.book.datePlaceholder} /></label>
+          <label>{d.book.departure}<input type="date" name="departure" placeholder={d.book.datePlaceholder} /></label>
           <label>{d.book.guests}<input type="number" name="guests" min="1" max="12" value="2" /></label>
           <button type="submit"><span>{d.hero.check}</span></button>
         </form>
         <div class="hero-meta">
           <p class="clock"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{d.hero.time} <time id="clock"></time></p>
           <span class="meta-sep" aria-hidden="true">·</span>
-          <p class="hero-coords">{coordsDisplay}</p>
+          <p class="hero-coords"><bdi dir="ltr">{coordsDisplay}</bdi></p>
         </div>
         <a href="#welcome" class="scroll-cue" aria-label={d.nav.scroll}><span></span></a>
       </div>
@@ -66,6 +66,7 @@ const amenityIcons = [
         <p class="eyebrow">{d.welcome.eyebrow}</p>
         <h2>{d.welcome.title}</h2>
         <p>{d.welcome.p1}</p>
+        <h3 class="welcome-sub">{d.welcome.subtitle}</h3>
         <p>{d.welcome.p2}</p>
         <ul class="facts-strip">
           {d.welcome.facts.map((fact) => <li>{fact}</li>)}
@@ -87,7 +88,7 @@ const amenityIcons = [
                 <p class="eyebrow">{d.rooms.eyebrow}</p>
               </div>
               <h2>{r.name}</h2>
-              <ul class="amenity-strip" aria-label="Room amenities">
+              <ul class="amenity-strip" aria-label={d.rooms.amenitiesLabel}>
                 {d.rooms.amenities.map((item, idx) => (
                   <li>
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -180,7 +181,7 @@ const amenityIcons = [
         <p class="eyebrow">{d.place.eyebrow}</p>
         <h2>{d.place.title}</h2>
         <p>{d.place.text}</p>
-        <p class="coords-line">{coordsDisplay}</p>
+        <p class="coords-line"><bdi dir="ltr">{coordsDisplay}</bdi></p>
         <a class="btn" href={mapUrl} target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
           <span>{d.place.map}</span>
@@ -242,48 +243,17 @@ const amenityIcons = [
       </section>
     </div>
 
-    <section class="panel book" id="book" data-dot={d.book.eyebrow}>
+    <section class="panel panel-editorial panel-cta" id="reserve" data-dot={d.book.eyebrow}>
       <div class="panel-media">
         <img src="/images/book.jpg" alt="" class="panel-img" loading="lazy" />
       </div>
       <div class="shade"></div>
-      <div class="book-card reveal">
+      <div class="panel-text reveal">
         <span class="chapter-num" aria-hidden="true">07</span>
         <p class="eyebrow">{d.book.eyebrow}</p>
         <h2>{d.book.title}</h2>
-        <p class="lead">{d.book.text}</p>
-
-        <div class="direct-contact">
-          <a href={contact.whatsappUrl} target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5a7.2 7.2 0 0 0 2.5 2.5c.2.1.4.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.5v.5c0 .3-.2.7-.6.9-.6.3-1.4.4-2.5 0a9.5 9.5 0 0 1-5-5c-.4-1.1-.3-1.9 0-2.5z"/></svg>
-            <span><strong>{d.book.whatsapp}</strong> {contact.phoneDisplay}</span>
-          </a>
-          <a href={contact.emailHref}>
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
-            <span><strong>{d.book.emailLabel}</strong> {contact.email}</span>
-          </a>
-        </div>
-
-        <form id="book-form" data-whatsapp={contact.whatsappUrl} data-email={contact.emailHref} novalidate>
-          <label>{d.book.name}<input name="name" autocomplete="name" required /></label>
-          <label>{d.book.email}<input name="email" type="email" autocomplete="email" required /></label>
-          <div class="row">
-            <label>{d.book.arrival}<input name="arrival" type="date" required /></label>
-            <label>{d.book.departure}<input name="departure" type="date" required /></label>
-          </div>
-          <label>{d.book.guests}<input name="guests" type="number" min="1" max="12" value="2" required /></label>
-          <label class="check-row">
-            <input type="checkbox" name="transfer" />
-            <span>{d.book.transfer}</span>
-          </label>
-          <label>{d.book.message}<textarea name="message" rows="3"></textarea></label>
-          <div class="form-actions">
-            <button class="btn btn--gold" type="submit" data-channel="whatsapp"><span>{d.book.sendWhatsapp}</span></button>
-            <button class="btn" type="button" data-channel="email"><span>{d.book.sendEmail}</span></button>
-          </div>
-          <p class="note">{d.book.rateNote}</p>
-          <p class="form-msg" id="form-msg" role="status" hidden>{d.book.validationMsg}</p>
-        </form>
+        <p>{d.book.rateNote}</p>
+        <a class="btn btn--gold" href="#book"><span>{d.hero.cta}</span></a>
       </div>
     </section>
   </main>
@@ -446,18 +416,81 @@ const amenityIcons = [
     </div>
   </div>
 
+  <div class="sheet-modal book-modal" id="book-modal" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="book-modal-title" aria-hidden="true" inert>
+    <div class="sheet-backdrop" data-close-modal></div>
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <div class="sheet-brand">
+          <img src="/images/logo-seal.png" alt="" width="38" height="38" />
+          <div>
+            <p class="sheet-eyebrow">Aurora Hacienda Zanzibar · Nungwi</p>
+            <h2 id="book-modal-title">{d.book.title}</h2>
+          </div>
+        </div>
+        <button type="button" class="sheet-close" data-close-modal aria-label={d.nav.close}>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+
+      <div class="sheet-body" data-lenis-prevent>
+        <p class="lead">{d.book.text}</p>
+
+        <div class="direct-contact">
+          <a href={contact.whatsappUrl} target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5a7.2 7.2 0 0 0 2.5 2.5c.2.1.4.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.5v.5c0 .3-.2.7-.6.9-.6.3-1.4.4-2.5 0a9.5 9.5 0 0 1-5-5c-.4-1.1-.3-1.9 0-2.5z"/></svg>
+            <span><strong>{d.book.whatsapp}</strong> <bdi dir="ltr">{contact.phoneDisplay}</bdi></span>
+          </a>
+          <a href={contact.emailHref}>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><strong>{d.book.emailLabel}</strong> {contact.email}</span>
+          </a>
+        </div>
+
+        <form id="book-form" data-guest-language={new Intl.DisplayNames(['en'], { type: 'language' }).of(lang)} data-whatsapp={contact.whatsappUrl} data-email={contact.emailHref} novalidate>
+          <label>{d.book.name}<input name="name" autocomplete="name" required /></label>
+          <label>{d.book.email}<input name="email" type="email" autocomplete="email" required /></label>
+          <div class="row">
+            <label>{d.book.arrival}<input name="arrival" type="date" placeholder={d.book.datePlaceholder} required /></label>
+            <label>{d.book.departure}<input name="departure" type="date" placeholder={d.book.datePlaceholder} required /></label>
+          </div>
+          <label>{d.book.guests}<input name="guests" type="number" min="1" max="12" value="2" required /></label>
+          <label class="check-row">
+            <input type="checkbox" name="transfer" />
+            <span>{d.book.transfer}</span>
+          </label>
+          <label>{d.book.message}<textarea name="message" rows="3"></textarea></label>
+          <div class="form-actions">
+            <button class="btn btn--gold" type="submit" data-channel="whatsapp"><span>{d.book.sendWhatsapp}</span></button>
+            <button class="btn" type="button" data-channel="email"><span>{d.book.sendEmail}</span></button>
+          </div>
+          <p class="note">{d.book.rateNote}</p>
+          <p class="form-msg" id="form-msg" role="status" hidden>{d.book.validationMsg}</p>
+        </form>
+      </div>
+
+      <div class="sheet-foot">
+        <button type="button" class="sheet-back" data-close-modal>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          {d.dining.back}
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script is:inline>
     const bar = document.getElementById('bar'), bf = document.getElementById('book-form');
     const msgEl = document.getElementById('form-msg');
     bar.addEventListener('submit', (e) => {
       e.preventDefault();
       for (const n of ['arrival', 'departure', 'guests']) {
-        const target = bf.elements[n];
-        target.value = bar.elements[n].value;
-        target.classList.add('prefilled');
-        setTimeout(() => target.classList.remove('prefilled'), 1800);
+        const target = bf.elements[n], value = bar.elements[n].value, picker = target._flatpickr;
+        if (picker) value ? picker.setDate(value, true) : picker.selectedDates.length && picker.clear();
+        else target.value = value;
+        const shown = picker?.altInput || target;
+        shown.classList.add('prefilled');
+        setTimeout(() => shown.classList.remove('prefilled'), 1800);
       }
-      window.__goTo ? window.__goTo('#book') : document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+      window.__openBooking?.();
     });
     const clock = document.getElementById('clock');
     const tick = () => {
@@ -480,6 +513,7 @@ const amenityIcons = [
       const message = bf.elements.message.value.trim();
       const lines = [
         'Aurora Hacienda Zanzibar — Booking & Rate Inquiry',
+        'Guest language: ' + bf.dataset.guestLanguage,
         'Name: ' + name,
         email ? 'Email: ' + email : null,
         arrival ? 'Arrival: ' + arrival : null,

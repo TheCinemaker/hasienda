@@ -1,12 +1,25 @@
 ---
+import { allLocales, available } from '../i18n';
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/en/" />
-    <link rel="canonical" href="/en/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>Aurora Hacienda Zanzibar</title>
+    {available.map((l) => <link rel="alternate" hreflang={l} href={`/${l}/`} />)}
+    <script is:inline define:vars={{ available }}>
+      // saved choice first, then the browser's languages, then English
+      let saved = null;
+      try { saved = localStorage.getItem('lang'); } catch {}
+      const wanted = [saved, ...(navigator.languages || [navigator.language])];
+      const match = wanted.map((v) => String(v || '').slice(0, 2).toLowerCase()).find((v) => available.includes(v));
+      location.replace('/' + (match || 'en') + '/' + location.hash);
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=/en/" /></noscript>
   </head>
-  <body><a href="/en/">Aurora Hacienda Zanzibar</a></body>
+  <body>
+    <p>{available.map((l) => <a href={`/${l}/`} lang={l}>{allLocales[l].label} </a>)}</p>
+  </body>
 </html>

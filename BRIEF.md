@@ -6,7 +6,7 @@ Indult: 2026. november 25.
 ## Rögzített döntések (2026-11-25, tulaj elképzelése alapján)
 - Hely: Nungwi (Zanzibár északi csúcsa). GPS: -5.736968776973334, 39.296170872725 (src/i18n/site.ts).
 - Stílus: luxury, referencia: https://www.aryaboutiqueresort.com/?lang=en – **ne legyen "AI-érzés"** (nincs sablonos gradiens/kártyarács, valódi fotók, visszafogott tipó).
-- Nyelvek: EN, DE, RU, FR, ES, IT, AR (az arab RTL!).
+- Nyelvek (2026-11-26): EN, HU, DE, FR, IT, ES, RU, AR (az arab RTL). Szövegek: src/i18n/, ellenőrzés: node scripts/check-i18n.mjs
 - Nulla emoji, csak SVG ikonok.
 - Online foglalás + Apple Wallet / Google Wallet jegy (QR) – lásd TODO.md.
 - Recepció: QR-beolvasás → vendég/foglalás azonnal a recepciós felületen → saját PMS kell.
