@@ -1,12 +1,12 @@
 // English copy. Plain, simple wording for international guests.
-// Anything not confirmed by the hotel is wrapped as { tbc: '...' } and shown with a "to be confirmed" mark.
+// Only confirmed facts go in here; anything unknown is simply left out (see TODO.md).
 export const en = {
   meta: {
     title: 'Aurora Hacienda Zanzibar – a small hotel in Nungwi',
     description:
       'Aurora Hacienda is a small hotel with four rooms in Nungwi, at the northern tip of Zanzibar, Tanzania. Built in the traditional Zanzibari style.',
   },
-  nav: { start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', quick: 'Quick links' },
+  nav: { start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
   hero: {
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: 'A small hotel at the northern tip of Zanzibar',
@@ -28,10 +28,10 @@ export const en = {
     intro: 'Each room has an en-suite bathroom and full modern comfort in traditional Zanzibari style.',
     amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe'],
     items: [
-      { name: 'Room 1', text: { tbc: 'Individual room details coming soon.' } },
-      { name: 'Room 2', text: { tbc: 'Individual room details coming soon.' } },
-      { name: 'Room 3', text: { tbc: 'Individual room details coming soon.' } },
-      { name: 'Room 4', text: { tbc: 'Individual room details coming soon.' } },
+      { name: 'Room 1' },
+      { name: 'Room 2' },
+      { name: 'Room 3' },
+      { name: 'Room 4' },
     ],
     rateLabel: 'Rates',
     rateBasis: 'Per room · 2 guests · Per night · Breakfast included',
@@ -42,6 +42,10 @@ export const en = {
     eyebrow: 'Dining & Bar',
     title: 'Own kitchen, island flavours & cocktails',
     text: 'Wake up to breakfast included with every stay, and enjoy our own restaurant and bar from midday into the evening.',
+    breakfastBtn: 'Breakfast menu',
+    drinkBtn: 'Drink menu',
+    back: 'Back',
+    closeMenu: 'Close menu',
     pillars: [
       {
         title: 'Breakfast included',
@@ -56,6 +60,105 @@ export const en = {
         text: 'Alcoholic and non-alcoholic drinks, specialty coffees and teas, and local and international cocktails.',
       },
     ],
+    menus: {
+      breakfast: {
+        title: 'Breakfast Menu',
+        subtitle: 'Included every morning with your stay',
+        fixedTitle: 'Every morning',
+        fixed: [
+          { name: 'Fresh from the tropics', desc: 'Orange juice, mint, and lemon water' },
+          { name: 'Zanzibari spiced coffee', desc: 'Zanzibar coffee flavoured with ginger' },
+          { name: 'Swahili spiced tea', desc: 'Black tea with cinnamon and cloves' },
+          { name: 'Fresh herbal teas', desc: 'Lemongrass and fresh green mint brew' },
+          { name: 'Fresh tropical fruit platter', desc: '' },
+          { name: 'Salty and sweet pastries', desc: 'Served with butter and jam' },
+        ],
+        choiceTitle: 'Choice of menu',
+        choiceNote: 'Choose one option each morning',
+        choices: [
+          {
+            title: 'Toast with Eggs',
+            items: ['Scrambled eggs', 'Boiled eggs (soft or hard)', 'Omelette (plain or with vegetables)'],
+          },
+          {
+            title: 'Toast',
+            items: ['French toast with banana and cinnamon', 'Avocado toast with or without egg', 'Cheesy tomato toast with egg'],
+          },
+          {
+            title: 'Pancakes',
+            items: ['Pancake with fruits or jam', 'Pancake with banana and Nutella', 'Pancake with vegetables'],
+          },
+          {
+            title: 'Waffles',
+            items: ['Waffle with a choice of fruit, Nutella, or honey'],
+          },
+        ],
+        zanzibariTitle: 'Zanzibari Breakfast',
+        zanzibariNote: 'Counts as one serving',
+        zanzibari: [
+          { name: 'Chapati', desc: 'Layered flatbread' },
+          { name: 'Kitumbua', desc: 'Coconut rice fritter' },
+          { name: 'Kachori', desc: 'Potato balls in turmeric-flavoured fried batter' },
+          { name: 'Mandazi', desc: 'Triangular doughnut' },
+        ],
+        footerNote: 'We also occasionally delight our guests with a unique daily selection.',
+      },
+      drinks: {
+        title: 'Drink Menu',
+        subtitle: 'Served at our restaurant & bar',
+        hotTitle: 'Hot Drinks',
+        hot: [
+          { name: 'Black Tea', price: '5,000 TZS / 2 USD' },
+          { name: 'American Coffee', price: '5,000 TZS / 2 USD' },
+          { name: 'Tea with Milk', price: '5,000 TZS / 2 USD' },
+          { name: 'Hot Milk', price: '2,500 TZS / 1 USD' },
+          { name: 'Hot Chocolate', price: '10,000 TZS / 4 USD' },
+          { name: 'Espresso Coffee', price: '5,000 TZS / 2 USD' },
+          { name: 'Caffe Latte', price: '7,500 TZS / 3 USD' },
+          { name: 'Cappuccino', price: '7,500 TZS / 3 USD' },
+        ],
+        coldTitle: 'Cold Drinks',
+        cold: [
+          { name: 'Soda (Coca-Cola, Fanta, Tonic…)', price: '3,000 TZS / 1.5 USD' },
+          { name: 'Water 1.5L', price: '3,000 TZS / 1.5 USD' },
+          { name: 'Water 0.5L', price: '2,000 TZS / 1 USD' },
+        ],
+        juiceTitle: 'Fresh Juice',
+        juice: [
+          { name: 'All Fresh Juice', desc: 'Pineapple, Mango, Lemon, Watermelon, Orange, Passion, Papaya, Avocado', price: '7,000 TZS / 2.5 USD' },
+          { name: 'Avocado + Lime', desc: '', price: '10,000 TZS / 3 USD' },
+          { name: 'Avocado + Ginger', desc: '', price: '10,000 TZS / 3 USD' },
+        ],
+        cocktailsTitle: 'Cocktails',
+        cocktailsNote: 'All cocktails available with or without alcohol',
+        localCocktailsTitle: 'Local Cocktails',
+        localCocktails: [
+          { name: 'Zanzibar Dawa', desc: 'Gin or rum, honey, lemon, crushed ice' },
+          { name: 'Spice Island Punch', desc: 'Dark rum, pineapple juice, orange juice, cloves, cinnamon syrup' },
+          { name: 'Hakuna Matata', desc: 'White rum, coconut cream, mango, fresh passion fruit' },
+        ],
+        intlCocktailsTitle: 'International Cocktails',
+        intlCocktails: [
+          { name: 'Mojito', desc: 'White rum, lime, sugar, mint, water, ice' },
+          { name: 'Daiquiri', desc: 'White rum, lime, sugar, ice' },
+          { name: 'Piña Colada', desc: 'White rum, cream of coconut, pineapple juice, ice' },
+          { name: 'Gin + Tonic', desc: '' },
+          { name: 'Gimlet', desc: 'Gin, lime, sugar syrup, ice' },
+          { name: 'Paloma', desc: 'Tequila, lime, grapefruit, water, salt' },
+          { name: 'Tequila Sunrise', desc: 'Tequila, orange juice, ice, pomegranate syrup' },
+        ],
+        winesTitle: 'Wines & Sparkling Wines',
+        wines: [
+          'Red Wine (1 bottle)',
+          'White Wine (1 bottle)',
+          'White & Red Wine (1 glass · 2 dl)',
+          'Dry Sparkling Wine (1 bottle)',
+          'Sweet Sparkling Wine (1 bottle)',
+        ],
+        spiritsTitle: 'Beers & Distilled Spirits',
+        spirits: ['1 Bottle of Beer', 'Local Spirits', 'International Spirits'],
+      },
+    },
   },
   house: {
     eyebrow: 'The house',
@@ -63,13 +166,11 @@ export const en = {
     text: 'The building is made in the traditional Zanzibari style.',
     securityLabel: 'Peace of mind',
     securityText: 'Nighttime security by Imara Security (Tanzania) and CCTV in common areas.',
-    more: { tbc: 'More about the building, the garden and the common areas will follow.' },
   },
   place: {
     eyebrow: 'Location',
     title: 'Nungwi',
     text: 'Nungwi is a village at the very north of Zanzibar island.',
-    more: { tbc: 'Distance to the beach, the airport and Stone Town will follow.' },
     map: 'Open in Google Maps',
   },
   experiences: {
@@ -78,7 +179,6 @@ export const en = {
       label: 'Arrival',
       title: 'Personal airport transfer',
       text: 'Your stay begins the moment you land. The owner personally picks up every guest at the airport and brings you straight to Aurora Hacienda in Nungwi.',
-      note: { tbc: 'Transfer details and rates to be confirmed.' },
       cta: 'Request airport pickup',
     },
     excursions: {
@@ -90,7 +190,6 @@ export const en = {
         { title: 'Mainland safari', text: 'Unforgettable wildlife safaris on mainland Tanzania.' },
         { title: 'Personal host guidance', text: 'The owner personally shares where to go and the best time to explore.' },
       ],
-      note: { tbc: 'Excursion options and pricing will follow.' },
       cta: 'Plan your stay',
     },
   },
@@ -117,6 +216,5 @@ export const en = {
     rights: 'All rights reserved.',
     credit: 'Designed & built by SA Software',
   },
-  tbcLabel: 'To be confirmed',
 };
 export type Dict = typeof en;

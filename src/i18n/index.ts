@@ -18,5 +18,3 @@ export const dictionaries: Partial<Record<Locale, Dict>> = { en };
 export const available = Object.keys(dictionaries) as Locale[];
 export const t = (lang: Locale): Dict => dictionaries[lang] as Dict;
 
-export const isTbc = (v: unknown): v is { tbc: string } =>
-  typeof v === 'object' && v !== null && 'tbc' in v;

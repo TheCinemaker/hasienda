@@ -18,7 +18,7 @@ Indult: 2026. november 25.
 - Kirándulások / experience: a helyszínen foglalhatók, illetve a tulaj személyesen megmutatja/elmondja, mikor és merre érdemes menni; Zanzibár-túrák mellett szárazföldi tanzániai szafari is.
 - Árak alapja: szobánként / 2 főre / reggelivel / naponta (aktuális árak érdeklődésre: telefonon, Messengeren, WhatsAppon, e-mailben).
 - Szobafelszereltség: saját fürdőszoba minden szobában, TV, klíma (AC), ventilátor, hűtőszekrény, kávé- és teabár, széf.
-- Étterem & reggeli: saját konyha – reggeli európai, hazai és helyi ízekkel; ebéd és vacsora étlapról, heti tematikus estek; alkoholos és alkoholmentes italok, kávékülönlegességek, teák, helyi és nemzetközi koktélok.
+- Étterem & reggeli: saját konyha – reggeli európai, hazai és helyi ízekkel; ebéd és vacsora étlapról, heti tematikus estek; alkoholos és alkoholmentes italok, kávékülönlegességek, teák, helyi és nemzetközi koktélok. Hivatalos Breakfast Menu és Drink Menu (TZS/USD árakkal) beépítve a Dining & Bar szekcióba.
 - Biztonság: éjszakai őrző-védő szolgálat (IMARA SECURITY, Tanzánia) és CCTV kamerarendszer a közösségi terekben.
 - Hivatalos logó és elérhetőségek: kör alakú FB pecsét (`logo-seal.png`), WhatsApp/telefon `+36 30 385 2459`, e-mail `aurorahaciendazanzibar@gmail.com`.
 

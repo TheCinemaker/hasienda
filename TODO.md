@@ -25,11 +25,18 @@
 - [ ] Google Wallet Issuer fiók
 - [ ] Cloudflare, Supabase fiók (ügyfél tulajdonában)
 
-## Ideiglenes képek (cserélendő, azonos fájlnévvel)
-- MI-generált ideiglenes luxury fotók (`public/images/`): `hero.jpg`, `welcome.jpg`, `room-1.jpg`, `room-2.jpg`, `room-3.jpg`, `room-4.jpg`, `house.jpg`, `nungwi.jpg`, `transfer.jpg`, `excursions.jpg`, `book.jpg`. Mind a 11 fájl 2400×1350 (16:9) JPEG, ugyanazzal a fájlnévvel cserélhető valódi fotóra (a korábbi Wikimedia Commons demo fotók és a lábléc `photoCredit` sor eltávolítva).
-- Ideiglenes CC0 stock fotó: `dining.jpg` (Rawpixel / Openverse CC0, 2400×1350 – valódi étteremfotóra cserélendő).
-- Hivatalos logó: `logo-seal.png` (tulaj FB-on is használt kör alakú pecsétje átlátszó háttérrel feldolgozva).
+## Képek állapota (cserélendő ideiglenesek azonos fájlnévvel)
+- **VALÓDI hotel fotók (színkorrigálva az oldal arany-obszidián-türkiz palettájához, `inbox/`-ból):** `hero.jpg`, `welcome.jpg`, `dining.jpg`, `house.jpg` (2400×1350 JPEG).
+- **Még ideiglenes MI-generált fotók (`public/images/`, azonos fájlnévvel cserélhetők):** `room-1.jpg`, `room-2.jpg`, `room-3.jpg`, `room-4.jpg`, `nungwi.jpg`, `transfer.jpg`, `excursions.jpg`, `book.jpg` (2400×1350 JPEG).
+- **Hivatalos logó:** `logo-seal.png` (arany-obszidián hivatalos pecsét, 512×512 PNG).
 - A szövegekben "To be confirmed" jelölésű részek (egyedi szobaleírások, pontos szobaárak/kirándulás-árak, pontos távolságok, fizetés) valós adatra cserélendők, a jelölő (.tbc) ezután törölhető
 - Jogi cégnév a lábléc copyright sorába (most: Aurora Hacienda Zanzibar)
 - Foglalási űrlap: előtöltött WhatsApp (`+36303852459`) és e-mail (`aurorahaciendazanzibar@gmail.com`) küldés aktív; Supabase / saját PMS a 2. fázisban
 - Fordítások (DE, RU, FR, ES, IT, AR): az EN szöveg véglegesítése után; addig az oldal csak EN, a nyelvválasztó rejtve
+
+## Kivett helyőrző szövegek (2026-11-26) – ha megjön az adat, visszakerülhet
+- Szobák egyedi leírása (4 db)
+- Épület, kert, közös terek bővebb leírása
+- Távolság: tengerpart, reptér, Stone Town
+- Reptéri transzfer részletei és díja
+- Kirándulások listája és ára

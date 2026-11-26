@@ -8,3 +8,6 @@ dist/
 Thumbs.db
 *.log
 .astro/
+
+# raw client photos, not for the repo
+inbox/

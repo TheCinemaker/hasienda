@@ -107,7 +107,70 @@ menu.querySelectorAll<HTMLAnchorElement>('.menu-links a[data-preview]').forEach(
   link.addEventListener('focus', () => swapPreview(src));
 });
 addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false);
+  if (e.key === 'Escape') {
+    if (menu.classList.contains('open')) setMenu(false);
+    if (diningModal?.classList.contains('open')) closeDiningModal();
+  }
+});
+
+/* ---------- interactive breakfast & drink menu modal ---------- */
+const diningModal = document.getElementById('dining-modal') as (HTMLElement & { inert: boolean }) | null;
+const diningClose = document.getElementById('dining-modal-close') as HTMLButtonElement | null;
+const diningBody = document.getElementById('dining-modal-body') as HTMLElement | null;
+let diningTrigger: HTMLElement | null = null;
+
+const setDiningTab = (tab: string) => {
+  if (!diningModal) return;
+  diningModal.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((btn) => {
+    btn.setAttribute('aria-selected', String(btn.dataset.tab === tab));
+  });
+  diningModal.querySelectorAll<HTMLElement>('.sheet-panel').forEach((panel) => {
+    panel.hidden = panel.id !== `tab-${tab}`;
+  });
+  if (diningBody) diningBody.scrollTop = 0;
+};
+
+const openDiningModal = (tab: string, trigger?: HTMLElement | null) => {
+  if (!diningModal) return;
+  diningTrigger = trigger || null;
+  setDiningTab(tab);
+  diningModal.classList.add('open');
+  diningModal.setAttribute('aria-hidden', 'false');
+  diningModal.inert = false;
+  document.body.classList.add('lock');
+  setHeaderHidden(true);
+  lenis?.stop();
+  diningClose?.focus({ preventScroll: true });
+  // the phone's own back button should close the menu, not leave the page
+  if (!history.state?.diningModal) history.pushState({ diningModal: true }, '');
+};
+
+const closeDiningModal = () => {
+  if (!diningModal || !diningModal.classList.contains('open')) return;
+  if (diningModal.contains(document.activeElement)) {
+    diningTrigger?.focus({ preventScroll: true });
+  }
+  diningModal.classList.remove('open');
+  diningModal.setAttribute('aria-hidden', 'true');
+  diningModal.inert = true;
+  if (!menu.classList.contains('open')) {
+    document.body.classList.remove('lock');
+    lenis?.start();
+  }
+  setHeaderHidden(false);
+  if (history.state?.diningModal) history.back();
+};
+
+addEventListener('popstate', () => closeDiningModal());
+document.getElementById('dining-modal-back')?.addEventListener('click', closeDiningModal);
+
+document.querySelectorAll<HTMLElement>('[data-open-menu]').forEach((btn) => {
+  btn.addEventListener('click', () => openDiningModal(btn.dataset.openMenu || 'breakfast', btn));
+});
+diningClose?.addEventListener('click', closeDiningModal);
+diningModal?.querySelector('[data-close-modal]')?.addEventListener('click', closeDiningModal);
+diningModal?.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((btn) => {
+  btn.addEventListener('click', () => setDiningTab(btn.dataset.tab || 'breakfast'));
 });
 
 /* ---------- flicker-free header state machine, progress & GPU parallax ---------- */
@@ -248,18 +311,31 @@ const show = (el: Element) => el.classList.add('in');
 if (reduce) {
   document.querySelectorAll('.reveal').forEach(show);
 } else {
+  // replays in both directions: show when enough is visible, reset only once fully off screen
   const ro = new IntersectionObserver(
     (es) =>
       es.forEach((e) => {
-        if (e.isIntersecting) {
-          show(e.target);
-          ro.unobserve(e.target);
-        }
+        if (!e.isIntersecting) e.target.classList.remove('in');
+        else if (e.intersectionRatio >= 0.16) show(e.target);
       }),
-    { threshold: 0.16 }
+    { threshold: [0, 0.16] }
   );
-  document.querySelectorAll('.reveal').forEach((el) => {
-    if (el.closest('.hero')) setTimeout(() => show(el), 220);
-    else ro.observe(el);
-  });
+  // the hero waits a moment on first load, so the entrance is seen
+  setTimeout(() => document.querySelectorAll('.reveal').forEach((el) => ro.observe(el)), 220);
 }
+
+/* ---------- back to top ---------- */
+const toTop = $('to-top');
+const small = matchMedia('(max-width: 860px)');
+let prevTopY = scrollY;
+const updateToTop = () => {
+  const y = scrollY;
+  const past = y > innerHeight * 0.9;
+  // on phones show it only while scrolling up, so it never covers the buttons being read
+  const goingDown = y > prevTopY;
+  if (y !== prevTopY) toTop.classList.toggle('show', past && !(small.matches && goingDown));
+  else if (!past) toTop.classList.remove('show');
+  prevTopY = y;
+};
+addEventListener('scroll', updateToTop, { passive: true });
+toTop.addEventListener('click', () => goTo(0));

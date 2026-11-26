@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { available, t, isTbc, type Locale } from '../../i18n';
+import { available, t, type Locale } from '../../i18n';
 import { contact, coordsDisplay, mapUrl } from '../../i18n/site';
 
 export function getStaticPaths() {
@@ -87,10 +87,6 @@ const amenityIcons = [
                 <p class="eyebrow">{d.rooms.eyebrow}</p>
               </div>
               <h2>{r.name}</h2>
-              <p class="suite-desc">
-                {isTbc(r.text) ? r.text.tbc : r.text}
-                {isTbc(r.text) && <span class="tbc">{d.tbcLabel}</span>}
-              </p>
               <ul class="amenity-strip" aria-label="Room amenities">
                 {d.rooms.amenities.map((item, idx) => (
                   <li>
@@ -143,6 +139,10 @@ const amenityIcons = [
               </div>
             ))}
           </div>
+          <div class="dining-actions">
+            <button type="button" class="btn btn--gold" data-open-menu="breakfast"><span>{d.dining.breakfastBtn}</span></button>
+            <button type="button" class="btn" data-open-menu="drinks"><span>{d.dining.drinkBtn}</span></button>
+          </div>
         </div>
       </div>
     </section>
@@ -157,7 +157,6 @@ const amenityIcons = [
         <p class="eyebrow">{d.house.eyebrow}</p>
         <h2>{d.house.title}</h2>
         <p>{d.house.text}</p>
-        <p class="note">{d.house.more.tbc}<span class="tbc">{d.tbcLabel}</span></p>
         <div class="security-strip">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3l7 3v5c0 4.8-3 8.8-7 10-4-1.2-7-5.2-7-10V6l7-3z"/>
@@ -182,7 +181,6 @@ const amenityIcons = [
         <h2>{d.place.title}</h2>
         <p>{d.place.text}</p>
         <p class="coords-line">{coordsDisplay}</p>
-        <p class="note">{d.place.more.tbc}<span class="tbc">{d.tbcLabel}</span></p>
         <a class="btn" href={mapUrl} target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
           <span>{d.place.map}</span>
@@ -204,7 +202,6 @@ const amenityIcons = [
             </div>
             <h2>{d.experiences.transfer.title}</h2>
             <p class="suite-desc">{d.experiences.transfer.text}</p>
-            <p class="note">{d.experiences.transfer.note.tbc}<span class="tbc">{d.tbcLabel}</span></p>
             <a class="btn" href="#book" data-request-transfer><span>{d.experiences.transfer.cta}</span></a>
           </div>
           <nav class="suite-nav" aria-label={d.experiences.eyebrow}>
@@ -235,7 +232,6 @@ const amenityIcons = [
                 </div>
               ))}
             </div>
-            <p class="note">{d.experiences.excursions.note.tbc}<span class="tbc">{d.tbcLabel}</span></p>
             <a class="btn" href="#book"><span>{d.experiences.excursions.cta}</span></a>
           </div>
           <nav class="suite-nav" aria-label={d.experiences.eyebrow}>
@@ -292,6 +288,164 @@ const amenityIcons = [
     </section>
   </main>
 
+  <div class="sheet-modal" id="dining-modal" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="dining-modal-title" aria-hidden="true" inert>
+    <div class="sheet-backdrop" data-close-modal></div>
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <div class="sheet-brand">
+          <img src="/images/logo-seal.png" alt="" width="38" height="38" />
+          <div>
+            <p class="sheet-eyebrow">Aurora Hacienda Zanzibar · Nungwi</p>
+            <h2 id="dining-modal-title">{d.dining.eyebrow}</h2>
+          </div>
+        </div>
+        <button type="button" class="sheet-close" id="dining-modal-close" aria-label={d.dining.closeMenu}>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+
+      <div class="sheet-tabs" role="tablist" aria-label={d.dining.eyebrow}>
+        <button type="button" role="tab" aria-selected="true" aria-controls="tab-breakfast" data-tab="breakfast">{d.dining.menus.breakfast.title}</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="tab-drinks" data-tab="drinks">{d.dining.menus.drinks.title}</button>
+      </div>
+
+      <div class="sheet-body" id="dining-modal-body" data-lenis-prevent>
+        <div class="sheet-panel" id="tab-breakfast" role="tabpanel">
+          <p class="sheet-sub">{d.dining.menus.breakfast.subtitle}</p>
+
+          <h3 class="menu-sec-title">{d.dining.menus.breakfast.fixedTitle}</h3>
+          <div class="menu-list">
+            {d.dining.menus.breakfast.fixed.map((item) => (
+              <div class="menu-item">
+                <div class="menu-item-name">{item.name}</div>
+                {item.desc && <p class="menu-item-desc">{item.desc}</p>}
+              </div>
+            ))}
+          </div>
+
+          <h3 class="menu-sec-title">{d.dining.menus.breakfast.choiceTitle} <span>{d.dining.menus.breakfast.choiceNote}</span></h3>
+          <div class="menu-cols">
+            {d.dining.menus.breakfast.choices.map((group) => (
+              <div class="menu-group">
+                <h4>{group.title}</h4>
+                <ul>
+                  {group.items.map((line) => <li>{line}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div class="menu-highlight">
+            <h3 class="menu-sec-title">{d.dining.menus.breakfast.zanzibariTitle} <span>{d.dining.menus.breakfast.zanzibariNote}</span></h3>
+            <div class="menu-cols">
+              {d.dining.menus.breakfast.zanzibari.map((item) => (
+                <div class="menu-item">
+                  <div class="menu-item-name">{item.name}</div>
+                  <p class="menu-item-desc">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p class="sheet-foot-note">{d.dining.menus.breakfast.footerNote}</p>
+        </div>
+
+        <div class="sheet-panel" id="tab-drinks" role="tabpanel" hidden>
+          <p class="sheet-sub">{d.dining.menus.drinks.subtitle}</p>
+
+          <div class="menu-cols">
+            <div>
+              <h3 class="menu-sec-title">{d.dining.menus.drinks.hotTitle}</h3>
+              <div class="menu-price-list">
+                {d.dining.menus.drinks.hot.map((item) => (
+                  <div class="menu-row">
+                    <span>{item.name}</span>
+                    <span class="menu-leader" aria-hidden="true"></span>
+                    <strong class="menu-price">{item.price}</strong>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 class="menu-sec-title">{d.dining.menus.drinks.coldTitle}</h3>
+              <div class="menu-price-list">
+                {d.dining.menus.drinks.cold.map((item) => (
+                  <div class="menu-row">
+                    <span>{item.name}</span>
+                    <span class="menu-leader" aria-hidden="true"></span>
+                    <strong class="menu-price">{item.price}</strong>
+                  </div>
+                ))}
+              </div>
+
+              <h3 class="menu-sec-title menu-sec-gap">{d.dining.menus.drinks.juiceTitle}</h3>
+              <div class="menu-price-list">
+                {d.dining.menus.drinks.juice.map((item) => (
+                  <div class="menu-price-block">
+                    <div class="menu-row">
+                      <span>{item.name}</span>
+                      <span class="menu-leader" aria-hidden="true"></span>
+                      <strong class="menu-price">{item.price}</strong>
+                    </div>
+                    {item.desc && <p class="menu-item-desc">{item.desc}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <h3 class="menu-sec-title menu-sec-gap">{d.dining.menus.drinks.cocktailsTitle} <span>{d.dining.menus.drinks.cocktailsNote}</span></h3>
+          <div class="menu-cols">
+            <div>
+              <h4 class="menu-subcat">{d.dining.menus.drinks.localCocktailsTitle}</h4>
+              <div class="menu-list">
+                {d.dining.menus.drinks.localCocktails.map((c) => (
+                  <div class="menu-item">
+                    <div class="menu-item-name">{c.name}</div>
+                    {c.desc && <p class="menu-item-desc">{c.desc}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 class="menu-subcat">{d.dining.menus.drinks.intlCocktailsTitle}</h4>
+              <div class="menu-list">
+                {d.dining.menus.drinks.intlCocktails.map((c) => (
+                  <div class="menu-item">
+                    <div class="menu-item-name">{c.name}</div>
+                    {c.desc && <p class="menu-item-desc">{c.desc}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-cols menu-sec-gap">
+            <div class="menu-group">
+              <h3 class="menu-sec-title">{d.dining.menus.drinks.winesTitle}</h3>
+              <ul>
+                {d.dining.menus.drinks.wines.map((w) => <li>{w}</li>)}
+              </ul>
+            </div>
+            <div class="menu-group">
+              <h3 class="menu-sec-title">{d.dining.menus.drinks.spiritsTitle}</h3>
+              <ul>
+                {d.dining.menus.drinks.spirits.map((s) => <li>{s}</li>)}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet-foot">
+        <button type="button" class="sheet-back" id="dining-modal-back">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          {d.dining.back}
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script is:inline>
     const bar = document.getElementById('bar'), bf = document.getElementById('book-form');
     const msgEl = document.getElementById('form-msg');
@@ -319,8 +473,8 @@ const amenityIcons = [
     const buildInquiry = () => {
       const name = bf.elements.name.value.trim();
       const email = bf.elements.email.value.trim();
-      const arrival = bf.elements.arrival.value || 'To be confirmed';
-      const departure = bf.elements.departure.value || 'To be confirmed';
+      const arrival = bf.elements.arrival.value;
+      const departure = bf.elements.departure.value;
       const guests = bf.elements.guests.value || '2';
       const transfer = bf.elements.transfer.checked ? 'Yes (owner airport pickup)' : 'No';
       const message = bf.elements.message.value.trim();
@@ -328,8 +482,8 @@ const amenityIcons = [
         'Aurora Hacienda Zanzibar — Booking & Rate Inquiry',
         'Name: ' + name,
         email ? 'Email: ' + email : null,
-        'Arrival: ' + arrival,
-        'Departure: ' + departure,
+        arrival ? 'Arrival: ' + arrival : null,
+        departure ? 'Departure: ' + departure : null,
         'Guests: ' + guests,
         'Personal airport transfer: ' + transfer,
         message ? 'Notes: ' + message : null,
