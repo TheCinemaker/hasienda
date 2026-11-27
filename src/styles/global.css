@@ -2598,3 +2598,22 @@ html[dir='rtl'] .flatpickr-calendar { direction: rtl; }
   .book-actions { grid-template-columns: auto 1fr 1fr; }
   .book-actions .sheet-back { grid-column: auto; order: 0; width: auto; }
 }
+
+/* ---------- two WhatsApp numbers ---------- */
+.book-modal .direct-contact { grid-template-columns: 1fr 1fr; }
+.wa-choice[hidden] { display: none; }
+.wa-choice p { margin: 0 0 6px; font-size: .8rem; letter-spacing: .08em; color: var(--gold-bright); text-align: center; }
+.wa-choice > div { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.wa-choice .btn { margin: 0; justify-content: center; padding: 11px 6px; letter-spacing: .04em; font-size: .86rem; }
+@media (max-width: 620px) { .book-modal .book-info { grid-column: auto; } .book-modal .direct-contact a, .book-modal .book-info { font-size: .72rem; letter-spacing: .02em; padding-inline: 6px; } }
+
+/* phones: keep the airport sign and the front of the car in view */
+@media (max-width: 860px) { #transfer .panel-img { object-position: 40% 50%; } }
+
+/* transfer photo is already dark and moody: only shade where the text sits */
+#transfer .shade { background: linear-gradient(90deg, rgba(10, 8, 6, .5) 0%, rgba(10, 8, 6, .2) 46%, rgba(10, 8, 6, 0) 70%), linear-gradient(180deg, rgba(12, 9, 7, .12) 0%, rgba(12, 9, 7, 0) 38%, rgba(10, 8, 6, .5) 64%, rgba(10, 8, 6, .86) 100%); }
+html[dir='rtl'] #transfer .shade { transform: scaleX(-1); }
+
+@media (min-width: 861px) { #transfer .panel-img { object-position: 72% 50%; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

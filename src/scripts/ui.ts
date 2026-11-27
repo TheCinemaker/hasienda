@@ -326,11 +326,14 @@ document.querySelectorAll<HTMLElement>('.reveal').forEach((block) => {
   [...block.children].forEach((el) => {
     const node = el as HTMLElement;
     if (/^H[12]$/.test(node.tagName)) {
+      const context = node.querySelector(':scope > .sr-only');
+      context?.remove();
       const words = (node.textContent || '').trim().split(/\s+/);
-      node.setAttribute('aria-label', words.join(' '));
+      node.setAttribute('aria-label', [context?.textContent?.trim(), words.join(' ')].filter(Boolean).join(' '));
       node.innerHTML = words
         .map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`)
         .join(' ');
+      if (context) node.prepend(context);
       node.style.setProperty('--n', String(words.length));
       c = Math.max(c, 1);
     } else {

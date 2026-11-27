@@ -7,6 +7,7 @@ export const es: Dict = {
   },
   nav: { info: "Info de viaje", start: 'Inicio', home: 'Bienvenida', stay: 'Habitaciones', dining: 'Restaurante', house: 'La casa', place: 'Nungwi', experiences: 'Experiencias', book: 'Reservar', menu: 'Menú', close: 'Cerrar', language: 'Idioma', scroll: 'Desplazarse hacia abajo', top: 'Volver arriba', quick: 'Enlaces rápidos' },
   hero: {
+    context: "Aurora Hacienda en Nungwi, Zanzíbar",
     eyebrow: 'Nungwi · Zanzíbar · Tanzania',
     title: "Boutique Hotel",
     text: "Cerca del océano Índico: cuatro habitaciones de estilo tradicional zanzibarí, cocina propia y sabores de Zanzíbar.",
@@ -171,13 +172,15 @@ export const es: Dict = {
     sections: [
       { title: "Pasaporte y visado", items: [
         "Tu pasaporte debe tener al menos 6 meses de validez desde el día de llegada y una página en blanco como mínimo.",
-        "La mayoría de los visitantes necesita visado. Comprueba las normas para tu nacionalidad.",
-        "Puedes solicitar el visado electrónico antes de viajar. También puede haber visado de una sola entrada a la llegada; quizá te pidan el billete de vuelta.",
+        "Necesitas visado de turista. Es válido hasta 90 días y cuesta 50 USD para la mayoría de las nacionalidades.",
+        "Solicita el visado electrónico antes de viajar, o pídelo a la llegada rellenando un formulario en papel en el aeropuerto.",
       ] },
       { title: "Seguro obligatorio de Zanzíbar", items: [
-        "Quienes visitan Zanzíbar deben contratar el seguro de entrada de la Zanzibar Insurance Corporation (ZIC). Los residentes están excluidos.",
-        "Se contrata en línea antes de viajar o a la llegada, y cubre la estancia hasta 92 días.",
-        "Sin él pueden denegarte la entrada. Recomendamos además tu propio seguro de viaje y médico.",
+        "El seguro de entrada de Zanzíbar es obligatorio para los visitantes. Ningún otro seguro, ni siquiera tu seguro de viaje, lo sustituye. Los residentes están excluidos.",
+        "Precio: 44 USD a partir de 18 años, 22 USD de 3 a 17 años, gratis para los más pequeños. Válido hasta 92 días.",
+        "Tras contratarlo recibes un código QR que debes mostrar a la llegada. Sin él pueden denegarte la entrada.",
+        "Cubre atención médica, evacuación de emergencia, repatriación, accidentes y pérdida de equipaje o documentos. Hay exclusiones para enfermedades previas y ciertos casos.",
+        "Recomendamos además un seguro de viaje y accidentes con pago directo (atención sin adelantar dinero).",
       ] },
       { title: "Vuelos e internet", items: [
         "Llegas al aeropuerto internacional Abeid Amani Karume (ZNZ) de Zanzíbar.",
@@ -209,6 +212,8 @@ export const es: Dict = {
     disclosure: "Algunos enlaces son de afiliados: si reservas a través de ellos podemos recibir una comisión, sin coste adicional para ti.",
   },
   book: {
+    chooseWhatsapp: "Elige un número de WhatsApp",
+    stayNote: "Sin estancia mínima. Para cancelar, escríbenos por WhatsApp.",
     infoBtn: "Visado, seguro y vuelos",
     eyebrow: 'Reservar',
     title: 'Envía una solicitud de reserva',
@@ -228,6 +233,18 @@ export const es: Dict = {
     rateNote: 'Tarifas: por habitación / 2 huéspedes / por noche, desayuno incluido.',
     validationMsg: 'Escribe tu nombre o contáctanos directamente por WhatsApp o por el correo indicado arriba.',
   },
+  alt: {
+    hero: "Piscina y habitaciones con techo de paja de Aurora Hacienda en Nungwi",
+    welcome: "Piscina rodeada de jardín tropical en Aurora Hacienda",
+    room: "entrada y terraza de la habitación en Aurora Hacienda",
+    dining: "Terraza del restaurante junto a la piscina en Aurora Hacienda",
+    house: "Edificio con techo de paja y jardín de estilo zanzibarí en Aurora Hacienda",
+    nungwi: "Playa de arena y barcas en la costa de Zanzíbar",
+    transfer: "Traslado desde el aeropuerto a Aurora Hacienda en Nungwi",
+    excursions: "Excursiones en Zanzíbar",
+    book: "Libro de visitas y farol",
+  },
+  notFound: { title: "Página no encontrada", text: "La página que buscas no existe.", home: "Volver al inicio" },
   footer: {
     address: 'Nungwi, Zanzíbar, Tanzania',
     rights: 'Todos los derechos reservados.',

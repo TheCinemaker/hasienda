@@ -7,6 +7,7 @@ export const it: Dict = {
   },
   nav: { info: "Info di viaggio", start: 'Panoramica', home: 'Benvenuti', stay: 'Camere', dining: 'Ristorante', house: 'La casa', place: 'Nungwi', experiences: 'Esperienze', book: 'Prenota', menu: 'Menu', close: 'Chiudi', language: 'Lingua', scroll: 'Scorri in basso', top: 'Torna su', quick: 'Collegamenti rapidi' },
   hero: {
+    context: "Aurora Hacienda a Nungwi, Zanzibar",
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: "Boutique Hotel",
     text: "Vicino all’Oceano Indiano: quattro camere in tradizionale stile zanzibarino, cucina nostra e sapori di Zanzibar.",
@@ -171,13 +172,15 @@ export const it: Dict = {
     sections: [
       { title: "Passaporto e visto", items: [
         "Il passaporto deve essere valido almeno 6 mesi dal giorno di arrivo e avere almeno una pagina libera.",
-        "La maggior parte dei visitatori ha bisogno del visto. Controlla le regole per la tua cittadinanza.",
-        "Puoi richiedere l’e-visa online prima di partire. Un visto a ingresso singolo può essere rilasciato anche all’arrivo; potrebbe esserti chiesto il biglietto di ritorno.",
+        "Serve il visto turistico. È valido fino a 90 giorni e costa 50 USD per la maggior parte delle cittadinanze.",
+        "Richiedi l’e-visa online prima di partire, oppure fai domanda all’arrivo compilando un modulo cartaceo in aeroporto.",
       ] },
       { title: "Assicurazione obbligatoria di Zanzibar", items: [
-        "Chi visita Zanzibar deve avere l’assicurazione d’ingresso della Zanzibar Insurance Corporation (ZIC). I residenti sono esclusi.",
-        "Si acquista online prima di partire o all’arrivo e copre il soggiorno fino a 92 giorni.",
-        "Senza di essa l’ingresso può essere negato. Consigliamo anche una tua assicurazione viaggio e sanitaria.",
+        "L’assicurazione d’ingresso di Zanzibar è obbligatoria per i visitatori. Nessun’altra assicurazione, nemmeno la tua polizza di viaggio, la sostituisce. I residenti sono esclusi.",
+        "Prezzo: 44 USD dai 18 anni, 22 USD dai 3 ai 17 anni, gratis per i più piccoli. Vale fino a 92 giorni.",
+        "Dopo l’acquisto ricevi un codice QR da mostrare all’arrivo. Senza di esso l’ingresso può essere negato.",
+        "Copre cure mediche, evacuazione d’emergenza, rimpatrio, infortuni, bagagli e documenti smarriti. Sono previste esclusioni per malattie preesistenti e casi particolari.",
+        "Consigliamo anche un’assicurazione viaggio e infortuni con pagamento diretto (cure senza anticipo di contanti).",
       ] },
       { title: "Voli e internet", items: [
         "Atterri all’aeroporto internazionale Abeid Amani Karume (ZNZ) di Zanzibar.",
@@ -209,6 +212,8 @@ export const it: Dict = {
     disclosure: "Alcuni link sono link partner: se prenoti tramite questi, potremmo ricevere una commissione, senza costi aggiuntivi per te.",
   },
   book: {
+    chooseWhatsapp: "Scegli un numero WhatsApp",
+    stayNote: "Nessun soggiorno minimo. Per annullare, scrivici su WhatsApp.",
     infoBtn: "Visto, assicurazione, voli",
     eyebrow: 'Prenota',
     title: 'Invia una richiesta di prenotazione',
@@ -228,6 +233,18 @@ export const it: Dict = {
     rateNote: 'Tariffe: per camera / 2 ospiti / a notte, colazione inclusa.',
     validationMsg: 'Inserisci il tuo nome, oppure contattaci direttamente via WhatsApp o e-mail qui sopra.',
   },
+  alt: {
+    hero: "Piscina e camere con tetto di paglia di Aurora Hacienda a Nungwi",
+    welcome: "Piscina circondata dal giardino tropicale di Aurora Hacienda",
+    room: "ingresso e terrazza della camera ad Aurora Hacienda",
+    dining: "Terrazza del ristorante a bordo piscina ad Aurora Hacienda",
+    house: "Edificio con tetto di paglia e giardino in stile zanzibarino ad Aurora Hacienda",
+    nungwi: "Spiaggia di sabbia e barche sulla costa di Zanzibar",
+    transfer: "Transfer dall’aeroporto ad Aurora Hacienda a Nungwi",
+    excursions: "Escursioni a Zanzibar",
+    book: "Libro degli ospiti e lanterna",
+  },
+  notFound: { title: "Pagina non trovata", text: "La pagina che cerchi non esiste.", home: "Torna alla pagina iniziale" },
   footer: {
     address: 'Nungwi, Zanzibar, Tanzania',
     rights: 'Tutti i diritti riservati.',

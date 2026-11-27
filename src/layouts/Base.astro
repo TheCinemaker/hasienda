@@ -15,7 +15,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import '../styles/global.css';
 import { allLocales, available, t, type Locale } from '../i18n';
 import { contact, coordsDisplay, mapUrl } from '../i18n/site';
-import TravelpayoutsDrive from '../components/TravelpayoutsDrive.astro';
+import Seo from '../components/Seo.astro';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -28,22 +28,12 @@ const year = new Date().getFullYear();
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>{d.meta.title}</title>
-    <meta name="description" content={d.meta.description} />
-    <meta property="og:title" content={d.meta.title} />
-    <meta property="og:description" content={d.meta.description} />
-    <meta name="theme-color" content="#0e0b09" />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" type="image/png" href="/images/logo-seal.png" />
-    <link rel="apple-touch-icon" href="/images/logo-seal.png" />
+    <Seo lang={lang} />
     <script is:inline>document.documentElement.classList.add('js')</script>
-    {available.map((l) => <link rel="alternate" hreflang={l} href={`/${l}/`} />)}
-    <link rel="alternate" hreflang="x-default" href="/" />
-    <TravelpayoutsDrive />
   </head>
   <body>
     <div class="progress" id="progress" aria-hidden="true"></div>
-    <div class="curtain" id="curtain" aria-hidden="true"><img src="/images/logo-seal.png" alt="" width="72" height="72" /></div>
+    <div class="curtain" id="curtain" aria-hidden="true"><img src="/images/opt/logo-192.png" alt="" width="72" height="72" /></div>
     <header class="site-header" id="top">
       <div class="header-left">
         <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
@@ -60,7 +50,7 @@ const year = new Date().getFullYear();
       </div>
 
       <a class="brand" href={`/${lang}/`} aria-label="Aurora Hacienda Zanzibar">
-        <img src="/images/logo-seal.png" alt="" class="brand-seal" width="44" height="44" />
+        <img src="/images/opt/logo-192.png" alt="" class="brand-seal" width="44" height="44" />
         <span class="brand-text">
           <span class="brand-main">Aurora</span>
           <span class="brand-sub">Hacienda Zanzibar</span>
@@ -96,18 +86,18 @@ const year = new Date().getFullYear();
       <div class="menu-grid">
         <div class="menu-nav-col">
           <div class="menu-brand-head">
-            <img src="/images/logo-seal.png" alt="" class="menu-seal" width="52" height="52" />
+            <img src="/images/opt/logo-192.png" alt="" class="menu-seal" width="52" height="52" />
             <p class="eyebrow menu-eyebrow">Aurora Hacienda Zanzibar</p>
           </div>
           <nav class="menu-links" aria-label={d.nav.menu}>
-            <a href="#welcome" data-preview="/images/welcome.jpg"><span class="menu-num">01</span><span>{d.nav.home}</span></a>
-            <a href="#rooms" data-preview="/images/room-1.jpg"><span class="menu-num">02</span><span>{d.nav.stay}</span></a>
-            <a href="#dining" data-preview="/images/dining.jpg"><span class="menu-num">03</span><span>{d.nav.dining}</span></a>
-            <a href="#house" data-preview="/images/house.jpg"><span class="menu-num">04</span><span>{d.nav.house}</span></a>
-            <a href="#nungwi" data-preview="/images/nungwi.jpg"><span class="menu-num">05</span><span>{d.nav.place}</span></a>
-            <a href="#experiences" data-preview="/images/excursions.jpg"><span class="menu-num">06</span><span>{d.nav.experiences}</span></a>
-            <a href="#info" data-preview="/images/nungwi.jpg"><span class="menu-num">07</span><span>{d.nav.info}</span></a>
-            <a href="#book" data-preview="/images/book.jpg"><span class="menu-num">08</span><span>{d.nav.book}</span></a>
+            <a href="#welcome" data-preview="/images/opt/welcome-900.webp"><span class="menu-num">01</span><span>{d.nav.home}</span></a>
+            <a href="#rooms" data-preview="/images/opt/room-1-900.webp"><span class="menu-num">02</span><span>{d.nav.stay}</span></a>
+            <a href="#dining" data-preview="/images/opt/dining-900.webp"><span class="menu-num">03</span><span>{d.nav.dining}</span></a>
+            <a href="#house" data-preview="/images/opt/house-900.webp"><span class="menu-num">04</span><span>{d.nav.house}</span></a>
+            <a href="#nungwi" data-preview="/images/opt/nungwi-900.webp"><span class="menu-num">05</span><span>{d.nav.place}</span></a>
+            <a href="#experiences" data-preview="/images/opt/excursions-900.webp"><span class="menu-num">06</span><span>{d.nav.experiences}</span></a>
+            <a href="#info" data-preview="/images/opt/nungwi-900.webp"><span class="menu-num">07</span><span>{d.nav.info}</span></a>
+            <a href="#book" data-preview="/images/opt/book-900.webp"><span class="menu-num">08</span><span>{d.nav.book}</span></a>
           </nav>
           {available.length > 1 && (
             <div class="lang" aria-label={d.nav.language}>
@@ -119,7 +109,7 @@ const year = new Date().getFullYear();
           <div class="menu-mobile-foot">
             <p class="menu-mobile-loc">{d.footer.address} · <span><bdi dir="ltr">{coordsDisplay}</bdi></span></p>
             <div class="menu-mobile-links">
-              <a href={contact.whatsappUrl} target="_blank" rel="noopener">WhatsApp <bdi dir="ltr">{contact.phoneDisplay}</bdi></a>
+              {contact.whatsapp.map((w) => <a href={w.url} target="_blank" rel="noopener">WhatsApp <bdi dir="ltr">{w.display}</bdi></a>)}
               <a href={contact.emailHref}>{contact.email}</a>
             </div>
             <a href="#book" class="btn btn--gold menu-mobile-cta"><span>{d.hero.cta}</span></a>
@@ -128,7 +118,7 @@ const year = new Date().getFullYear();
 
         <aside class="menu-showcase" aria-hidden="true">
           <div class="menu-frame">
-            <img id="menu-preview" src="/images/hero.jpg" alt="" />
+            <img id="menu-preview" src="/images/opt/hero-900.webp" alt="" loading="lazy" />
           </div>
           <div class="menu-caption">
             <span>{d.footer.address}</span>
@@ -149,7 +139,7 @@ const year = new Date().getFullYear();
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-seal-wrap">
-          <img src="/images/logo-seal.png" alt="Aurora Hacienda Zanzibar" class="footer-seal" width="104" height="104" />
+          <img src="/images/opt/logo-192.png" alt="Aurora Hacienda Zanzibar" class="footer-seal" width="104" height="104" />
         </div>
         <p class="footer-brand">Aurora Hacienda Zanzibar</p>
         <p class="footer-address">
@@ -158,10 +148,12 @@ const year = new Date().getFullYear();
           <a href={mapUrl} target="_blank" rel="noopener"><bdi dir="ltr">{coordsDisplay}</bdi></a>
         </p>
         <div class="footer-contact">
-          <a href={contact.whatsappUrl} target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5a7.2 7.2 0 0 0 2.5 2.5c.2.1.4.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.5v.5c0 .3-.2.7-.6.9-.6.3-1.4.4-2.5 0a9.5 9.5 0 0 1-5-5c-.4-1.1-.3-1.9 0-2.5z"/></svg>
-            <span>WhatsApp <bdi dir="ltr">{contact.phoneDisplay}</bdi></span>
-          </a>
+          {contact.whatsapp.map((w) => (
+            <a href={w.url} target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5a7.2 7.2 0 0 0 2.5 2.5c.2.1.4.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.5v.5c0 .3-.2.7-.6.9-.6.3-1.4.4-2.5 0a9.5 9.5 0 0 1-5-5c-.4-1.1-.3-1.9 0-2.5z"/></svg>
+              <span>WhatsApp <bdi dir="ltr">{w.display}</bdi></span>
+            </a>
+          ))}
           <a href={contact.phoneHref}>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
             <span><bdi dir="ltr">{contact.phoneDisplay}</bdi></span>

@@ -7,6 +7,7 @@ export const fr: Dict = {
   },
   nav: { info: "Infos voyage", start: 'Aperçu', home: 'Bienvenue', stay: 'Chambres', dining: 'Table', house: 'La maison', place: 'Nungwi', experiences: 'Expériences', book: 'Réserver', menu: 'Menu', close: 'Fermer', language: 'Langue', scroll: 'Faire défiler', top: 'Retour en haut', quick: 'Accès rapide' },
   hero: {
+    context: "Aurora Hacienda à Nungwi, Zanzibar",
     eyebrow: 'Nungwi · Zanzibar · Tanzanie',
     title: "Boutique Hotel",
     text: "Près de l’océan Indien : quatre chambres de style traditionnel zanzibarite, notre propre cuisine et les saveurs de Zanzibar.",
@@ -171,13 +172,15 @@ export const fr: Dict = {
     sections: [
       { title: "Passeport et visa", items: [
         "Votre passeport doit être valable au moins 6 mois à compter de votre arrivée et comporter au moins une page vierge.",
-        "La plupart des visiteurs ont besoin d’un visa. Vérifiez les règles applicables à votre nationalité.",
-        "Un e-visa peut être demandé en ligne avant le départ. Un visa à entrée unique peut aussi être délivré à l’arrivée ; votre billet retour peut être demandé.",
+        "Un visa touristique est nécessaire. Il est valable jusqu’à 90 jours et coûte 50 USD pour la plupart des nationalités.",
+        "Demandez l’e-visa en ligne avant le départ, ou faites la demande à l’arrivée en remplissant un formulaire papier à l’aéroport.",
       ] },
       { title: "Assurance obligatoire de Zanzibar", items: [
-        "Les visiteurs de Zanzibar doivent souscrire l’assurance d’entrée de la Zanzibar Insurance Corporation (ZIC). Les résidents en sont exclus.",
-        "Elle s’achète en ligne avant le départ ou à l’arrivée et couvre votre séjour jusqu’à 92 jours.",
-        "Sans elle, l’entrée peut vous être refusée. Nous recommandons aussi votre propre assurance voyage et santé.",
+        "L’assurance d’entrée à Zanzibar est obligatoire pour les visiteurs. Aucune autre assurance, pas même votre assurance voyage, ne la remplace. Les résidents en sont exclus.",
+        "Tarif : 44 USD à partir de 18 ans, 22 USD de 3 à 17 ans, gratuit pour les plus jeunes. Valable jusqu’à 92 jours.",
+        "Après la souscription, vous recevez un code QR à présenter à l’arrivée. Sans lui, l’entrée peut vous être refusée.",
+        "Elle couvre les soins médicaux, l’évacuation d’urgence, le rapatriement, les accidents ainsi que la perte de bagages ou de documents. Des exclusions s’appliquent aux maladies préexistantes et à certains cas.",
+        "Nous recommandons aussi une assurance voyage et accident avec prise en charge directe, sans avance de frais.",
       ] },
       { title: "Vols et internet", items: [
         "Vous atterrissez à l’aéroport international Abeid Amani Karume (ZNZ) de Zanzibar.",
@@ -209,6 +212,8 @@ export const fr: Dict = {
     disclosure: "Certains liens sont des liens partenaires : si vous réservez par leur intermédiaire, nous pouvons percevoir une commission, sans coût supplémentaire pour vous.",
   },
   book: {
+    chooseWhatsapp: "Choisissez un numéro WhatsApp",
+    stayNote: "Aucune durée minimale de séjour. Annulation par WhatsApp.",
     infoBtn: "Visa, assurance, vols",
     eyebrow: 'Réserver',
     title: 'Envoyer une demande de réservation',
@@ -228,6 +233,18 @@ export const fr: Dict = {
     rateNote: 'Tarifs : par chambre / 2 personnes / par nuit, petit-déjeuner inclus.',
     validationMsg: 'Veuillez saisir votre nom, ou contactez-nous directement par WhatsApp ou par e-mail ci-dessus.',
   },
+  alt: {
+    hero: "Piscine et chambres sous toit de chaume à Aurora Hacienda, Nungwi",
+    welcome: "Piscine entourée d’un jardin tropical à Aurora Hacienda",
+    room: "entrée et terrasse de la chambre à Aurora Hacienda",
+    dining: "Terrasse du restaurant au bord de la piscine à Aurora Hacienda",
+    house: "Bâtiment au toit de chaume et jardin de style zanzibarite à Aurora Hacienda",
+    nungwi: "Plage de sable et bateaux sur la côte de Zanzibar",
+    transfer: "Transfert aéroport vers Aurora Hacienda à Nungwi",
+    excursions: "Excursions à Zanzibar",
+    book: "Livre d’or et lanterne",
+  },
+  notFound: { title: "Page introuvable", text: "La page que vous cherchez n’existe pas.", home: "Retour à l’accueil" },
   footer: {
     address: 'Nungwi, Zanzibar, Tanzanie',
     rights: 'Tous droits réservés.',

@@ -46,7 +46,6 @@
 - [x] Foglalás modalban; hosszú ugrásoknál átúsztatás
 - [ ] Anyanyelvi átolvasás, elsősorban arab és orosz; a magyart a tulaj nézze át
 - [ ] A tulaj hagyja jóvá a Welcome / Nungwi szöveg fordításait (az eredetit ő küldte HU + EN nyelven)
-- [ ] Élesítéskor a noindex mindhárom helyről törlendő (meta, netlify.toml header, public/robots.txt)
 
 ## Szobák (2026-11-27)
 - [x] A 4 szoba egyforma: egy szoba-szekció + galéria modal
@@ -65,9 +64,35 @@
 - Szándékosan kimaradt (nem volt hivatalos forrásból igazolva): biztosítás ára, vízumdíj, drón-szabály, konnektor/feszültség
 - [ ] Tulaj / könyvelő: a 2025-ös tanzániai devizaszabály (árak shillingben) – az itallap USD árai rendben vannak-e
 
-## Affiliate / adatvédelem (2026-11-27)
-- [x] Travelpayouts Drive kód minden oldalon (fiók: 607503), partnerlinkek: src/i18n/site.ts
-- [ ] ÉLESÍTÉS ELŐTT: sütihozzájárulás (EU látogatók) - a Drive csak elfogadás után töltődjön; adatkezelési tájékoztató
-- [ ] Travelpayouts irányítópult: a partnerlinkek beillesztése (repjegy, eSIM, utasbiztosítás); Drive beállításai (beszúrt ajánlatok, felugrók KI)
-- [ ] Tulaj hozzájárulása az affiliate-hez; a saját kirándulás / transzfer ajánlat mellé ne kerüljön konkurens ajánlat
+## Affiliate (2026-11-27)
+- Travelpayouts Drive script eltávolítva (user kérése); sütit az oldal nem használ, sütisáv nem kell
+- [ ] Kiwi.com követőlink → src/i18n/site.ts partners.flights, majd affiliate: true (megjelenik a partnerlink-tájékoztató)
+- [ ] Ha később mérő- vagy affiliate script kerül be, előtte sütihozzájárulás kell
 - [x] Ingyenes Wi-Fi az egész házban
+
+## Megrendelő, 2026-11-27 (3. kör)
+- [x] Vízum- és biztosítási adatok a tulaj levele alapján (50 USD, 90 nap; biztosítás 44 / 22 USD, 92 nap, QR)
+- [x] Két foglalási WhatsApp-szám: +20 111 275 0404 és +255 773 350 418 (a WhatsApp küldésnél választható)
+- [ ] Megerősítendő: a +36-os szám maradjon-e telefonként; a +20 (egyiptomi) szám jó-e
+- A levélben a biztosítás kezdete "2024. január 01." - a hivatalos források szerint 2024. október 1., ezért dátum nincs az oldalon
+- [x] transfer.jpg: a megrendelő/user által adott MI-generált hangulatkép (2026-11-27). Márkázott autó és reptéri felirat látható rajta - ha a hotelnek nincs ilyen autója, valódi fotóra cserélendő
+
+## SEO (2026-11-27)
+- [x] Canonical, hreflang, Open Graph, Twitter, JSON-LD (Hotel), sitemap.xml, robots.txt, képleírások 8 nyelven, WebP képek, 404
+- [ ] ÉLESÍTÉS: saját domain a Netlify-on elsődlegesre → src/i18n/site.ts seo.indexable = true → push
+- [ ] Google Search Console: tulajdon igazolása (seo.googleSiteVerification), sitemap beküldése; Bing Webmaster
+- [ ] Google Business Profile link a tulajtól (seo.googleBusinessUrl); a profilban ugyanaz a név, cím, telefon, weboldal
+- Figyelem: Nungwiban működik egy másik "Aurora Hotel Nungwi" - mindenhol a teljes név: Aurora Hacienda Zanzibar
+- [ ] Később: Instagram/Facebook/TripAdvisor → seo.profiles; ár, bejelentkezési idő a strukturált adatokba
+
+## Egyeztetve 2026-11-27 (felülírja a korábbi nyitott kérdéseket)
+- [x] Hotelnév marad: Aurora Hacienda Zanzibar
+- [x] Telefon +36 marad; foglalási WhatsApp: +20 és +255
+- [x] Nincs minimum tartózkodás; lemondás WhatsAppon (kint a foglaló ablakban)
+- [x] Árakat a vendég egyénileg kapja meg (nincs kiírva)
+- [x] Arab szöveg átolvasva; orosz így mehet (a 11-27 délutáni új mondatok még nincsenek átolvasva)
+- [ ] Google Business link (még nincs kész) → seo.googleBusinessUrl
+- [ ] Saját domain (folyamatban) → utána seo.indexable = true, Search Console
+- [ ] Domaines e-mail (később)
+- [ ] Szobafotók (a tulajtól)
+- [ ] Messenger: a szöveg említi, link még nincs

@@ -1,15 +1,21 @@
 ---
-import { allLocales, available } from '../i18n';
-import TravelpayoutsDrive from '../components/TravelpayoutsDrive.astro';
+import { allLocales, available, t } from '../i18n';
+import { seo } from '../i18n/site';
+const abs = (path: string) => new URL(path, Astro.site).href;
+const d = t('en');
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Aurora Hacienda Zanzibar</title>
-    {available.map((l) => <link rel="alternate" hreflang={l} href={`/${l}/`} />)}
+    <meta name="robots" content={seo.indexable ? 'index, follow' : 'noindex, nofollow'} />
+    <title>{d.meta.title}</title>
+    <meta name="description" content={d.meta.description} />
+    <link rel="canonical" href={abs('/en/')} />
+    {available.map((l) => <link rel="alternate" hreflang={l} href={abs(`/${l}/`)} />)}
+    <link rel="alternate" hreflang="x-default" href={abs('/en/')} />
+    <link rel="icon" type="image/png" href="/icon-192.png" />
     <script is:inline define:vars={{ available }}>
       // saved choice first, then the browser's languages, then English
       let saved = null;
@@ -19,9 +25,9 @@ import TravelpayoutsDrive from '../components/TravelpayoutsDrive.astro';
       location.replace('/' + (match || 'en') + '/' + location.hash);
     </script>
     <noscript><meta http-equiv="refresh" content="0; url=/en/" /></noscript>
-    <TravelpayoutsDrive />
   </head>
   <body>
     <p>{available.map((l) => <a href={`/${l}/`} lang={l}>{allLocales[l].label} </a>)}</p>
+    <footer><p>© {new Date().getFullYear()} Aurora Hacienda Zanzibar. {d.footer.rights}</p><p>{d.footer.credit}</p></footer>
   </body>
 </html>

@@ -7,6 +7,7 @@ export const hu: Dict = {
   },
   nav: { info: "Utazási infók", start: 'Kezdőlap', home: 'Üdvözlünk', stay: 'Szobák', dining: 'Étterem', house: 'A ház', place: 'Nungwi', experiences: 'Élmények', book: 'Foglalás', menu: 'Menü', close: 'Bezárás', language: 'Nyelv', scroll: 'Görgess lejjebb', top: 'Vissza a tetejére', quick: 'Gyorslinkek' },
   hero: {
+    context: "Aurora Hacienda Nungwiban, Zanzibáron",
     eyebrow: 'Nungwi · Zanzibár · Tanzánia',
     title: "Boutique Hotel",
     text: "Közel az Indiai-óceánhoz: négy szoba hagyományos zanzibári stílusban, saját konyha, zanzibári ízek.",
@@ -171,13 +172,15 @@ export const hu: Dict = {
     sections: [
       { title: "Útlevél és vízum", items: [
         "Az útleveled az érkezés napjától számítva legalább 6 hónapig legyen érvényes, és legyen benne legalább egy üres oldal.",
-        "A legtöbb utazónak vízum szükséges. Nézd meg, mi vonatkozik a te állampolgárságodra.",
-        "Indulás előtt online e-vízumot igényelhetsz. Egyszeri belépésre érkezéskor is kaphatsz vízumot; kérhetik a visszaútra szóló jegyedet.",
+        "Turistavízumra lesz szükséged. Legfeljebb 90 napig érvényes, a legtöbb állampolgár számára 50 USD.",
+        "Indulás előtt online igényelheted az e-vízumot, de beutazáskor is kérhetsz vízumot: a reptéren papíralapú kérelmet kell kitöltened.",
       ] },
       { title: "Kötelező zanzibári biztosítás", items: [
-        "A Zanzibárra látogatóknak kötelező a Zanzibar Insurance Corporation (ZIC) helyi beutazási biztosítása. A helyi lakosokra nem vonatkozik.",
-        "Megköthető online indulás előtt vagy érkezéskor, és a tartózkodás idejére szól, legfeljebb 92 napig.",
-        "Nélküle megtagadhatják a belépést. Saját utas- és egészségbiztosítást is javaslunk.",
+        "A látogatóknak kötelező a zanzibári beutazási biztosítás. Semmilyen más biztosítás, a saját utasbiztosításod sem helyettesíti. A helyi lakosokra nem vonatkozik.",
+        "Ára: 18 éves kortól 44 USD, 3–17 éves korig 22 USD, a fiatalabb gyerekeknek ingyenes. Legfeljebb 92 napig érvényes.",
+        "A megkötés után QR-kódot kapsz, amelyet érkezéskor be kell mutatni. Ennek hiányában megtagadhatják a belépést.",
+        "Fedezi az orvosi ellátást, a vészhelyzeti evakuálást, a hazaszállítást, a baleseteket, valamint az elveszett poggyászt és okmányokat. Meglévő betegségekre és bizonyos esetekre kizárások vonatkoznak.",
+        "Javasolt olyan utas- és balesetbiztosítást is kötni, ahol a biztosító közvetlenül számol el (készpénzmentes ellátás).",
       ] },
       { title: "Repülés és internet", items: [
         "Zanzibáron az Abeid Amani Karume nemzetközi repülőtérre (ZNZ) érkezel.",
@@ -209,6 +212,8 @@ export const hu: Dict = {
     disclosure: "Egyes linkek partnerlinkek: ha ezeken keresztül foglalsz, jutalékot kaphatunk, neked ez nem kerül többe.",
   },
   book: {
+    chooseWhatsapp: "Válassz WhatsApp-számot",
+    stayNote: "Nincs minimum tartózkodás. Lemondás WhatsAppon.",
     infoBtn: "Vízum, biztosítás, repjegy",
     eyebrow: 'Foglalás',
     title: 'Küldj foglalási kérést',
@@ -228,6 +233,18 @@ export const hu: Dict = {
     rateNote: 'Árak: szobánként / 2 fő / egy éjszaka, reggelivel.',
     validationMsg: 'Kérjük, írd be a neved, vagy keress minket közvetlenül a fenti WhatsApp-számon vagy e-mail-címen.',
   },
+  alt: {
+    hero: "Úszómedence és nádtetős szobasor az Aurora Haciendában, Nungwiban",
+    welcome: "Medence trópusi kerttel az Aurora Haciendában",
+    room: "szobabejárat és terasz az Aurora Haciendában",
+    dining: "Étterem terasza a medence mellett az Aurora Haciendában",
+    house: "Nádtetős épület és kert zanzibári stílusban az Aurora Haciendában",
+    nungwi: "Homokos part és csónakok Zanzibár partjainál",
+    transfer: "Reptéri transzfer az Aurora Haciendába, Nungwiba",
+    excursions: "Kirándulások Zanzibáron",
+    book: "Vendégkönyv és lámpás",
+  },
+  notFound: { title: "Az oldal nem található", text: "A keresett oldal nem létezik.", home: "Vissza a kezdőlapra" },
   footer: {
     address: 'Nungwi, Zanzibár, Tanzánia',
     rights: 'Minden jog fenntartva.',

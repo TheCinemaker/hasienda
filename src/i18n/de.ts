@@ -7,6 +7,7 @@ export const de: Dict = {
   },
   nav: { info: "Reiseinfos", start: 'Übersicht', home: 'Willkommen', stay: 'Zimmer', dining: 'Restaurant', house: 'Das Haus', place: 'Nungwi', experiences: 'Erlebnisse', book: 'Buchen', menu: 'Menü', close: 'Schließen', language: 'Sprache', scroll: 'Nach unten scrollen', top: 'Nach oben', quick: 'Schnellzugriff' },
   hero: {
+    context: "Aurora Hacienda in Nungwi, Sansibar",
     eyebrow: 'Nungwi · Sansibar · Tansania',
     title: "Boutique Hotel",
     text: "Nahe am Indischen Ozean: vier Zimmer im traditionellen sansibarischen Stil, eigene Küche und sansibarische Aromen.",
@@ -171,13 +172,15 @@ export const de: Dict = {
     sections: [
       { title: "Reisepass und Visum", items: [
         "Dein Reisepass sollte ab dem Ankunftstag noch mindestens 6 Monate gültig sein und mindestens eine freie Seite haben.",
-        "Die meisten Reisenden brauchen ein Visum. Prüfe die Regeln für deine Staatsangehörigkeit.",
-        "Du kannst vor der Reise online ein E-Visum beantragen. Für eine einmalige Einreise ist ein Visum auch bei Ankunft möglich; eventuell wird dein Rückflugticket verlangt.",
+        "Du brauchst ein Touristenvisum. Es gilt bis zu 90 Tage und kostet für die meisten Nationalitäten 50 USD.",
+        "Beantrage vor der Reise online das E-Visum oder stelle den Antrag bei der Einreise: Am Flughafen füllst du ein Formular auf Papier aus.",
       ] },
       { title: "Pflichtversicherung für Sansibar", items: [
-        "Wer Sansibar besucht, braucht die lokale Einreiseversicherung der Zanzibar Insurance Corporation (ZIC). Einwohner sind ausgenommen.",
-        "Du kannst sie vorab online oder bei der Ankunft abschließen. Sie gilt für deinen Aufenthalt, höchstens 92 Tage.",
-        "Ohne sie kann die Einreise verweigert werden. Wir empfehlen zusätzlich eine eigene Reise- und Krankenversicherung.",
+        "Die Einreiseversicherung für Sansibar ist für Besucher Pflicht. Keine andere Versicherung, auch nicht deine eigene Reiseversicherung, ersetzt sie. Einwohner sind ausgenommen.",
+        "Preis: ab 18 Jahren 44 USD, von 3 bis 17 Jahren 22 USD, jüngere Kinder kostenlos. Gültig bis zu 92 Tage.",
+        "Nach dem Abschluss erhältst du einen QR-Code, den du bei der Ankunft vorzeigst. Ohne ihn kann die Einreise verweigert werden.",
+        "Sie deckt medizinische Versorgung, Notfallevakuierung, Rücktransport, Unfälle sowie verlorenes Gepäck und Dokumente. Für Vorerkrankungen und bestimmte Fälle gelten Ausschlüsse.",
+        "Zusätzlich empfehlen wir eine Reise- und Unfallversicherung mit Direktabrechnung (bargeldlose Behandlung).",
       ] },
       { title: "Flüge und Internet", items: [
         "Du landest am Abeid Amani Karume International Airport (ZNZ) auf Sansibar.",
@@ -209,6 +212,8 @@ export const de: Dict = {
     disclosure: "Einige Links sind Partnerlinks: Wenn du darüber buchst, erhalten wir eventuell eine Provision, ohne Mehrkosten für dich.",
   },
   book: {
+    chooseWhatsapp: "WhatsApp-Nummer wählen",
+    stayNote: "Kein Mindestaufenthalt. Stornierung per WhatsApp.",
     infoBtn: "Visum, Versicherung, Flüge",
     eyebrow: 'Buchen',
     title: 'Buchungsanfrage senden',
@@ -228,6 +233,18 @@ export const de: Dict = {
     rateNote: 'Preise: pro Zimmer / 2 Personen / pro Nacht, inklusive Frühstück.',
     validationMsg: 'Bitte gib deinen Namen ein oder kontaktiere uns direkt per WhatsApp oder E-Mail.',
   },
+  alt: {
+    hero: "Pool und reetgedeckte Zimmer der Aurora Hacienda in Nungwi",
+    welcome: "Pool mit tropischem Garten in der Aurora Hacienda",
+    room: "Zimmereingang und Terrasse in der Aurora Hacienda",
+    dining: "Restaurantterrasse am Pool der Aurora Hacienda",
+    house: "Reetgedecktes Haus und Garten im sansibarischen Stil in der Aurora Hacienda",
+    nungwi: "Sandstrand und Boote an der Küste Sansibars",
+    transfer: "Flughafentransfer zur Aurora Hacienda in Nungwi",
+    excursions: "Ausflüge auf Sansibar",
+    book: "Gästebuch und Laterne",
+  },
+  notFound: { title: "Seite nicht gefunden", text: "Die gesuchte Seite gibt es nicht.", home: "Zur Startseite" },
   footer: {
     address: 'Nungwi, Sansibar, Tansania',
     rights: 'Alle Rechte vorbehalten.',

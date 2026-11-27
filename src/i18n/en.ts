@@ -7,6 +7,7 @@ export const en = {
   },
   nav: { info: "Travel info", start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
   hero: {
+    context: "Aurora Hacienda in Nungwi, Zanzibar",
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: "Boutique Hotel",
     text: "Close to the Indian Ocean: four rooms in traditional Zanzibari style, our own kitchen and Zanzibari flavours.",
@@ -203,13 +204,15 @@ export const en = {
     sections: [
       { title: "Passport and visa", items: [
         "Your passport should be valid for at least 6 months from the day you arrive and have at least one blank page.",
-        "Most visitors need a visa. Check the rules for your nationality.",
-        "You can apply for an e-visa online before you travel. A single-entry visa may also be available on arrival; you may be asked to show your return ticket.",
+        "You need a tourist visa. It is valid for up to 90 days and costs USD 50 for most nationalities.",
+        "Apply online for the e-visa before you travel, or apply on arrival by filling in a paper visa application at the airport.",
       ] },
       { title: "Mandatory Zanzibar insurance", items: [
-        "Visitors to Zanzibar must have the local inbound travel insurance of the Zanzibar Insurance Corporation (ZIC). Residents are excluded.",
-        "Buy it online before you travel, or on arrival. It covers your stay for up to 92 days.",
-        "Without it you may be refused entry. We also recommend your own travel and health insurance.",
+        "Zanzibar inbound travel insurance is mandatory for visitors. No other insurance, including your own travel insurance, replaces it. Residents are excluded.",
+        "Price: USD 44 from age 18, USD 22 for ages 3 to 17, free for younger children. It is valid for up to 92 days.",
+        "After buying it you receive a QR code. Show it on arrival; without it you may be refused entry.",
+        "It covers medical care, emergency evacuation, repatriation, accidents and lost luggage or documents. Exclusions apply to pre-existing conditions and certain cases.",
+        "We also recommend travel and accident insurance with direct billing, so you do not have to pay for treatment in cash.",
       ] },
       { title: "Flights and internet", items: [
         "You fly into Abeid Amani Karume International Airport (ZNZ) in Zanzibar.",
@@ -241,6 +244,8 @@ export const en = {
     disclosure: "Some links are partner links: if you book through them we may receive a commission, at no extra cost to you.",
   },
   book: {
+    chooseWhatsapp: "Choose a WhatsApp number",
+    stayNote: "No minimum stay. To cancel, message us on WhatsApp.",
     infoBtn: "Visa, insurance and flights",
     eyebrow: 'Book',
     title: 'Send a booking request',
@@ -260,6 +265,18 @@ export const en = {
     rateNote: 'Rates: per room / 2 guests / per night, breakfast included.',
     validationMsg: 'Please enter your name, or contact us directly via WhatsApp or email above.',
   },
+  alt: {
+    hero: "Swimming pool and thatched rooms at Aurora Hacienda in Nungwi",
+    welcome: "Pool surrounded by tropical garden at Aurora Hacienda",
+    room: "room entrance and terrace at Aurora Hacienda",
+    dining: "Restaurant terrace by the pool at Aurora Hacienda",
+    house: "Thatched building and garden at Aurora Hacienda, traditional Zanzibari style",
+    nungwi: "Sandy beach and boats on the coast of Zanzibar",
+    transfer: "Airport transfer to Aurora Hacienda in Nungwi",
+    excursions: "Excursions on Zanzibar",
+    book: "Guest book and lantern",
+  },
+  notFound: { title: "Page not found", text: "The page you are looking for does not exist.", home: "Back to the home page" },
   footer: {
     address: 'Nungwi, Zanzibar, Tanzania',
     rights: 'All rights reserved.',

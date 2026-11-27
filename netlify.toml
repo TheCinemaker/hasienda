@@ -5,8 +5,20 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# DRAFT PHASE: keep search engines out. Remove this block (and the robots meta tag) at launch.
+# Indexing is controlled by seo.indexable in src/i18n/site.ts
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

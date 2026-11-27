@@ -1,0 +1,79 @@
+---
+// Everything search engines and social networks read from <head>.
+import { available, t, type Locale } from '../i18n';
+import { contact, mapUrl, seo, site } from '../i18n/site';
+import images from '../generated/images.json';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const d = t(lang);
+const abs = (path: string) => new URL(path, Astro.site).href;
+const url = abs(`/${lang}/`);
+const ogImage = abs('/og.jpg');
+const ogLocale: Record<Locale, string> = { en: 'en_GB', hu: 'hu_HU', de: 'de_DE', fr: 'fr_FR', it: 'it_IT', es: 'es_ES', ru: 'ru_RU', ar: 'ar_AR' };
+const hero = (images as Record<string, { widths: number[] }>).hero;
+const heroSet = hero.widths.map((w) => `/images/opt/hero-${w}.webp ${w}w`).join(', ');
+
+const hotelId = abs('/#hotel');
+const siteId = abs('/#website');
+// only facts confirmed by the hotel
+const amenities = ['Free Wi-Fi', 'Swimming pool', 'Restaurant', 'Cocktail bar', 'Breakfast included', 'Airport transfer on request', 'Backup generator', 'Night security', 'CCTV in common areas', 'Air conditioning', 'En-suite bathroom'];
+const graph = [
+  {
+    '@type': 'Hotel',
+    '@id': hotelId,
+    name: site.name,
+    url,
+    description: d.meta.description,
+    image: [ogImage, ...['hero', 'welcome', 'room-1', 'room-2', 'dining', 'house'].map((n) => abs(`/images/${n}.jpg`))],
+    logo: abs('/icon-512.png'),
+    telephone: contact.whatsapp[1].display,
+    email: contact.email,
+    contactPoint: contact.whatsapp.map((w) => ({ '@type': 'ContactPoint', contactType: 'reservations', telephone: w.display, url: w.url, availableLanguage: available })),
+    address: { '@type': 'PostalAddress', addressLocality: 'Nungwi', addressRegion: 'Zanzibar', addressCountry: 'TZ' },
+    geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
+    hasMap: seo.googleBusinessUrl || mapUrl,
+    ...(seo.googleBusinessUrl || seo.profiles.length ? { sameAs: [seo.googleBusinessUrl, ...seo.profiles].filter(Boolean) } : {}),
+    numberOfRooms: d.rooms.items.length,
+    amenityFeature: amenities.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
+    containsPlace: d.rooms.items.map((room, i) => ({ '@type': 'HotelRoom', name: room.name, image: abs(`/images/room-${i + 1}.jpg`) })),
+  },
+  { '@type': 'WebSite', '@id': siteId, url: abs('/'), name: site.name, inLanguage: available, publisher: { '@id': hotelId } },
+  { '@type': 'WebPage', '@id': url, url, name: d.meta.title, description: d.meta.description, inLanguage: lang, isPartOf: { '@id': siteId }, about: { '@id': hotelId }, primaryImageOfPage: ogImage },
+];
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+---
+<title>{d.meta.title}</title>
+<meta name="description" content={d.meta.description} />
+<meta name="robots" content={seo.indexable ? 'index, follow, max-image-preview:large' : 'noindex, nofollow'} />
+<link rel="canonical" href={url} />
+{available.map((l) => <link rel="alternate" hreflang={l} href={abs(`/${l}/`)} />)}
+<link rel="alternate" hreflang="x-default" href={abs('/en/')} />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={d.meta.title} />
+<meta property="og:description" content={d.meta.description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={d.alt.hero} />
+<meta property="og:locale" content={ogLocale[lang]} />
+{available.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={ogLocale[l]} />)}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={d.meta.title} />
+<meta name="twitter:description" content={d.meta.description} />
+<meta name="twitter:image" content={ogImage} />
+
+<meta name="geo.region" content="TZ" />
+<meta name="geo.placename" content="Nungwi, Zanzibar" />
+<meta name="geo.position" content={`${site.geo.lat};${site.geo.lng}`} />
+{seo.googleSiteVerification && <meta name="google-site-verification" content={seo.googleSiteVerification} />}
+
+<meta name="theme-color" content="#0e0b09" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="preload" as="image" imagesrcset={heroSet} imagesizes="(max-width: 860px) 200vh, 100vw" fetchpriority="high" />
+<script is:inline type="application/ld+json" set:html={jsonLd} />
