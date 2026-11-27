@@ -687,6 +687,10 @@ const amenityIcons = [
       waChoice.hidden = true;
       dispatchInquiry('email');
     });
+    document.querySelector('#book-modal button[data-channel="phone"]')?.addEventListener('click', () => {
+      waChoice.hidden = true;
+      dispatchInquiry('phone');
+    });
     waChoice.querySelectorAll('[data-wa]').forEach((btn) => btn.addEventListener('click', () => dispatchInquiry('whatsapp', btn.dataset.wa)));
 
     document.querySelectorAll('a[data-request-transfer]').forEach((el) => {
