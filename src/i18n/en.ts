@@ -3,29 +3,29 @@
 export const en = {
   meta: {
     title: "Aurora Hacienda Zanzibar – boutique hotel in Nungwi",
-    description: "Boutique hotel in Nungwi, close to the Indian Ocean: four rooms in traditional Zanzibari style, pool, restaurant, cocktail bar and breakfast.",
+    description: "Boutique hotel in Nungwi, close to the Indian Ocean: four rooms in a traditional Zanzibar-inspired style, a swimming pool, restaurant, cocktail bar and breakfast.",
   },
   nav: { info: "Travel info", start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
   hero: {
     context: "Aurora Hacienda in Nungwi, Zanzibar",
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: "Boutique Hotel",
-    text: "Close to the Indian Ocean: four rooms in traditional Zanzibari style, our own kitchen and Zanzibari flavours.",
+    text: "Close to the Indian Ocean: four rooms with traditional island-inspired details, an in-house restaurant and the distinctive flavours of Zanzibar.",
     cta: 'Send a booking request',
     check: 'Request your dates',
     time: 'Local time in Zanzibar',
   },
   welcome: {
     eyebrow: "Aurora Hacienda · Zanzibar",
-    title: "A place between the lush greenery and the sky",
+    title: "A peaceful hideaway in a lush tropical garden",
     p1: "The dream of a Hungarian architect, brought to life close to the Indian Ocean.",
-    p2: "This is a small, verdant paradise where an architect’s imagination meets authentic Zanzibari traditions. Surrounded by more than 50 plant species, with a stunning swimming pool at its heart, a four-room bungalow and our own restaurant and kitchen all come together to make your holiday truly dreamlike.",
-    facts: ['Four rooms · Breakfast included', 'Own restaurant & cocktail bar', "Airport transfer on request", 'Night security & CCTV', "High-capacity backup generator", "Free Wi-Fi"],
+    p2: "This is a peaceful tropical hideaway where an architect’s vision meets the character and traditions of Zanzibar. Surrounded by more than 50 plant species, with a stunning swimming pool at its heart, a four-room bungalow and our own restaurant and kitchen all come together to make your holiday truly dreamlike.",
+    facts: ['Four rooms · Breakfast included', 'Own restaurant & cocktail bar', "Airport transfer on request", 'Night security & CCTV', "Powerful backup generator", "Free Wi-Fi"],
   },
   rooms: {
     eyebrow: 'Rooms',
     title: 'Four rooms',
-    intro: 'Each room has an en-suite bathroom and modern comforts, in traditional Zanzibari style.',
+    intro: 'Each room has an en-suite bathroom and modern comforts, complemented by traditional island-inspired design.',
     amenitiesLabel: "Room amenities",
     amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe', "Free Wi-Fi"],
     items: [
@@ -36,12 +36,12 @@ export const en = {
     ],
     rateLabel: 'Rates',
     rateBasis: 'Per room · 2 guests · Per night · Breakfast included',
-    rateInquiry: 'For current rates, contact us via WhatsApp, phone, Messenger or email.',
+    rateInquiry: 'For our latest rates, contact us by WhatsApp, phone, Messenger or email.',
     request: 'Request stay',
   },
   dining: {
     eyebrow: 'Dining & Bar',
-    title: "Our own kitchen, Zanzibari flavours",
+    title: "A taste of Zanzibar",
     text: 'Wake up to breakfast included with every stay, and enjoy our own restaurant and bar from midday into the evening.',
     breakfastBtn: 'Breakfast menu',
     drinkBtn: 'Drink menu',
@@ -51,7 +51,7 @@ export const en = {
     pillars: [
       {
         title: 'Breakfast included',
-        text: 'European and homestyle flavours alongside a vibrant spread of local Zanzibari dishes.',
+        text: 'European favourites and homestyle dishes sit alongside a selection of traditional local specialities.',
       },
       {
         title: 'Restaurant & themed nights',
@@ -69,7 +69,7 @@ export const en = {
         fixedTitle: 'Every morning',
         fixed: [
           { name: 'Fresh from the tropics', desc: 'Orange juice, mint, and lemon water' },
-          { name: 'Zanzibari spiced coffee', desc: 'Zanzibar coffee flavoured with ginger' },
+          { name: 'Zanzibar-spiced coffee', desc: 'Zanzibar coffee flavoured with ginger' },
           { name: 'Swahili spiced tea', desc: 'Black tea with cinnamon and cloves' },
           { name: 'Fresh herbal teas', desc: 'Lemongrass and fresh green mint brew' },
           { name: 'Fresh tropical fruit platter', desc: '' },
@@ -95,7 +95,7 @@ export const en = {
             items: ['Waffle with a choice of fruit, Nutella, or honey'],
           },
         ],
-        zanzibariTitle: 'Zanzibari Breakfast',
+        zanzibariTitle: 'Traditional Zanzibar Breakfast',
         zanzibariNote: 'Counts as one serving',
         zanzibari: [
           { name: 'Chapati', desc: 'Layered flatbread' },
@@ -164,10 +164,10 @@ export const en = {
   },
   house: {
     eyebrow: 'The house',
-    title: 'Zanzibari style',
-    text: 'The house is built in the traditional Zanzibari style.',
+    title: 'Traditional Zanzibar Architecture',
+    text: 'The house reflects the island’s traditional architecture and craftsmanship.',
     powerLabel: "Always powered",
-    powerText: "We have a high-capacity generator, so you are never left without electricity.",
+    powerText: "A powerful backup generator helps keep the house running during power cuts.",
     securityLabel: 'Peace of mind',
     securityText: 'Nighttime security by Imara Security (Tanzania) and CCTV in common areas.',
   },
@@ -182,7 +182,7 @@ export const en = {
     transfer: {
       label: 'Arrival',
       title: "Airport transfer",
-      text: "An airport transfer is available on request, bringing you to Aurora Hacienda in Nungwi.",
+      text: "Ask us to arrange your airport transfer to Aurora Hacienda in Nungwi.",
       cta: "Request a transfer",
     },
     excursions: {
@@ -259,7 +259,7 @@ export const en = {
     transfer: "I would like an airport transfer",
     message: 'Message (optional)',
     sendWhatsapp: 'Send via WhatsApp',
-    sendEmail: 'Send via Email',
+    sendEmail: 'Send by email',
     whatsapp: 'WhatsApp',
     emailLabel: 'Email',
     rateNote: 'Rates: per room / 2 guests / per night, breakfast included.',
@@ -270,7 +270,7 @@ export const en = {
     welcome: "Pool surrounded by tropical garden at Aurora Hacienda",
     room: "room entrance and terrace at Aurora Hacienda",
     dining: "Restaurant terrace by the pool at Aurora Hacienda",
-    house: "Thatched building and garden at Aurora Hacienda, traditional Zanzibari style",
+    house: "Thatched building and garden at Aurora Hacienda, with traditional island-inspired architecture",
     nungwi: "Sandy beach and boats on the coast of Zanzibar",
     transfer: "Airport transfer to Aurora Hacienda in Nungwi",
     excursions: "Excursions on Zanzibar",
