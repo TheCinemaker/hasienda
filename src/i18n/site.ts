@@ -13,3 +13,11 @@ export const contact = {
   email: 'aurorahaciendazanzibar@gmail.com',
   emailHref: 'mailto:aurorahaciendazanzibar@gmail.com',
 };
+
+// Partner (affiliate) links shown in the travel information sheet. Paste the tracking links from the
+// Travelpayouts dashboard here. An empty value hides that button.
+export const partners = {
+  flights: 'https://www.kiwi.com/', // plain link until the Travelpayouts tracking link is pasted here
+  esim: 'https://www.airalo.com/',
+  travelInsurance: '',
+};

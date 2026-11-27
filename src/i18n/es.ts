@@ -5,7 +5,7 @@ export const es: Dict = {
     title: "Aurora Hacienda Zanzibar – hotel boutique en Nungwi",
     description: "Hotel boutique en Nungwi, cerca del océano Índico: cuatro habitaciones de estilo zanzibarí, piscina, restaurante, coctelería y desayuno.",
   },
-  nav: { start: 'Inicio', home: 'Bienvenida', stay: 'Habitaciones', dining: 'Restaurante', house: 'La casa', place: 'Nungwi', experiences: 'Experiencias', book: 'Reservar', menu: 'Menú', close: 'Cerrar', language: 'Idioma', scroll: 'Desplazarse hacia abajo', top: 'Volver arriba', quick: 'Enlaces rápidos' },
+  nav: { info: "Info de viaje", start: 'Inicio', home: 'Bienvenida', stay: 'Habitaciones', dining: 'Restaurante', house: 'La casa', place: 'Nungwi', experiences: 'Experiencias', book: 'Reservar', menu: 'Menú', close: 'Cerrar', language: 'Idioma', scroll: 'Desplazarse hacia abajo', top: 'Volver arriba', quick: 'Enlaces rápidos' },
   hero: {
     eyebrow: 'Nungwi · Zanzíbar · Tanzania',
     title: "Boutique Hotel",
@@ -17,16 +17,16 @@ export const es: Dict = {
   welcome: {
     eyebrow: "Aurora Hacienda · Zanzíbar",
     title: "Un lugar entre la vegetación y el cielo",
-    p1: "El sueño de un arquitecto húngaro, hecho realidad a pocos cientos de metros del océano Índico.",
+    p1: "El sueño de un arquitecto húngaro, hecho realidad cerca del océano Índico.",
     p2: "Un pequeño paraíso verde donde la imaginación del arquitecto se une a las auténticas tradiciones de Zanzíbar. Rodeado de más de 50 especies de plantas, con una magnífica piscina en el centro, un bungaló de cuatro habitaciones y nuestro propio restaurante con cocina hacen de tus vacaciones un sueño.",
-    facts: ['Cuatro habitaciones · desayuno incluido', 'Restaurante y coctelería propios', "Traslado al aeropuerto a petición", 'Vigilancia nocturna y cámaras', "Generador de gran potencia"],
+    facts: ['Cuatro habitaciones · desayuno incluido', 'Restaurante y coctelería propios', "Traslado al aeropuerto a petición", 'Vigilancia nocturna y cámaras', "Generador de gran potencia", "Wifi gratis"],
   },
   rooms: {
     eyebrow: 'Habitaciones',
     title: 'Cuatro habitaciones',
     intro: 'Cada habitación cuenta con baño privado y todas las comodidades modernas en el estilo tradicional zanzibarí.',
     amenitiesLabel: "Servicios de la habitación",
-    amenities: ['Baño privado', 'Aire acondicionado', 'Ventilador', 'Televisión', 'Nevera', 'Rincón de café y té', 'Caja fuerte'],
+    amenities: ['Baño privado', 'Aire acondicionado', 'Ventilador', 'Televisión', 'Nevera', 'Rincón de café y té', 'Caja fuerte', "Wifi gratis"],
     items: [{ name: "Faraona Cleopatra" }, { name: "Princesa Diana" }, { name: "Reina Isabel II" }, { name: "Faraona Hatshepsut" }],
     rateLabel: 'Tarifas',
     rateBasis: 'Por habitación · 2 huéspedes · por noche · desayuno incluido',
@@ -164,7 +164,52 @@ export const es: Dict = {
       cta: 'Planificar la estancia',
     },
   },
+  info: {
+    title: "Antes de viajar",
+    intro: "Lo esencial para tu viaje a Zanzíbar. Las normas pueden cambiar y varían según la nacionalidad: consulta las fuentes oficiales antes de salir.",
+    checked: "Información comprobada el 27 de noviembre de 2026.",
+    sections: [
+      { title: "Pasaporte y visado", items: [
+        "Tu pasaporte debe tener al menos 6 meses de validez desde el día de llegada y una página en blanco como mínimo.",
+        "La mayoría de los visitantes necesita visado. Comprueba las normas para tu nacionalidad.",
+        "Puedes solicitar el visado electrónico antes de viajar. También puede haber visado de una sola entrada a la llegada; quizá te pidan el billete de vuelta.",
+      ] },
+      { title: "Seguro obligatorio de Zanzíbar", items: [
+        "Quienes visitan Zanzíbar deben contratar el seguro de entrada de la Zanzibar Insurance Corporation (ZIC). Los residentes están excluidos.",
+        "Se contrata en línea antes de viajar o a la llegada, y cubre la estancia hasta 92 días.",
+        "Sin él pueden denegarte la entrada. Recomendamos además tu propio seguro de viaje y médico.",
+      ] },
+      { title: "Vuelos e internet", items: [
+        "Llegas al aeropuerto internacional Abeid Amani Karume (ZNZ) de Zanzíbar.",
+        "Hay wifi gratis en toda la casa.",
+        "Para tener datos móviles puedes conseguir una eSIM antes de viajar.",
+      ] },
+      { title: "Salud", items: [
+        "Se exige el certificado de vacunación contra la fiebre amarilla si llegas desde un país con riesgo. Comprueba las normas si haces escala en uno de ellos.",
+        "El riesgo de malaria en Zanzíbar es alto. Consulta con tu médico la profilaxis con suficiente antelación.",
+        "A la mayoría de los viajeros se les recomiendan las vacunas contra la hepatitis A y la fiebre tifoidea.",
+      ] },
+      { title: "Dinero", items: [
+        "La moneda local es el chelín tanzano (TZS).",
+        "Los dólares estadounidenses se aceptan ampliamente en las zonas turísticas.",
+        "Los cajeros entregan chelines, pero pueden estar averiados o vacíos. Lleva algo de efectivo.",
+      ] },
+      { title: "Vestimenta y costumbres", items: [
+        "Zanzíbar es conservadora. La ropa de playa es para la playa y el alojamiento.",
+        "En Stone Town y en los pueblos, incluido Nungwi, cubre hombros y rodillas.",
+      ] },
+      { title: "Conviene saber", items: [
+        "Las bolsas de plástico están prohibidas. Al llegar en avión pueden pedirte que las entregues.",
+        "La hora de Zanzíbar es UTC+3.",
+        "Teléfonos de emergencia: 112 o 999.",
+      ] },
+    ],
+    sources: "Fuentes oficiales (en inglés)",
+    links: { visa: "Visado electrónico de Tanzania", insurance: "Contratar el seguro de Zanzíbar", entry: "Gobierno británico: requisitos de entrada", health: "CDC: consejos de salud", flights: "Buscar vuelos", esim: "Conseguir una eSIM", travelInsurance: "Seguro de viaje" },
+    disclosure: "Algunos enlaces son de afiliados: si reservas a través de ellos podemos recibir una comisión, sin coste adicional para ti.",
+  },
   book: {
+    infoBtn: "Visado, seguro y vuelos",
     eyebrow: 'Reservar',
     title: 'Envía una solicitud de reserva',
     text: 'Las tarifas son por habitación, para 2 huéspedes por noche, con desayuno incluido. Envía tus fechas por WhatsApp o correo, o contáctanos directamente por teléfono o Messenger.',

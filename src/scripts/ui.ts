@@ -56,10 +56,10 @@ document.addEventListener('click', (e) => {
   const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
   if (!a || a.getAttribute('href') === '#') return;
   const id = a.getAttribute('href')!;
-  if (id === '#book') {
-    // booking opens on top of the page, wherever the visitor is
+  if (id === '#book' || id === '#info') {
+    // booking and travel information open on top of the page, wherever the visitor is
     e.preventDefault();
-    openSheet(bookModal, a);
+    openSheet(id === '#book' ? bookModal : infoModal, a);
     return;
   }
   if (document.querySelector(id)) {
@@ -130,7 +130,9 @@ addEventListener('keydown', (e) => {
 type Sheet = HTMLElement & { inert: boolean };
 const diningModal = document.getElementById('dining-modal') as Sheet | null;
 const bookModal = document.getElementById('book-modal') as Sheet | null;
+const infoModal = document.getElementById('info-modal') as Sheet | null;
 let sheetTrigger: HTMLElement | null = null;
+let returnTo: Sheet | null = null;
 
 const openedSheet = () => document.querySelector<Sheet>('.sheet-modal.open');
 
@@ -145,6 +147,7 @@ const hideSheet = (sheet: Sheet) => {
 function openSheet(sheet: Sheet | null, trigger?: HTMLElement | null) {
   if (!sheet || sheet.classList.contains('open')) return;
   const other = openedSheet();
+  returnTo = other && sheet === infoModal ? other : null;
   if (other) hideSheet(other);
   sheetTrigger = trigger || null;
   sheet.classList.add('open');
@@ -162,6 +165,11 @@ function closeSheet() {
   const sheet = openedSheet();
   if (!sheet) return;
   hideSheet(sheet);
+  if (returnTo) {
+    const previous = returnTo;
+    openSheet(previous);
+    return;
+  }
   if (!menu.classList.contains('open')) {
     document.body.classList.remove('lock');
     lenis?.start();
@@ -381,3 +389,4 @@ initDatePickers();
 
 // a shared link ending in #book opens the booking sheet straight away
 if (location.hash === '#book') openSheet(bookModal);
+if (location.hash === '#info') openSheet(infoModal);

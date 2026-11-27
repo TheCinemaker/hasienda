@@ -58,3 +58,16 @@
 - [x] Eredeti reggeli- és itallap képként is (angol)
 - [x] Reptéri transzfer csak igény esetén; nagy teljesítményű generátor
 - Alkoholos italoknak szándékosan nincs ára (beszerzés miatt) – nem hiba, ne pótoljuk
+
+## Utazási tudnivalók (2026-11-27)
+- [x] "Before you travel" modal 8 nyelven, hivatalos forráslinkekkel (gov.uk, ZIC közlemény, CDC)
+- [ ] Időnként (legalább szezononként) újraellenőrizni; a dátum a nyelvi fájlokban: info.checked
+- Szándékosan kimaradt (nem volt hivatalos forrásból igazolva): biztosítás ára, vízumdíj, drón-szabály, konnektor/feszültség
+- [ ] Tulaj / könyvelő: a 2025-ös tanzániai devizaszabály (árak shillingben) – az itallap USD árai rendben vannak-e
+
+## Affiliate / adatvédelem (2026-11-27)
+- [x] Travelpayouts Drive kód minden oldalon (fiók: 607503), partnerlinkek: src/i18n/site.ts
+- [ ] ÉLESÍTÉS ELŐTT: sütihozzájárulás (EU látogatók) - a Drive csak elfogadás után töltődjön; adatkezelési tájékoztató
+- [ ] Travelpayouts irányítópult: a partnerlinkek beillesztése (repjegy, eSIM, utasbiztosítás); Drive beállításai (beszúrt ajánlatok, felugrók KI)
+- [ ] Tulaj hozzájárulása az affiliate-hez; a saját kirándulás / transzfer ajánlat mellé ne kerüljön konkurens ajánlat
+- [x] Ingyenes Wi-Fi az egész házban

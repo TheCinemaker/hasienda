@@ -5,7 +5,7 @@ export const de: Dict = {
     title: "Aurora Hacienda Zanzibar – Boutique-Hotel in Nungwi",
     description: "Boutique-Hotel in Nungwi nahe am Indischen Ozean: vier Zimmer im traditionellen sansibarischen Stil, Pool, Restaurant, Bar und Frühstück.",
   },
-  nav: { start: 'Übersicht', home: 'Willkommen', stay: 'Zimmer', dining: 'Restaurant', house: 'Das Haus', place: 'Nungwi', experiences: 'Erlebnisse', book: 'Buchen', menu: 'Menü', close: 'Schließen', language: 'Sprache', scroll: 'Nach unten scrollen', top: 'Nach oben', quick: 'Schnellzugriff' },
+  nav: { info: "Reiseinfos", start: 'Übersicht', home: 'Willkommen', stay: 'Zimmer', dining: 'Restaurant', house: 'Das Haus', place: 'Nungwi', experiences: 'Erlebnisse', book: 'Buchen', menu: 'Menü', close: 'Schließen', language: 'Sprache', scroll: 'Nach unten scrollen', top: 'Nach oben', quick: 'Schnellzugriff' },
   hero: {
     eyebrow: 'Nungwi · Sansibar · Tansania',
     title: "Boutique Hotel",
@@ -17,16 +17,16 @@ export const de: Dict = {
   welcome: {
     eyebrow: "Aurora Hacienda · Sansibar",
     title: "Ein Ort zwischen üppigem Grün und Himmel",
-    p1: "Der Traum eines ungarischen Architekten, verwirklicht nur wenige hundert Meter vom Indischen Ozean entfernt.",
+    p1: "Der Traum eines ungarischen Architekten, verwirklicht nahe am Indischen Ozean.",
     p2: "Ein kleines grünes Paradies, in dem die Fantasie des Architekten auf authentische sansibarische Traditionen trifft. Umgeben von mehr als 50 Pflanzenarten, mit einem herrlichen Pool in der Mitte, machen ein Bungalow mit vier Zimmern und unser eigenes Restaurant mit Küche deinen Urlaub traumhaft.",
-    facts: ['Vier Zimmer · mit Frühstück', 'Eigenes Restaurant und Cocktailbar', "Flughafentransfer auf Wunsch", 'Nachtwache und Videoüberwachung', "Leistungsstarker Notstromgenerator"],
+    facts: ['Vier Zimmer · mit Frühstück', 'Eigenes Restaurant und Cocktailbar', "Flughafentransfer auf Wunsch", 'Nachtwache und Videoüberwachung', "Leistungsstarker Notstromgenerator", "Kostenloses WLAN"],
   },
   rooms: {
     eyebrow: 'Zimmer',
     title: 'Vier Zimmer',
     intro: 'Jedes Zimmer hat ein eigenes Bad und allen modernen Komfort im traditionellen sansibarischen Stil.',
     amenitiesLabel: "Zimmerausstattung",
-    amenities: ['Eigenes Bad', 'Klimaanlage', 'Ventilator', 'Fernseher', 'Kühlschrank', 'Kaffee- und Teestation', 'Zimmersafe'],
+    amenities: ['Eigenes Bad', 'Klimaanlage', 'Ventilator', 'Fernseher', 'Kühlschrank', 'Kaffee- und Teestation', 'Zimmersafe', "Kostenloses WLAN"],
     items: [{ name: "Pharaonin Kleopatra" }, { name: "Prinzessin Diana" }, { name: "Königin Elisabeth II." }, { name: "Pharaonin Hatschepsut" }],
     rateLabel: 'Preise',
     rateBasis: 'Pro Zimmer · 2 Personen · pro Nacht · mit Frühstück',
@@ -164,7 +164,52 @@ export const de: Dict = {
       cta: 'Aufenthalt planen',
     },
   },
+  info: {
+    title: "Vor der Reise",
+    intro: "Das Wichtigste für deine Reise nach Sansibar. Regeln können sich ändern und je nach Staatsangehörigkeit abweichen. Bitte prüfe vor der Abreise die offiziellen Quellen.",
+    checked: "Stand der Informationen: 27. November 2026.",
+    sections: [
+      { title: "Reisepass und Visum", items: [
+        "Dein Reisepass sollte ab dem Ankunftstag noch mindestens 6 Monate gültig sein und mindestens eine freie Seite haben.",
+        "Die meisten Reisenden brauchen ein Visum. Prüfe die Regeln für deine Staatsangehörigkeit.",
+        "Du kannst vor der Reise online ein E-Visum beantragen. Für eine einmalige Einreise ist ein Visum auch bei Ankunft möglich; eventuell wird dein Rückflugticket verlangt.",
+      ] },
+      { title: "Pflichtversicherung für Sansibar", items: [
+        "Wer Sansibar besucht, braucht die lokale Einreiseversicherung der Zanzibar Insurance Corporation (ZIC). Einwohner sind ausgenommen.",
+        "Du kannst sie vorab online oder bei der Ankunft abschließen. Sie gilt für deinen Aufenthalt, höchstens 92 Tage.",
+        "Ohne sie kann die Einreise verweigert werden. Wir empfehlen zusätzlich eine eigene Reise- und Krankenversicherung.",
+      ] },
+      { title: "Flüge und Internet", items: [
+        "Du landest am Abeid Amani Karume International Airport (ZNZ) auf Sansibar.",
+        "Im ganzen Haus gibt es kostenloses WLAN.",
+        "Für mobiles Internet unterwegs kannst du vor der Reise eine eSIM besorgen.",
+      ] },
+      { title: "Gesundheit", items: [
+        "Ein Nachweis der Gelbfieberimpfung ist nötig, wenn du aus einem Land mit Gelbfieberrisiko einreist. Prüfe die Regeln, wenn du dort umsteigst.",
+        "Das Malariarisiko auf Sansibar ist hoch. Frage rechtzeitig vor der Reise deine Ärztin oder deinen Arzt nach einer Prophylaxe.",
+        "Impfungen gegen Hepatitis A und Typhus werden den meisten Reisenden empfohlen.",
+      ] },
+      { title: "Geld", items: [
+        "Landeswährung ist der Tansania-Schilling (TZS).",
+        "US-Dollar werden in Touristengebieten weithin akzeptiert.",
+        "Geldautomaten geben Schilling aus, können aber defekt oder leer sein. Nimm etwas Bargeld mit.",
+      ] },
+      { title: "Kleidung und Gepflogenheiten", items: [
+        "Sansibar ist konservativ. Badekleidung gehört an den Strand und in die Unterkunft.",
+        "Bedecke in Stone Town und in den Dörfern, auch in Nungwi, bitte Schultern und Knie.",
+      ] },
+      { title: "Gut zu wissen", items: [
+        "Plastiktüten sind verboten. Bei der Ankunft per Flugzeug musst du sie eventuell abgeben.",
+        "Die Zeitzone auf Sansibar ist UTC+3.",
+        "Notrufnummern: 112 oder 999.",
+      ] },
+    ],
+    sources: "Offizielle Quellen (auf Englisch)",
+    links: { visa: "E-Visum für Tansania", insurance: "Versicherung für Sansibar abschließen", entry: "Britische Regierung: Einreisebestimmungen", health: "CDC: Gesundheitshinweise", flights: "Flüge suchen", esim: "eSIM holen", travelInsurance: "Reiseversicherung" },
+    disclosure: "Einige Links sind Partnerlinks: Wenn du darüber buchst, erhalten wir eventuell eine Provision, ohne Mehrkosten für dich.",
+  },
   book: {
+    infoBtn: "Visum, Versicherung, Flüge",
     eyebrow: 'Buchen',
     title: 'Buchungsanfrage senden',
     text: 'Die Preise gelten pro Zimmer für 2 Personen und Nacht inklusive Frühstück. Sende deine Reisedaten per WhatsApp oder E-Mail, oder erreiche uns direkt per Telefon oder Messenger.',

@@ -5,7 +5,7 @@ export const hu: Dict = {
     title: "Aurora Hacienda Zanzibar – boutique hotel Nungwiban",
     description: "Boutique hotel Nungwiban, közel az Indiai-óceánhoz: négy szoba hagyományos zanzibári stílusban, medence, étterem, koktélbár és reggeli.",
   },
-  nav: { start: 'Kezdőlap', home: 'Üdvözlünk', stay: 'Szobák', dining: 'Étterem', house: 'A ház', place: 'Nungwi', experiences: 'Élmények', book: 'Foglalás', menu: 'Menü', close: 'Bezárás', language: 'Nyelv', scroll: 'Görgess lejjebb', top: 'Vissza a tetejére', quick: 'Gyorslinkek' },
+  nav: { info: "Utazási infók", start: 'Kezdőlap', home: 'Üdvözlünk', stay: 'Szobák', dining: 'Étterem', house: 'A ház', place: 'Nungwi', experiences: 'Élmények', book: 'Foglalás', menu: 'Menü', close: 'Bezárás', language: 'Nyelv', scroll: 'Görgess lejjebb', top: 'Vissza a tetejére', quick: 'Gyorslinkek' },
   hero: {
     eyebrow: 'Nungwi · Zanzibár · Tanzánia',
     title: "Boutique Hotel",
@@ -17,16 +17,16 @@ export const hu: Dict = {
   welcome: {
     eyebrow: "Aurora Hacienda · Zanzibár",
     title: "Egy hely a zöld és az ég között",
-    p1: "Egy magyar építész álma, néhány száz méterre az Indiai-óceántól.",
+    p1: "Egy magyar építész álma, közel az Indiai-óceánhoz.",
     p2: "Ez egy kis zöld paradicsom, ahol az építész fantáziája találkozott a zanzibári autentikus hagyományokkal. Több mint 50 növényfaj ölel körül, a közepén csodálatos úszómedence, mellette négyszobás bungaló és saját étterem konyhával – mindez álomszerűvé varázsolja a nyaralásodat.",
-    facts: ['Négy szoba · reggelivel', 'Saját étterem és koktélbár', "Reptéri transzfer igény esetén", 'Éjszakai őrzés és kamerák', "Nagy teljesítményű generátor"],
+    facts: ['Négy szoba · reggelivel', 'Saját étterem és koktélbár', "Reptéri transzfer igény esetén", 'Éjszakai őrzés és kamerák', "Nagy teljesítményű generátor", "Ingyenes Wi-Fi"],
   },
   rooms: {
     eyebrow: 'Szobák',
     title: 'Négy szoba',
     intro: 'Minden szobához saját fürdőszoba és teljes modern kényelem tartozik, hagyományos zanzibári stílusban.',
     amenitiesLabel: "A szoba felszereltsége",
-    amenities: ['Saját fürdőszoba', 'Légkondicionáló', 'Ventilátor', 'Televízió', 'Hűtőszekrény', 'Kávé- és teasarok', 'Szobaszéf'],
+    amenities: ['Saját fürdőszoba', 'Légkondicionáló', 'Ventilátor', 'Televízió', 'Hűtőszekrény', 'Kávé- és teasarok', 'Szobaszéf', "Ingyenes Wi-Fi"],
     items: [{ name: "Kleopátra fáraónő" }, { name: "Diana hercegnő" }, { name: "II. Erzsébet királynő" }, { name: "Hatsepszut fáraónő" }],
     rateLabel: 'Árak',
     rateBasis: 'Szobánként · 2 fő · egy éjszaka · reggelivel',
@@ -164,7 +164,52 @@ export const hu: Dict = {
       cta: 'Tervezd meg nálunk',
     },
   },
+  info: {
+    title: "Utazás előtt",
+    intro: "A legfontosabb tudnivalók zanzibári utadhoz. A szabályok változhatnak, és állampolgárság szerint eltérhetnek, ezért indulás előtt ellenőrizd a hivatalos forrásokat.",
+    checked: "Az információkat 2026. november 27-én ellenőriztük.",
+    sections: [
+      { title: "Útlevél és vízum", items: [
+        "Az útleveled az érkezés napjától számítva legalább 6 hónapig legyen érvényes, és legyen benne legalább egy üres oldal.",
+        "A legtöbb utazónak vízum szükséges. Nézd meg, mi vonatkozik a te állampolgárságodra.",
+        "Indulás előtt online e-vízumot igényelhetsz. Egyszeri belépésre érkezéskor is kaphatsz vízumot; kérhetik a visszaútra szóló jegyedet.",
+      ] },
+      { title: "Kötelező zanzibári biztosítás", items: [
+        "A Zanzibárra látogatóknak kötelező a Zanzibar Insurance Corporation (ZIC) helyi beutazási biztosítása. A helyi lakosokra nem vonatkozik.",
+        "Megköthető online indulás előtt vagy érkezéskor, és a tartózkodás idejére szól, legfeljebb 92 napig.",
+        "Nélküle megtagadhatják a belépést. Saját utas- és egészségbiztosítást is javaslunk.",
+      ] },
+      { title: "Repülés és internet", items: [
+        "Zanzibáron az Abeid Amani Karume nemzetközi repülőtérre (ZNZ) érkezel.",
+        "Az egész házban ingyenes a Wi-Fi.",
+        "Útközbeni mobilnethez indulás előtt eSIM-et is beszerezhetsz.",
+      ] },
+      { title: "Egészség", items: [
+        "Sárgaláz elleni oltási igazolás szükséges, ha sárgalázzal érintett országból érkezel. Ha ilyen országban szállsz át, ellenőrizd a szabályokat.",
+        "Zanzibáron magas a malária kockázata. Jóval az utazás előtt kérdezd meg orvosodat a megelőző gyógyszerről.",
+        "A legtöbb utazónak javasolt a hepatitis A és a tífusz elleni oltás.",
+      ] },
+      { title: "Pénz", items: [
+        "A helyi pénznem a tanzániai shilling (TZS).",
+        "A turisták látogatta helyeken az amerikai dollárt széles körben elfogadják.",
+        "A bankautomaták shillinget adnak, de előfordul, hogy nem működnek vagy kifogynak. Legyen nálad készpénz.",
+      ] },
+      { title: "Öltözködés és helyi szokások", items: [
+        "Zanzibár konzervatív. A strandruha a strandra és a szállásra való.",
+        "Stone Townban és a falvakban, így Nungwiban is, fedd el a vállad és a térded.",
+      ] },
+      { title: "Jó tudni", items: [
+        "A nejlonzacskó tilos. Repülővel érkezéskor kérhetik, hogy add le.",
+        "Zanzibár időzónája UTC+3.",
+        "Segélyhívó számok: 112 vagy 999.",
+      ] },
+    ],
+    sources: "Hivatalos források (angol nyelven)",
+    links: { visa: "Tanzániai e-vízum", insurance: "Zanzibári biztosítás megkötése", entry: "Brit kormány: beutazási feltételek", health: "CDC: egészségügyi tanácsok", flights: "Repjegy keresése", esim: "eSIM beszerzése", travelInsurance: "Utasbiztosítás" },
+    disclosure: "Egyes linkek partnerlinkek: ha ezeken keresztül foglalsz, jutalékot kaphatunk, neked ez nem kerül többe.",
+  },
   book: {
+    infoBtn: "Vízum, biztosítás, repjegy",
     eyebrow: 'Foglalás',
     title: 'Küldj foglalási kérést',
     text: 'Az árak szobánként, 2 főre, egy éjszakára, reggelivel értendők. Küldd el a dátumokat WhatsAppon vagy e-mailben, vagy keress minket telefonon, illetve Messengeren.',

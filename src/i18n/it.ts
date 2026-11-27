@@ -5,7 +5,7 @@ export const it: Dict = {
     title: "Aurora Hacienda Zanzibar – boutique hotel a Nungwi",
     description: "Boutique hotel a Nungwi, vicino all’Oceano Indiano: quattro camere in stile zanzibarino, piscina, ristorante, cocktail bar e colazione.",
   },
-  nav: { start: 'Panoramica', home: 'Benvenuti', stay: 'Camere', dining: 'Ristorante', house: 'La casa', place: 'Nungwi', experiences: 'Esperienze', book: 'Prenota', menu: 'Menu', close: 'Chiudi', language: 'Lingua', scroll: 'Scorri in basso', top: 'Torna su', quick: 'Collegamenti rapidi' },
+  nav: { info: "Info di viaggio", start: 'Panoramica', home: 'Benvenuti', stay: 'Camere', dining: 'Ristorante', house: 'La casa', place: 'Nungwi', experiences: 'Esperienze', book: 'Prenota', menu: 'Menu', close: 'Chiudi', language: 'Lingua', scroll: 'Scorri in basso', top: 'Torna su', quick: 'Collegamenti rapidi' },
   hero: {
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: "Boutique Hotel",
@@ -17,16 +17,16 @@ export const it: Dict = {
   welcome: {
     eyebrow: "Aurora Hacienda · Zanzibar",
     title: "Un luogo tra il verde e il cielo",
-    p1: "Il sogno di un architetto ungherese, diventato realtà a poche centinaia di metri dall’Oceano Indiano.",
+    p1: "Il sogno di un architetto ungherese, diventato realtà vicino all’Oceano Indiano.",
     p2: "Un piccolo paradiso verde dove la fantasia dell’architetto incontra le autentiche tradizioni di Zanzibar. Circondato da oltre 50 specie di piante, con una splendida piscina al centro, un bungalow di quattro camere e il nostro ristorante con cucina rendono la tua vacanza un sogno.",
-    facts: ['Quattro camere · colazione inclusa', 'Ristorante e cocktail bar', "Transfer aeroportuale su richiesta", 'Guardiania notturna e telecamere', "Generatore ad alta potenza"],
+    facts: ['Quattro camere · colazione inclusa', 'Ristorante e cocktail bar', "Transfer aeroportuale su richiesta", 'Guardiania notturna e telecamere', "Generatore ad alta potenza", "Wi-Fi gratuito"],
   },
   rooms: {
     eyebrow: 'Camere',
     title: 'Quattro camere',
     intro: 'Ogni camera ha il bagno privato e tutti i comfort moderni nel tradizionale stile zanzibarino.',
     amenitiesLabel: "Dotazioni della camera",
-    amenities: ['Bagno privato', 'Aria condizionata', 'Ventilatore', 'TV', 'Frigorifero', 'Angolo caffè e tè', 'Cassaforte'],
+    amenities: ['Bagno privato', 'Aria condizionata', 'Ventilatore', 'TV', 'Frigorifero', 'Angolo caffè e tè', 'Cassaforte', "Wi-Fi gratuito"],
     items: [{ name: "Faraona Cleopatra" }, { name: "Principessa Diana" }, { name: "Regina Elisabetta II" }, { name: "Faraona Hatshepsut" }],
     rateLabel: 'Tariffe',
     rateBasis: 'Per camera · 2 ospiti · a notte · colazione inclusa',
@@ -164,7 +164,52 @@ export const it: Dict = {
       cta: 'Pianifica il soggiorno',
     },
   },
+  info: {
+    title: "Prima di partire",
+    intro: "L’essenziale per il tuo viaggio a Zanzibar. Le regole possono cambiare e variano in base alla cittadinanza: controlla le fonti ufficiali prima di partire.",
+    checked: "Informazioni verificate il 27 novembre 2026.",
+    sections: [
+      { title: "Passaporto e visto", items: [
+        "Il passaporto deve essere valido almeno 6 mesi dal giorno di arrivo e avere almeno una pagina libera.",
+        "La maggior parte dei visitatori ha bisogno del visto. Controlla le regole per la tua cittadinanza.",
+        "Puoi richiedere l’e-visa online prima di partire. Un visto a ingresso singolo può essere rilasciato anche all’arrivo; potrebbe esserti chiesto il biglietto di ritorno.",
+      ] },
+      { title: "Assicurazione obbligatoria di Zanzibar", items: [
+        "Chi visita Zanzibar deve avere l’assicurazione d’ingresso della Zanzibar Insurance Corporation (ZIC). I residenti sono esclusi.",
+        "Si acquista online prima di partire o all’arrivo e copre il soggiorno fino a 92 giorni.",
+        "Senza di essa l’ingresso può essere negato. Consigliamo anche una tua assicurazione viaggio e sanitaria.",
+      ] },
+      { title: "Voli e internet", items: [
+        "Atterri all’aeroporto internazionale Abeid Amani Karume (ZNZ) di Zanzibar.",
+        "In tutta la casa il Wi-Fi è gratuito.",
+        "Per i dati mobili in viaggio puoi procurarti una eSIM prima di partire.",
+      ] },
+      { title: "Salute", items: [
+        "Il certificato di vaccinazione contro la febbre gialla è richiesto se arrivi da un Paese a rischio. Controlla le regole se fai scalo in uno di questi Paesi.",
+        "A Zanzibar il rischio di malaria è alto. Chiedi al medico, con largo anticipo, della profilassi.",
+        "Per la maggior parte dei viaggiatori sono consigliati i vaccini contro epatite A e tifo.",
+      ] },
+      { title: "Denaro", items: [
+        "La valuta locale è lo scellino tanzaniano (TZS).",
+        "I dollari statunitensi sono ampiamente accettati nelle zone turistiche.",
+        "I bancomat erogano scellini, ma possono essere guasti o vuoti. Porta con te un po’ di contanti.",
+      ] },
+      { title: "Abbigliamento e usanze locali", items: [
+        "Zanzibar è conservatrice. L’abbigliamento da spiaggia va bene in spiaggia e in struttura.",
+        "A Stone Town e nei villaggi, Nungwi compresa, copri spalle e ginocchia.",
+      ] },
+      { title: "Da sapere", items: [
+        "I sacchetti di plastica sono vietati. All’arrivo in aereo potrebbero chiederti di consegnarli.",
+        "Il fuso orario di Zanzibar è UTC+3.",
+        "Numeri di emergenza: 112 o 999.",
+      ] },
+    ],
+    sources: "Fonti ufficiali (in inglese)",
+    links: { visa: "E-visa per la Tanzania", insurance: "Acquista l’assicurazione di Zanzibar", entry: "Governo britannico: requisiti d’ingresso", health: "CDC: consigli sanitari", flights: "Cerca voli", esim: "Prendi una eSIM", travelInsurance: "Assicurazione viaggio" },
+    disclosure: "Alcuni link sono link partner: se prenoti tramite questi, potremmo ricevere una commissione, senza costi aggiuntivi per te.",
+  },
   book: {
+    infoBtn: "Visto, assicurazione, voli",
     eyebrow: 'Prenota',
     title: 'Invia una richiesta di prenotazione',
     text: 'Le tariffe sono per camera, per 2 ospiti a notte, colazione inclusa. Invia le date via WhatsApp o e-mail, oppure contattaci direttamente per telefono o Messenger.',

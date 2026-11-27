@@ -15,6 +15,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import '../styles/global.css';
 import { allLocales, available, t, type Locale } from '../i18n';
 import { contact, coordsDisplay, mapUrl } from '../i18n/site';
+import TravelpayoutsDrive from '../components/TravelpayoutsDrive.astro';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -38,6 +39,7 @@ const year = new Date().getFullYear();
     <script is:inline>document.documentElement.classList.add('js')</script>
     {available.map((l) => <link rel="alternate" hreflang={l} href={`/${l}/`} />)}
     <link rel="alternate" hreflang="x-default" href="/" />
+    <TravelpayoutsDrive />
   </head>
   <body>
     <div class="progress" id="progress" aria-hidden="true"></div>
@@ -104,7 +106,8 @@ const year = new Date().getFullYear();
             <a href="#house" data-preview="/images/house.jpg"><span class="menu-num">04</span><span>{d.nav.house}</span></a>
             <a href="#nungwi" data-preview="/images/nungwi.jpg"><span class="menu-num">05</span><span>{d.nav.place}</span></a>
             <a href="#experiences" data-preview="/images/excursions.jpg"><span class="menu-num">06</span><span>{d.nav.experiences}</span></a>
-            <a href="#book" data-preview="/images/book.jpg"><span class="menu-num">07</span><span>{d.nav.book}</span></a>
+            <a href="#info" data-preview="/images/nungwi.jpg"><span class="menu-num">07</span><span>{d.nav.info}</span></a>
+            <a href="#book" data-preview="/images/book.jpg"><span class="menu-num">08</span><span>{d.nav.book}</span></a>
           </nav>
           {available.length > 1 && (
             <div class="lang" aria-label={d.nav.language}>
@@ -175,6 +178,7 @@ const year = new Date().getFullYear();
           <a href="#house">{d.nav.house}</a>
           <a href="#nungwi">{d.nav.place}</a>
           <a href="#experiences">{d.nav.experiences}</a>
+          <a href="#info">{d.nav.info}</a>
           <a href="#book">{d.nav.book}</a>
         </nav>
         <p class="legal">© {year} Aurora Hacienda Zanzibar. {d.footer.rights}</p>

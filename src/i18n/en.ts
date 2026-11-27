@@ -5,7 +5,7 @@ export const en = {
     title: "Aurora Hacienda Zanzibar – boutique hotel in Nungwi",
     description: "Boutique hotel in Nungwi, close to the Indian Ocean: four rooms in traditional Zanzibari style, pool, restaurant, cocktail bar and breakfast.",
   },
-  nav: { start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
+  nav: { info: "Travel info", start: 'Overview', home: 'Welcome', stay: 'Rooms', dining: 'Dining', house: 'The house', place: 'Nungwi', experiences: 'Experiences', book: 'Book', menu: 'Menu', close: 'Close', language: 'Language', scroll: 'Scroll down', top: 'Back to top', quick: 'Quick links' },
   hero: {
     eyebrow: 'Nungwi · Zanzibar · Tanzania',
     title: "Boutique Hotel",
@@ -17,16 +17,16 @@ export const en = {
   welcome: {
     eyebrow: "Aurora Hacienda · Zanzibar",
     title: "A place between the lush greenery and the sky",
-    p1: "The dream of a Hungarian architect, brought to life just a few hundred metres from the Indian Ocean.",
+    p1: "The dream of a Hungarian architect, brought to life close to the Indian Ocean.",
     p2: "This is a small, verdant paradise where an architect’s imagination meets authentic Zanzibari traditions. Surrounded by more than 50 plant species, with a stunning swimming pool at its heart, a four-room bungalow and our own restaurant and kitchen all come together to make your holiday truly dreamlike.",
-    facts: ['Four rooms · Breakfast included', 'Own restaurant & cocktail bar', "Airport transfer on request", 'Night security & CCTV', "High-capacity backup generator"],
+    facts: ['Four rooms · Breakfast included', 'Own restaurant & cocktail bar', "Airport transfer on request", 'Night security & CCTV', "High-capacity backup generator", "Free Wi-Fi"],
   },
   rooms: {
     eyebrow: 'Rooms',
     title: 'Four rooms',
     intro: 'Each room has an en-suite bathroom and modern comforts, in traditional Zanzibari style.',
     amenitiesLabel: "Room amenities",
-    amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe'],
+    amenities: ['En-suite bathroom', 'Air conditioning', 'Fan', 'TV', 'Refrigerator', 'Coffee & tea bar', 'In-room safe', "Free Wi-Fi"],
     items: [
       { name: "Pharaoh Cleopatra" },
       { name: "Princess Diana" },
@@ -196,7 +196,52 @@ export const en = {
       cta: 'Plan your stay',
     },
   },
+  info: {
+    title: "Before you travel",
+    intro: "The essentials for your trip to Zanzibar. Rules can change and may differ by nationality, so please check the official sources before you travel.",
+    checked: "Information checked on 27 November 2026.",
+    sections: [
+      { title: "Passport and visa", items: [
+        "Your passport should be valid for at least 6 months from the day you arrive and have at least one blank page.",
+        "Most visitors need a visa. Check the rules for your nationality.",
+        "You can apply for an e-visa online before you travel. A single-entry visa may also be available on arrival; you may be asked to show your return ticket.",
+      ] },
+      { title: "Mandatory Zanzibar insurance", items: [
+        "Visitors to Zanzibar must have the local inbound travel insurance of the Zanzibar Insurance Corporation (ZIC). Residents are excluded.",
+        "Buy it online before you travel, or on arrival. It covers your stay for up to 92 days.",
+        "Without it you may be refused entry. We also recommend your own travel and health insurance.",
+      ] },
+      { title: "Flights and internet", items: [
+        "You fly into Abeid Amani Karume International Airport (ZNZ) in Zanzibar.",
+        "There is free Wi-Fi throughout the house.",
+        "For mobile data on the road, you can get an eSIM before you travel.",
+      ] },
+      { title: "Health", items: [
+        "A yellow fever vaccination certificate is required if you arrive from a country with a risk of yellow fever. Check the rules if your flight connects through such a country.",
+        "Malaria is a high risk in Zanzibar. Ask your doctor about preventive medicine well before you travel.",
+        "Hepatitis A and typhoid vaccinations are recommended for most travellers.",
+      ] },
+      { title: "Money", items: [
+        "The local currency is the Tanzanian shilling (TZS).",
+        "US dollars are widely accepted in tourist areas.",
+        "Cash machines pay out shillings, but they can be out of order or empty. Keep some cash with you.",
+      ] },
+      { title: "Dress and local customs", items: [
+        "Zanzibar is conservative. Beachwear is for the beach and the resort.",
+        "In Stone Town and in villages, including Nungwi, please cover your shoulders and knees.",
+      ] },
+      { title: "Good to know", items: [
+        "Plastic bags are banned. You may be asked to hand them in when you arrive by air.",
+        "Zanzibar time is UTC+3.",
+        "Emergency numbers: 112 or 999.",
+      ] },
+    ],
+    sources: "Official sources (in English)",
+    links: { visa: "Tanzania e-visa", insurance: "Buy the Zanzibar insurance", entry: "UK government: entry requirements", health: "CDC: health advice", flights: "Search flights", esim: "Get an eSIM", travelInsurance: "Travel insurance" },
+    disclosure: "Some links are partner links: if you book through them we may receive a commission, at no extra cost to you.",
+  },
   book: {
+    infoBtn: "Visa, insurance and flights",
     eyebrow: 'Book',
     title: 'Send a booking request',
     text: 'Rates are per room, for 2 guests per night including breakfast. Send your dates via WhatsApp or email, or reach out directly by phone or Messenger.',

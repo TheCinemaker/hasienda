@@ -1,5 +1,6 @@
 ---
 import { allLocales, available } from '../i18n';
+import TravelpayoutsDrive from '../components/TravelpayoutsDrive.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -18,6 +19,7 @@ import { allLocales, available } from '../i18n';
       location.replace('/' + (match || 'en') + '/' + location.hash);
     </script>
     <noscript><meta http-equiv="refresh" content="0; url=/en/" /></noscript>
+    <TravelpayoutsDrive />
   </head>
   <body>
     <p>{available.map((l) => <a href={`/${l}/`} lang={l}>{allLocales[l].label} </a>)}</p>
