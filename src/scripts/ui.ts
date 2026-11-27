@@ -1,5 +1,6 @@
 import Lenis from 'lenis';
 import { initDatePickers } from './dates';
+import { initGallery } from './gallery';
 
 const $ = (id: string) => document.getElementById(id) as HTMLElement;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -130,6 +131,14 @@ addEventListener('keydown', (e) => {
 type Sheet = HTMLElement & { inert: boolean };
 const diningModal = document.getElementById('dining-modal') as Sheet | null;
 const bookModal = document.getElementById('book-modal') as Sheet | null;
+const roomModal = document.getElementById('room-modal') as Sheet | null;
+const roomGallery = initGallery(document.getElementById('room-gallery'));
+document.querySelectorAll<HTMLElement>('[data-open-room]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    openSheet(roomModal, btn);
+    roomGallery?.reset();
+  });
+});
 let sheetTrigger: HTMLElement | null = null;
 
 const openedSheet = () => document.querySelector<Sheet>('.sheet-modal.open');

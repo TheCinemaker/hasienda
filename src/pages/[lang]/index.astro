@@ -2,12 +2,19 @@
 import Base from '../../layouts/Base.astro';
 import { available, t, type Locale } from '../../i18n';
 import { contact, coordsDisplay, mapUrl } from '../../i18n/site';
+import { readdirSync } from 'node:fs';
 
 export function getStaticPaths() {
   return available.map((lang) => ({ params: { lang } }));
 }
 const lang = Astro.params.lang as Locale;
 const d = t(lang);
+
+// every .jpg in public/images/room/ appears in the gallery, ordered by file name
+const roomPhotos = readdirSync('public/images/room')
+  .filter((f) => /\.jpe?g$/i.test(f))
+  .sort()
+  .map((f) => `/images/room/${f}`);
 
 const amenityIcons = [
   'M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3zM6 12V6a2 2 0 0 1 4 0v1',
@@ -74,20 +81,18 @@ const amenityIcons = [
       </div>
     </section>
 
-    <div id="rooms" data-dot={d.rooms.eyebrow}>
-      {d.rooms.items.map((r, i) => (
-        <section class="panel panel-suite" id={`room-${i + 1}`}>
-          <div class="panel-media">
-            <img src={`/images/room-${i + 1}.jpg`} alt="" class="panel-img" loading="lazy" />
+    <section class="panel panel-suite panel-rooms" id="rooms" data-dot={d.rooms.eyebrow}>
+      <div class="panel-media">
+        <img src={roomPhotos[0]} alt="" class="panel-img" loading="lazy" />
+      </div>
+      <div class="shade"></div>
+      <div class="panel-text panel-text--suite reveal">
+        <div class="suite-main">
+          <div class="suite-meta">
+            <span class="chapter-num">02</span>
+            <p class="eyebrow">{d.rooms.eyebrow}</p>
           </div>
-          <div class="shade"></div>
-          <div class="panel-text panel-text--suite reveal">
-            <div class="suite-main">
-              <div class="suite-meta">
-                <span class="chapter-num">02 · 0{i + 1} / 0{d.rooms.items.length}</span>
-                <p class="eyebrow">{d.rooms.eyebrow}</p>
-              </div>
-              <h2>{r.name}</h2>
+          <h2>{d.rooms.title}</h2>
               <ul class="amenity-strip" aria-label={d.rooms.amenitiesLabel}>
                 {d.rooms.amenities.map((item, idx) => (
                   <li>
@@ -98,26 +103,20 @@ const amenityIcons = [
                   </li>
                 ))}
               </ul>
-              <div class="suite-foot">
-                <p class="price">
-                  <span>{d.rooms.rateLabel}</span>
-                  <strong>{d.rooms.rateBasis}</strong>
-                  <small>{d.rooms.rateInquiry}</small>
-                </p>
-                <a class="btn" href="#book"><span>{d.rooms.request}</span></a>
-              </div>
+          <div class="suite-foot">
+            <p class="price">
+              <span>{d.rooms.rateLabel}</span>
+              <strong>{d.rooms.rateBasis}</strong>
+              <small>{d.rooms.rateInquiry}</small>
+            </p>
+            <div class="room-actions">
+              <button type="button" class="btn btn--gold" data-open-room><span>{d.rooms.view}</span></button>
+              <a class="btn" href="#book"><span>{d.rooms.request}</span></a>
             </div>
-            <nav class="suite-nav" aria-label={d.rooms.title}>
-              {d.rooms.items.map((item, j) => (
-                <a href={`#room-${j + 1}`} aria-current={i === j ? 'true' : undefined} title={item.name}>
-                  0{j + 1}
-                </a>
-              ))}
-            </nav>
           </div>
-        </section>
-      ))}
-    </div>
+        </div>
+      </div>
+    </section>
 
     <section class="panel panel-suite panel-dining" id="dining" data-dot={d.dining.eyebrow}>
       <div class="panel-media">
@@ -409,6 +408,73 @@ const amenityIcons = [
 
       <div class="sheet-foot">
         <button type="button" class="sheet-back" id="dining-modal-back">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          {d.dining.back}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-modal room-modal" id="room-modal" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="room-modal-title" aria-hidden="true" inert>
+    <div class="sheet-backdrop" data-close-modal></div>
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <div class="sheet-brand">
+          <img src="/images/logo-seal.png" alt="" width="38" height="38" />
+          <div>
+            <p class="sheet-eyebrow">Aurora Hacienda Zanzibar · Nungwi</p>
+            <h2 id="room-modal-title">{d.rooms.title}</h2>
+          </div>
+        </div>
+        <button type="button" class="sheet-close" data-close-modal aria-label={d.nav.close}>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+
+      <div class="sheet-body" data-lenis-prevent>
+        <div class="gallery" id="room-gallery">
+          <div class="gallery-stage">
+            <div class="gallery-track">
+              {roomPhotos.map((src, i) => (
+                <figure class="gallery-slide">
+                  <img src={src} alt={`${d.rooms.photo} ${i + 1} / ${roomPhotos.length}`} loading="lazy" />
+                </figure>
+              ))}
+            </div>
+            <button type="button" class="gallery-arrow gallery-prev" aria-label={d.rooms.prevPhoto}>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button type="button" class="gallery-arrow gallery-next" aria-label={d.rooms.nextPhoto}>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <p class="gallery-count" aria-live="polite"><bdi dir="ltr"><span id="gallery-now">1</span> / {roomPhotos.length}</bdi></p>
+          </div>
+          <div class="gallery-thumbs">
+            {roomPhotos.map((src, i) => (
+              <button type="button" data-slide={i} aria-label={`${d.rooms.photo} ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}>
+                <img src={src} alt="" loading="lazy" />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <p class="room-intro">{d.rooms.intro}</p>
+              <ul class="amenity-strip" aria-label={d.rooms.amenitiesLabel}>
+                {d.rooms.amenities.map((item, idx) => (
+                  <li>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d={amenityIcons[idx] || amenityIcons[0]} />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+        <p class="room-rate"><strong>{d.rooms.rateBasis}</strong><small>{d.rooms.rateInquiry}</small></p>
+        <a class="btn btn--gold room-book" href="#book"><span>{d.rooms.request}</span></a>
+      </div>
+
+      <div class="sheet-foot">
+        <button type="button" class="sheet-back" data-close-modal>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
           {d.dining.back}
         </button>

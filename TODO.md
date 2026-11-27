@@ -47,3 +47,7 @@
 - [ ] Anyanyelvi átolvasás, elsősorban arab és orosz; a magyart a tulaj nézze át
 - [ ] A tulaj hagyja jóvá a Welcome / Nungwi szöveg fordításait (az eredetit ő küldte HU + EN nyelven)
 - [ ] Élesítéskor a noindex mindhárom helyről törlendő (meta, netlify.toml header, public/robots.txt)
+
+## Szobák (2026-11-27)
+- [x] A 4 szoba egyforma: egy szoba-szekció + galéria modal
+- [ ] Szobabelső fotók (egész szoba 2 sarokból, fürdő, részletek, terasz; fekvő, eredeti fájl) → public/images/room/ mappába, fájlnév szerinti sorrend, a 01 a borítókép

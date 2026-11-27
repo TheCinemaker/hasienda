@@ -2535,3 +2535,39 @@ html[dir='rtl'] .flatpickr-calendar { direction: rtl; }
 .flatpickr-current-month { display: flex; justify-content: center; align-items: center; gap: 6px; height: 34px; padding-top: 4px; }
 
 .flatpickr-day.prevMonthDay:hover, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.nextMonthDay:focus { background: rgba(212, 176, 117, .2); border-color: rgba(212, 176, 117, .4); color: var(--ivory); }
+
+/* ---------- rooms section and gallery ---------- */
+.room-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.room-modal .sheet-card { max-width: 960px; max-height: min(94svh, 940px); }
+.room-modal .sheet-body { padding-top: 18px; }
+.gallery-stage { position: relative; }
+.gallery-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.gallery-track::-webkit-scrollbar, .gallery-thumbs::-webkit-scrollbar { display: none; }
+.gallery-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+.gallery-slide img { width: 100%; height: min(52svh, 440px); object-fit: cover; }
+.gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(212, 176, 117, .55); background: rgba(14, 11, 9, .7); color: var(--gold-bright); cursor: pointer; transition: background .25s, color .25s; }
+.gallery-arrow:hover { background: var(--gold-bright); color: var(--obsidian); }
+.gallery-prev { inset-inline-start: 12px; }
+.gallery-next { inset-inline-end: 12px; }
+html[dir='rtl'] .gallery-arrow svg { transform: scaleX(-1); }
+.gallery-count { position: absolute; inset-inline-end: 12px; bottom: 12px; margin: 0; padding: 4px 12px; font-size: .74rem; letter-spacing: .16em; background: rgba(14, 11, 9, .72); color: var(--ivory); }
+.gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin-top: 10px; padding: 2px; }
+.gallery-thumbs button { flex: 0 0 96px; height: 62px; padding: 0; border: 1px solid transparent; background: none; cursor: pointer; opacity: .55; transition: opacity .25s, border-color .25s; }
+.gallery-thumbs button[aria-current], .gallery-thumbs button:hover { opacity: 1; border-color: var(--gold-bright); }
+.gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.room-intro { margin: 1.4em 0 .6em; color: rgba(250, 246, 239, .86); }
+.room-rate { display: grid; gap: 4px; margin: 0 0 1.2em; }
+.room-rate strong { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; }
+.room-rate small { font-size: .84rem; color: rgba(250, 246, 239, .7); }
+.room-book { margin-top: 0; }
+@media (max-width: 860px) {
+  .room-actions { width: 100%; flex-direction: column; }
+  .room-actions .btn { width: 100%; justify-content: center; }
+  .gallery-slide img { height: min(44svh, 360px); }
+  .gallery-arrow { width: 40px; height: 40px; }
+  .gallery-thumbs button { flex-basis: 76px; height: 50px; }
+  .room-book { width: 100%; justify-content: center; }
+}
+
+/* phones: show the thatched terrace, path and palms rather than a bare wall */
+@media (max-width: 860px) { .panel-rooms .panel-img { object-position: 76% 50%; } }
