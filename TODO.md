@@ -51,3 +51,10 @@
 ## Szobák (2026-11-27)
 - [x] A 4 szoba egyforma: egy szoba-szekció + galéria modal
 - [ ] Szobabelső fotók (egész szoba 2 sarokból, fürdő, részletek, terasz; fekvő, eredeti fájl) → public/images/room/ mappába, fájlnév szerinti sorrend, a 01 a borítókép
+
+## Tulaj, 2026-11-27 (2. kör) – felülírja a "Szobák" bejegyzést
+- [x] Vissza a 4 külön szobára, nevekkel: 1 Kleopátra, 2 Diana, 3 II. Erzsébet, 4 Hatsepszut
+- [ ] Tulaj erősítse meg, melyik fotó / ajtó melyik szobanévhez tartozik; szobánkénti saját fotók
+- [x] Eredeti reggeli- és itallap képként is (angol)
+- [x] Reptéri transzfer csak igény esetén; nagy teljesítményű generátor
+- Alkoholos italoknak szándékosan nincs ára (beszerzés miatt) – nem hiba, ne pótoljuk

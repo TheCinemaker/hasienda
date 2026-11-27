@@ -39,3 +39,5 @@ Indult: 2026. november 25.
 5. **Domain, tárhely, e-mail:** van-e domain, ki kezeli? (alap javaslat: Netlify)
 6. **Határidő:** ____
 7. **Árajánlat / számlázás:** ____ (csak belső jegyzet)
+
+- 2026-11-27 (tulaj): „boutique hotel”; a szobák hagyományos zanzibári stílusban; közel az Indiai-óceánhoz; a „Megvalósult trópusi álom” és a „négy egyforma szoba” megfogalmazás kikerült.
